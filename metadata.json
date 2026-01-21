@@ -1,0 +1,9 @@
+
+{
+  "name": "Lumina Digital Portfolio",
+  "description": "A high-performance, visually stunning portfolio featuring 3D elements, Bento grids, and advanced Framer Motion animations.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}
