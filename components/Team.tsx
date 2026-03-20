@@ -7,7 +7,7 @@ const Team: React.FC = () => {
   const [hoveredId, setHoveredId] = useState<string | null>(null);
 
   return (
-    <section id="team" className="py-32 bg-slate-900/50">
+    <section id="teammm" className="py-32 bg-slate-900/50">
       <div className="container mx-auto px-6 text-center">
         <h2 className="text-4xl md:text-6xl font-black mb-16">CORE TALENT</h2>
         

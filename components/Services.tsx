@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { SERVICES } from '../constants';
@@ -39,7 +38,6 @@ const ServiceCard: React.FC<{ service: typeof SERVICES[0]; index: number }> = ({
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       onClick={handleClick}
-      // Fix: Cast style to any to allow perspective property
       style={{
         perspective: 1000,
         rotateX,
@@ -47,7 +45,7 @@ const ServiceCard: React.FC<{ service: typeof SERVICES[0]; index: number }> = ({
         transition: 'rotate 0.1s ease-out'
       } as any}
       className={`relative p-8 rounded-3xl glass group overflow-hidden cursor-pointer ${
-        index === 0 || index === 3 ? 'md:col-span-2' : 'md:col-span-1'
+        index === 0 || index === 3 || index == 4 ||index==7 || index==8  ? 'md:col-span-2' : 'md:col-span-1'
       }`}
     >
       <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-cyan-500 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
@@ -74,11 +72,12 @@ const ServiceCard: React.FC<{ service: typeof SERVICES[0]; index: number }> = ({
 
 const Services: React.FC = () => {
   return (
-    <section id="services" className="py-32 bg-slate-950">
+    <section id="services" className="py-32">
       <div className="container mx-auto px-6">
         <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
           <div className="max-w-xl">
-            <h2 className="text-4xl md:text-6xl font-black mb-6">SERVICES</h2>
+            {/* APPLIED 320px FIX HERE: text-3xl, min-[375px]:text-4xl, and break-words */}
+            <h2 className="text-3xl min-[375px]:text-4xl md:text-6xl font-black mb-6 break-words">SERVICES</h2>
             <p className="text-slate-400 text-lg">We push the boundaries of what is possible online, providing a specialized suite of creative engineering solutions.</p>
           </div>
           <div className="h-px bg-slate-800 flex-grow hidden md:block mx-10 mb-4" />

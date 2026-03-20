@@ -1,49 +1,273 @@
 
 import React from 'react';
 import { Code, Figma, Aperture, LineChart } from 'lucide-react';
-import { Service, TeamMember, Project } from './types';
+import { Service, TeamMember, Project, OrgMember } from './types';
+import ChairPerson from './images/chairperson.png';
+import ProjectDirector from './images/dir_project.jpeg';
+import DirectorFinance from './images/dir_finance.jpeg';
+import ManagingDirector from './images/managing_dir.png';
+import DirectorIt from './images/dir_IT.png';
+import DirectorSales from './images/dir_sales.png';
+import CISHImage from './images/cish.jpg';
+import FarmerPortal from './images/farmerportal.png';
+import UPYOG from './images/upyog.jpg';
+import GMRImage from './images/gmr.avif';
+import TechLead from './images/tech_lead.webp';
+import SalesOps from './images/sales_ops.jpeg';
+import ProjectOps from './images/project_ops.webp';
+import FinanceOps from './images/finance_ops.jpg';
+import Team from './images/team.jpg';
 
 export const SERVICES: Service[] = [
   {
-    id: 'web-dev',
-    title: 'Web Development',
-    description: 'High-performance, scalable web applications built with the latest technologies like React, Next.js, and Node.',
-    icon: 'Code',
+    id: 'soft-dev',
+    title: 'Custom Software Development',
+    description: 'Architecting high-performance, scalable web and mobile applications. We deliver robust, future-proof solutions utilizing modern tech stacks like React, Next.js, and Node.js.',
+    icon: 'Code2',
+  },
+  {
+    id: 'ai',
+    title: 'Artificial Intelligence',
+    description: 'Integrate next-generation intelligence into your ecosystem. We build custom AI-driven applications and smart automation tools designed to optimize workflows and accelerate innovation.',
+    icon: 'Brain',
+  },
+  {
+    id: 'ml',
+    title: 'Machine Learning',
+    description: 'Turn your raw data into a strategic asset. We design and deploy predictive models, intelligent algorithms, and deep learning solutions to solve complex business challenges.',
+    icon: 'Cpu',
   },
   {
     id: 'ui-ux',
     title: 'UI/UX Design',
-    description: 'User-centric designs that focus on intuition, aesthetic appeal, and seamless interaction patterns.',
+    description: 'Crafting user-centric digital environments that balance stunning visual aesthetics with seamless navigation. We build intuitive interfaces engineered to maximize user engagement and retention.',
     icon: 'Figma',
   },
   {
     id: 'motion',
     title: 'Motion Graphics',
-    description: 'Dynamic visual storytelling through complex animations and interactive 3D elements for the modern web.',
+    description: 'Dynamic visual storytelling tailored for the modern web. We create fluid, high-fidelity animations and interactive elements that captivate audiences and bring your brand to life.',
     icon: 'Aperture',
   },
   {
     id: 'consulting',
     title: 'Consulting',
-    description: 'Strategic technical advice to help scale your product and optimize architecture for growth.',
+    description: 'Strategic technical advisory to help you scale with confidence. We analyze your product architecture, streamline engineering processes, and provide a clear roadmap for sustainable growth.',
     icon: 'LineChart',
-  }
+  },
+  {
+    id: 'cloud',
+    title: 'Cloud Computing',
+    description: 'Engineering resilient, scalable cloud architectures that power global operations. We specialize in seamless migrations, serverless deployments, and multi-cloud strategies designed to optimize cost and maximize uptime.',
+    icon: 'Cloud',
+  },
+  {
+    id: 'cybersecurity',
+    title: 'Cyber Security',
+    description: 'Hardening your digital perimeter against evolving threats. We provide comprehensive security audits, end-to-end encryption, and proactive vulnerability management to safeguard your critical data and intellectual property.',
+    icon: 'ShieldCheck',
+  },
+  {
+    id: 'data-analytics',
+    title: 'Data Analytics',
+    description: 'Translating complex data streams into actionable business intelligence. We implement advanced visualization frameworks and statistical modeling to uncover hidden patterns and drive data-driven decision making.',
+    icon: 'BarChart3',
+  },
+  {
+    id: 'mobile-dev',
+    title: 'Mobile Development',
+    description: 'Building high-performance native and cross-platform mobile experiences. We leverage frameworks like React Native and Flutter to deliver smooth, feature-rich applications that perform flawlessly across iOS and Android.',
+    icon: 'Smartphone',
+  },
 ];
 
 export const TEAM: TeamMember[] = [
-  { id: '1', name: 'Alex Rivera', role: 'Lead Architect', image: 'https://picsum.photos/seed/alex/200' },
-  { id: '2', name: 'Sarah Chen', role: 'UX Director', image: 'https://picsum.photos/seed/sarah/200' },
-  { id: '3', name: 'Marcus Bell', role: 'Motion Lead', image: 'https://picsum.photos/seed/marcus/200' },
-  { id: '4', name: 'Elena Frost', role: 'Frontend Expert', image: 'https://picsum.photos/seed/elena/200' },
+  { id: '1', name: 'Pranav Srivastava', role: 'Director IT', image: DirectorIt },
+  { id: '2', name: 'Shubham Singh', role: 'Technical Lead', image: 'https://picsum.photos/seed/sarah/200' },
+  { id: '3', name: 'Satyam Gupta', role: 'Frontend Lead', image: 'https://picsum.photos/seed/marcus/200' },
+  { id: '4', name: 'Navajit Mishra', role: 'Backend Lead', image: 'https://picsum.photos/seed/elena/200' },
 ];
 
+export const ORG_MEMBERS: Record<string, OrgMember> = {
+  chairperson: {
+    id: "chairperson",
+    role: "Chairperson",
+    name: "J. P. Srivastava",
+    image: ChairPerson,
+    details: "Provides top-level strategic vision and governance. Oversees board operations, guides the long-term business trajectory, and ensures the company's overarching objectives align with its core values and stakeholder interests.",
+    experiences: ["30+ years of industry experience.", "Expert in Third-Party Inspection and Quality Assurance.", "Former leadership roles in Govt/PSUs (Ministry of Railways, RDSO, RITES).","Proven expertise in tendering, marketing, and project management."]
+  },
+  managingdirector: {
+    id: "managingdirector",
+    role: "Managing Director",
+    name: "Rekha Srivastava",
+    image: ManagingDirector,
+    details: "Directs overall daily business operations and executes the company's strategic vision. Acts as the primary bridge between the board of directors and executive leadership to drive organizational growth, operational excellence, and market expansion.",
+    experiences: ["15+ years of experience in the trading, manufacturing, and service sectors.", "Directs daily business operations and executes long-term organizational strategy.", "Fosters a strong corporate culture and team development, backed by a PG in Psychology.","Oversees financial health, business growth, and administrative excellence."]
+  },
+
+  directorSales: {
+    id: "dir-hr-marketing",
+    role: "Director HR/Marketing",
+    name: "Anant Srivastava",
+    image: DirectorSales,
+    details: "Drives revenue growth by leading business development initiatives and client acquisition strategies. Cultivates key enterprise partnerships, expands market reach, and manages the end-to-end sales pipeline.",
+    experiences: ["Driving revenue growth and B2B tech sales.", "Establishing global client networks.", "Over 12 years of executive sales leadership.","Conducts in-situ testing, risk analysis, and material assessments.","Leads structural design deliverables and concept development."]
+  },
+  directorProject: {
+    id: "joint-md",
+    role: "Joint Managing Director",
+    name: "Rita Rai",
+    image: ProjectDirector,
+    details: "Ensures the flawless execution and delivery of all client projects. Oversees project management frameworks, agile methodologies, and resource allocation to guarantee digital solutions are delivered on time, strictly within budget, and up to quality standards.",
+    experiences: ["12+ years of industry experience as a Mechanical Engineer.","Project lifecycle management and Agile methodologies.", "Delivered 50+ enterprise IT projects.", "Expertise in risk and resource management.","Management Representative for ISO 17020 compliance and NABCB audits."]
+  },
+  directorFinance: {
+    id: "dir-finance",
+    role: "Director Finance",
+    name: "Akash Srivastava",
+    image: DirectorFinance,
+    details: "Manages the company's financial health, including budgeting, forecasting, and capital optimization. Provides strategic financial insights and risk management to support sustainable organizational scaling.",
+    experiences: ["Financial planning & analysis.", "Budget management and forecasting.", "10+ years of engineering experience with EliTes India.","Specializes in consultancy, project monitoring, and vendor assessment."]
+  },
+  financeTeam: {
+    id: "finance-team",
+    role: "Finance Team",
+    name: "Finance Ops",
+    image: FinanceOps,
+    details: "Handles day-to-day financial operations including invoicing, accounts payable/receivable, payroll processing, and financial compliance reporting to maintain flawlessly accurate records.",
+    experiences: ["Accounting, taxation, and auditing.", "Quarterly financial reporting.", "Ensuring regulatory financial compliance.","Maintains accurate financial forecasting, budget tracking, and cost-benefit reporting."]
+  },
+  directorTech: {
+    id: "dir-tech",
+    role: "Director IT",
+    name: "Pranav Srivastava",
+    image: DirectorIt,
+    details: "Leads the overarching technology strategy, engineering practices, and product development. Oversees the technical architecture and drives the engineering teams to deliver high-performance, scalable, and innovative software solutions.",
+    experiences: ["Cloud architecture and scalable system design.", "Full-stack development leadership.", "5+ years in software engineering.","Led frontend architecture, UI/UX execution, sprint planning and stakeholder coordination"]
+  },
+  teamLeader: {
+    id: "vp",
+    role: "VP",
+    name: "VP",
+    image: TechLead,
+    details: "Manages the day-to-day operations of the engineering floor. Mentors developers, enforces rigorous code quality and architectural best practices, and bridges the gap between complex technical execution and project requirements.",
+    experiences: ["full-stack engineering and technical leadership.","Drives agile sprint execution and actively mentors development teams.", "Code reviews, systems architecture, debugging."]
+  },
+  teamSales: {
+    id: "sales-team",
+    role: "Sales Team",
+    name: "Sales Ops",
+    image: SalesOps,
+    details: "Supports the overarching sales strategy by analyzing market data, managing CRM tools, generating leads, and optimizing the client onboarding process to maximize conversion rates.",
+    experiences: ["Manages end-to-end CRM workflows and sales pipeline optimization.", "Conducts targeted market research to drive lead generation strategies.", "Analyzes core sales metrics to accurately forecast revenue and scale growth."]
+  },
+  teamProject: {
+    id: "project-team",
+    role: "Project Team",
+    name: "Project Ops",
+    image: ProjectOps,
+    details: "Coordinates daily project tasks, tracks sprint milestones, and facilitates seamless communication between internal engineering teams and external clients to ensure a smooth development lifecycle.",
+    experiences: ["Coordinates cross-functional teams to ensure on-time, on-budget delivery.", "Manages resource allocation, risk mitigation, and daily project tracking.", "Maintains continuous, transparent communication with key internal and external stakeholders."]
+  },
+  architects: {
+    id: "architects",
+    role: "Architects/Managers & SEs",
+    name: "Engineering Team",
+    image: Team,
+    details: "The core builders of the company’s digital products. Responsible for writing robust code, designing scalable system architectures, and implementing cutting-edge technologies to solve complex engineering challenges.",
+    experiences: ["Building rich scalable software solutions.", "React, Node.js, Python, AWS, Azure.", "Performance optimization & AI integrations."]
+  }
+};
+
 export const PROJECTS: Project[] = [
-  { id: 'p1', title: 'CyberSphere', category: 'Platform Design', image: 'https://picsum.photos/seed/p1/800/600' },
-  { id: 'p2', title: 'NeonVault', category: 'FinTech', image: 'https://picsum.photos/seed/p2/800/600' },
-  { id: 'p3', title: 'Aura Fitness', category: 'Mobile App', image: 'https://picsum.photos/seed/p3/800/600' },
-  { id: 'p4', title: 'Zenith Agency', category: 'Branding', image: 'https://picsum.photos/seed/p4/800/600' },
+  { id: 'p1', 
+    title: 'Brihanmumbai Municipal Corporation', 
+    category: 'Software Development', 
+    image: '/img/BMCLogo.jpeg',
+    shortDescription:
+    "The Brihanmumbai Municipal Corporation (BMC) Digital Governance Platform is a municipal management system built on the DIGIT Platform using the UPYOG framework. It digitizes departmental workflows and integrates multiple municipal services into a single platform to improve operational efficiency and transparency.",
+  description: 'The Digital Governance Platform for the Brihanmumbai Municipal Corporation (BMC) was developed using the open-source DIGIT Platform through the UPYOG framework. The project aims to modernize municipal operations by digitizing workflows across multiple departments and improving service delivery for citizens.The system is composed of multiple integrated modules designed to address specific operational needs. The Inventory Management Module allows municipal departments to track, manage, and monitor assets and resources in real time. The Deonar Abattoir Module digitizes slaughterhouse operations, including workflow management, compliance tracking, and operational monitoring. Additionally, the Planning Module (Citizen Side) enables citizens to access planning-related services, submit applications, and interact with municipal authorities through an online interface.The platform is built on a microservice architecture with modular user interface components, allowing the system to scale easily and integrate with other government systems. By centralizing data and automating manual processes, the platform improves transparency, enhances departmental coordination, and ensures faster service delivery for citizens.', 
+points:[
+"Built using the UPYOG framework on the DIGIT Platform.",
+"Focuses on digitizing municipal workflows and services.",
+"Uses microservice architecture for scalability.",
+"Major modules include-Inventory Management, Deonar Abattoir Management, Planning Module (Citizen Side)",
+"Enables real-time asset tracking and workflow management.",
+"Improves transparency and departmental coordination.",
+"Provides faster and more accessible citizen services."
+]},
+
+  { id: 'p2', 
+    title: 'CISH', 
+    category: 'Web Development', 
+    image: CISHImage,
+    shortDescription:
+    "The website for Central Institute for Subtropical Horticulture (CISH) was developed as a digital platform consisting of a public website and an internal administrative portal. It provides accessible information for the public while allowing institutional staff to manage content efficiently through a secure role-based admin system.",
+    description: 'The website for the Central Institute for Subtropical Horticulture (CISH) was developed as a comprehensive digital platform designed to serve both public users and internal employees. The system consists of a people-centric public website and an employee-focused administrative portal.The public website provides citizens, researchers, and stakeholders with easy access to information related to the institute, including research programs, horticulture resources, publications, and institutional announcements. The platform is designed with an intuitive interface to ensure users can easily navigate various sections and stay informed about the institute’s activities and updates.In addition to the public interface, an administrative management panel was developed for internal staff. The admin portal uses role-based access control, allowing different users such as Admin, Director, and Super Admin to manage specific functionalities. Authorized personnel can update website content, publish news, manage institutional data, and maintain the digital presence of the institute securely and efficiently.',
+    points:[
+      "Consists of two main components:Public website and Employee admin portal",
+    "Provides information on:Research initiatives, Publications, Events, Horticulture resources",
+    "Admin panel includes role-based access control.",
+    "Enables content management and website updates.",
+    "Ensures secure and structured information management."
+ ] },
+
+  { id: 'p3',
+     title: 'National Farmer Portal',
+      category: 'Web Development',
+       image: FarmerPortal,
+       shortDescription:
+       "The National Farmer Portal is a centralized, digital agricultural platform designed to bridge the gap between rural farmers and agricultural experts. Operating on a strict, top-to-bottom Role-Based Access Control (RBAC) model, the platform streamlines farmer onboarding through local representatives (Editors), captures their on-the-ground challenges, and routes these issues directly to verified experts (Agronomists) for resolution.",
+      description: 'The platform operates on a strict, top-to-bottom Role-Based Access Control (RBAC) hierarchy to ensure secure, organized, and efficient workflows. At the administrative level, Admins manage the overarching system and are exclusively responsible for verifying and onboarding qualified Agronomists, ensuring quality control. To overcome potential digital literacy barriers, Ground Level Editors act as the vital link in specific regions; they are responsible for physically onboarding farmers into the system and actively logging their localized agricultural issues. Once registered, farmers gain access to a secure digital portal where they can manage their profiles, connect with community support networks, and explore available agricultural programs. The issues logged by the Editors are then routed directly to the vetted Agronomists, who review the data and provide expert, actionable solutions. This creates a centralized digital ecosystem that seamlessly connects field realities with expert guidance.',
+    points:[
+      "Farmers can create profiles and register through an online form to join the platform.",
+      " Centralizes farmer data and provides an organized system for agricultural engagement.",
+      "Designed to connect farmers with agricultural information, programs, and support networks.",
+      "Having a RBAC controlled platform with top to bottom approach.",
+    "Regional Editors register farmers to overcome tech barriers.",
+    "Admins exclusively verify and onboard expert Agronomists.",
+    "Editors log localized field issues; Agronomists resolve them.",
+    "A single digital portal for farmer data, issue tracking, and community resources.",
+   
+ ]},
+
+  { id: 'p4', 
+    title: 'UPYOG/DIGIT Platform', 
+    category: 'Software Architecture', 
+    image: UPYOG ,
+    shortDescription: 
+    "The DIGIT Platform based UPYOG Platform is an open-source digital governance framework designed to help municipal bodies deliver efficient and transparent public services. It enables government departments to digitize workflows and manage services through a unified platform. The system supports multiple modules for different administrative functions and allows citizens to access municipal services online.",
+    points:[
+      "Built on the open-source DIGIT Platform framework.",
+    "Designed for digital governance of municipal corporations and ULBs.",
+    "Provides a modular architecture for different government departments.",
+    "Supports modules such as:Property management, Trade licensing, Planning permissions, Inventory management, Grievance systems",
+    "Helps digitize workflows and reduce manual paperwork.",
+    "Ensures scalability, interoperability, and service standardization.",
+    "Provides citizens with online access to municipal services.",
+    "Improves transparency, efficiency, and data-driven decision making."
+ ]},
+
+  { id: 'p5',
+     title: 'GMR',
+      category: 'Web App Selfie Kiosk', 
+      image: GMRImage,
+      shortDescription:
+      "The Selfie Kiosk System developed for **GMR Group at Indira Gandhi International Airport provides an interactive digital experience where visitors can capture selfies with themed backgrounds and download them instantly using a QR code.",
+      description: 'The Selfie Kiosk System was developed as an interactive digital solution for visitors at Indira Gandhi International Airport, with GMR Group as the client. The kiosk allows travelers to capture personalized selfies and enhance them with digitally generated backgrounds, creating a memorable airport experience.The system provides a user-friendly interface where visitors can take a selfie using the kiosk camera and select from multiple predefined background themes. After capturing the photo, the application processes the image and merges it with the selected background using image compositing techniques.Once the final image is generated, the system creates a QR code that users can scan with their smartphones to download the image instantly. This contactless download method ensures convenience and speed, especially in high-traffic environments like airports.The kiosk is designed for high performance and quick processing, making it suitable for locations with large numbers of visitors. By combining image processing, digital background integration, and QR-based downloads, the system provides an engaging and innovative digital experience for airport passengers.',
+      points:[
+        "Installed at Indira Gandhi International Airport.",
+      "Allows users to capture selfies through a digital kiosk.",
+      "Users can select themed digital backgrounds.",
+      "System performs image processing and background compositing.",
+      "Generates a QR code for instant image download.",
+      "Designed for high-footfall environments.",
+      "Provides contactless and engaging visitor experience."
+   ]
+    },
 ];
 
 export const CLIENT_LOGOS = [
-  'GMR', 'BMC', 'Delhi Jal Board', 'ICAR'
+  'GMR', 'BMC(Brihanmumbai Municipal Corporation)', 'UPYOG(Urban Platform for delivery of Online Governance', 'CISH(Central Institute of Subtropical Horticulture)'
 ];

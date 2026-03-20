@@ -1,23 +1,23 @@
-
 import React from 'react';
 import { Twitter, Github, Linkedin, Instagram } from 'lucide-react';
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-slate-950 border-t border-slate-900 pt-20 pb-40">
+    <footer className="border-t border-slate-900 pt-16 pb-16">
       <div className="container mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-20">
-          <div className="col-span-1 md:col-span-2">
-            <h2 className="text-3xl font-black mb-6 tracking-tighter">LUMINA</h2>
-            <p className="text-slate-500 max-w-sm leading-relaxed">
-              We are a boutique creative engineering agency specializing in the intersection 
-              of design, technology, and performance.
-            </p>
+        
+        {/* Switched to lg:grid-cols-12 to ensure it only applies on wide enough screens */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 mb-16">
+          
+          {/* Reduced from col-span-3 to col-span-2 to pull everything closer to NEBO */}
+          <div className="col-span-1 lg:col-span-2">
+            <h2 className="text-3xl font-black mb-6 tracking-tighter text-white">NEBO</h2>
           </div>
           
-          <div>
-            <h4 className="font-bold mb-6 text-sm uppercase tracking-widest">Navigation</h4>
-            <ul className="space-y-4 text-slate-400">
+          {/* Navigation */}
+          <div className="col-span-1 lg:col-span-2">
+            <h4 className="font-bold mb-6 text-sm uppercase tracking-widest text-white">Navigation</h4>
+            <ul className="space-y-3 text-slate-400 text-sm">
               <li><a href="#" className="hover:text-cyan-400 transition-colors">Home</a></li>
               <li><a href="#services" className="hover:text-cyan-400 transition-colors">Services</a></li>
               <li><a href="#work" className="hover:text-cyan-400 transition-colors">Work</a></li>
@@ -25,23 +25,35 @@ const Footer: React.FC = () => {
             </ul>
           </div>
 
-          <div>
-            <h4 className="font-bold mb-6 text-sm uppercase tracking-widest">Connect</h4>
-            <div className="flex gap-4">
-              <a href="#" className="w-10 h-10 glass rounded-full flex items-center justify-center text-slate-400 hover:text-cyan-400 transition-colors"><Twitter size={18} /></a>
-              <a href="#" className="w-10 h-10 glass rounded-full flex items-center justify-center text-slate-400 hover:text-cyan-400 transition-colors"><Github size={18} /></a>
-              <a href="#" className="w-10 h-10 glass rounded-full flex items-center justify-center text-slate-400 hover:text-cyan-400 transition-colors"><Linkedin size={18} /></a>
-              <a href="#" className="w-10 h-10 glass rounded-full flex items-center justify-center text-slate-400 hover:text-cyan-400 transition-colors"><Instagram size={18} /></a>
+          {/* Offices maintains its large width to keep addresses wide */}
+          <div className="col-span-1 lg:col-span-5">
+            <h4 className="font-bold mb-6 text-sm uppercase tracking-widest text-white">Offices</h4>
+            <address className="not-italic text-slate-400 space-y-3 text-xs leading-relaxed">
+              <p>1. G 204 Shilp residency near prarthna apartment, Hirawadi Road, Bapunagar, Ahmedabad, Gujarat 382345.</p>
+              <p>2. Badrish colony lane no. 1, house no. 75, danda dharampur Dehradun, 248001.</p>
+              <p>3. R-18 1St Floor, Vikas Marg, Shakarpur, Delhi-110092.</p>
+              <p>4. Building No./Flat No.: 6A/183 Road/Street: VIRENDAVAN YOJNA, City/ Town/Village: RAIBARELI ROAD, District: Lucknow, State: Uttar Pradesh, PIN Code: 226029.</p>
+              <p>5. K-422, SITE 5 KASNA IND AREA Greater Noida, Gautam Budh Nagar -201310.</p>
+              <p>6. E/S-6, vanshree c.h.s.ltd, khadakpada, Kalyan (w), Mumbai-421301.</p>
+              <p>7. Tamamunda chouk near by Champa fuels petrol pump farsabahar (c.g.) Dist. Jashpur, Chhattisgarh-496242.</p>
+            </address>
+          </div>
+
+          {/* Increased from col-span-2 to col-span-3 to give icons more room, removed flex-wrap */}
+          <div className="col-span-1 lg:col-span-3">
+            <h4 className="font-bold mb-6 text-sm uppercase tracking-widest text-white">Connect</h4>
+            <div className="flex gap-3">
+              <a href="#" className="w-9 h-9 border border-slate-800 rounded-full flex items-center justify-center text-slate-400 hover:text-cyan-400 hover:border-cyan-400 transition-all"><Twitter size={16} /></a>
+              <a href="#" className="w-9 h-9 border border-slate-800 rounded-full flex items-center justify-center text-slate-400 hover:text-cyan-400 hover:border-cyan-400 transition-all"><Github size={16} /></a>
+              <a href="#" className="w-9 h-9 border border-slate-800 rounded-full flex items-center justify-center text-slate-400 hover:text-cyan-400 hover:border-cyan-400 transition-all"><Linkedin size={16} /></a>
+              <a href="#" className="w-9 h-9 border border-slate-800 rounded-full flex items-center justify-center text-slate-400 hover:text-cyan-400 hover:border-cyan-400 transition-all"><Instagram size={16} /></a>
             </div>
           </div>
+
         </div>
 
-        <div className="pt-8 border-t border-slate-900 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-600">
-          <p>© 2024 Lumina Agency. All rights reserved.</p>
-          <p className="flex gap-6">
-            <span className="cursor-pointer hover:text-slate-400">Privacy Policy</span>
-            <span className="cursor-pointer hover:text-slate-400">Terms of Service</span>
-          </p>
+        <div className="pt-6 border-t border-slate-900 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-600">
+          <p>© 2019 Nebo Engineering. All rights reserved.</p>
         </div>
       </div>
     </footer>

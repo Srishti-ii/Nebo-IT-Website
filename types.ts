@@ -21,4 +21,13 @@ export interface TeamMember {
   image: string;
 }
 
+export interface OrgMember {
+  id: string;
+  name: string;
+  role: string;
+  image: string;
+  details: string;
+  experiences: string[];
+}
+
 export type SectionId = 'home' | 'services' | 'work' | 'team' | 'contact';

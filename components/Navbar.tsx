@@ -1,11 +1,12 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Home, Briefcase, Users, Mail, LayoutGrid } from 'lucide-react';
+import { Home, Briefcase, Users, Mail, LayoutGrid, Info } from 'lucide-react';
 
 const Navbar: React.FC = () => {
   const navItems = [
     { label: 'Home', icon: <Home size={20} />, href: '#' },
+    {label: 'About', icon: <Info size={20} />, href: '#about' },
     { label: 'Services', icon: <LayoutGrid size={20} />, href: '#services' },
     { label: 'Work', icon: <Briefcase size={20} />, href: '#work' },
     { label: 'Team', icon: <Users size={20} />, href: '#team' },
