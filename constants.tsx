@@ -1,7 +1,7 @@
-
-import React from 'react';
 import { Code, Figma, Aperture, LineChart } from 'lucide-react';
 import { Service, TeamMember, Project, OrgMember } from './types';
+
+// Image Imports
 import ChairPerson from './images/chairperson.png';
 import ProjectDirector from './images/dir_project.jpeg';
 import DirectorFinance from './images/dir_finance.jpeg';
@@ -17,6 +17,33 @@ import SalesOps from './images/sales_ops.jpeg';
 import ProjectOps from './images/project_ops.webp';
 import FinanceOps from './images/finance_ops.jpg';
 import Team from './images/team.jpg';
+import Patron1 from './images/Sood.jpg';
+import Patron2 from './images/rajesh.png';
+import Patron3 from './images/indu.png';
+import Patron4 from './images/Arun.jpeg';
+
+export const LEADERSHIP_DATA = [
+  {
+    name: "Vir Bhan Sood",
+    image: Patron1,
+    description: "25 years’ experience in Quality Assurance and inspection with RITES Limited, premier Third Party Inspection & Consultancy Organization. Conducted inspection of apprx.16000 tons of 60 Kg UIC Rails in China and wheels & wheel sets in Romania besides inspection of Wheels, Axles, Tyres & Wheel sets and other M&P items in foreign countries. Organized and supervised Quality Assurance and inspection of machinery Plant and equipment procured against World Bank funded projects of Health System Corporation of different State Governments on behalf of Oil Sector Clients such as Indian Oil Corporation Limited and IBP Co Ltd. Etc. Upgraded the RITES Northern Region Laboratory for testing of Metals. Surveillance of private and other Government testing laboratories. Vendor assessment prior to their approval .Construction supervision of Retail Outlets of IBP Company in Northern and Eastern Regions for assuring the Quality of works. Trained Lead Assessor in ISO 9001 and ISO 14001, worked as Management Representative Northern Region, RITES for.ISO 9001 from Aug 97 to Feb. 2004.Changed ISO Manual from 1994 version to 2000 version. In 2005 prepared Manual for ISO 17020 for RITES QA Division for its certification as Inspection agency. Consultancy works. Conducted ISO audits in different Divisions of RITES. Freelance Empanelled Assessor for National Accreditation Board for certifying Bodies, for assessment of Certification Bodies and inspection bodies for 08 years. . Member of NABCB Accreditation Committee From August 2021 to July 2023."
+  },
+  {
+    name: "Rajesh Khare",
+    image: Patron2,
+    description: "Mr. Khare, a Seasoned Chartered Civil Engineering Professional with 45+ years of experience in planning, design, and execution of infrastructure projects including roads, water supply, sewerage, wastewater systems, and smart city developments. Proven expertise in project management, structural design, and quality compliance with strong leadership in large-scale public infrastructure projects. He has gained this experience while working in different capacities in Govt. departments and is associated with us as Country Head."
+  },
+  {
+    name: "Indu Kumar Srivastava",
+    image: Patron3,
+    description: "Mr. Indu Kant Srivastava is a distinguished Civil Engineering graduate with an illustrious career spanning 39 years of dedicated service at U.P. Jal Nigam. A veteran in the field of public infrastructure, he has developed an unparalleled mastery over the entire lifecycle of Water Supply Projects, ranging from initial conceptualization and design to ground-level execution and large-scale supervision. Beyond his specialization in water systems, Mr. Srivastava’s technical footprint extends to the successful management of complex Building and Road projects, demonstrating a versatile engineering acumen. His nearly four decades at the forefront of state-level infrastructure development have equipped him with deep expertise in navigating regulatory frameworks, ensuring quality compliance, and leading multi-disciplinary teams through high-stakes engineering challenges. His career is a testament to technical excellence and a lifelong commitment to enhancing public utility systems."
+  },
+  {
+    name: "Arun Kumar Tyagi",
+    image: Patron4,
+    description: "Mr. Arun Kumar Tyagi is a distinguished professional with a robust background in engineering and management (BE, MBA, FIE). He has a proven track record of leadership in the public sector, having served as the Chief Project Officer for UREDA (Uttarakhand Renewable Energy Development Agency) and as an Advisor to the Planning Department for the Government of Uttarakhand. With deep expertise in large-scale project implementation and strategic planning, Mr. Tyagi specializes in steering complex initiatives from conception to execution within government frameworks. As a Fellow of the Institution of Engineers (FIE), he brings a high level of technical authority and administrative excellence to our leadership team."
+  },
+];
 
 export const SERVICES: Service[] = [
   {
@@ -105,7 +132,6 @@ export const ORG_MEMBERS: Record<string, OrgMember> = {
     details: "Directs overall daily business operations and executes the company's strategic vision. Acts as the primary bridge between the board of directors and executive leadership to drive organizational growth, operational excellence, and market expansion.",
     experiences: ["15+ years of experience in the trading, manufacturing, and service sectors.", "Directs daily business operations and executes long-term organizational strategy.", "Fosters a strong corporate culture and team development, backed by a PG in Psychology.","Oversees financial health, business growth, and administrative excellence."]
   },
-
   directorSales: {
     id: "dir-hr-marketing",
     role: "Director HR/Marketing",
@@ -185,87 +211,81 @@ export const PROJECTS: Project[] = [
     title: 'Brihanmumbai Municipal Corporation', 
     category: 'Software Development', 
     image: '/img/BMCLogo.jpeg',
-    shortDescription:
-    "The Brihanmumbai Municipal Corporation (BMC) Digital Governance Platform is a municipal management system built on the DIGIT Platform using the UPYOG framework. It digitizes departmental workflows and integrates multiple municipal services into a single platform to improve operational efficiency and transparency.",
-  description: 'The Digital Governance Platform for the Brihanmumbai Municipal Corporation (BMC) was developed using the open-source DIGIT Platform through the UPYOG framework. The project aims to modernize municipal operations by digitizing workflows across multiple departments and improving service delivery for citizens.The system is composed of multiple integrated modules designed to address specific operational needs. The Inventory Management Module allows municipal departments to track, manage, and monitor assets and resources in real time. The Deonar Abattoir Module digitizes slaughterhouse operations, including workflow management, compliance tracking, and operational monitoring. Additionally, the Planning Module (Citizen Side) enables citizens to access planning-related services, submit applications, and interact with municipal authorities through an online interface.The platform is built on a microservice architecture with modular user interface components, allowing the system to scale easily and integrate with other government systems. By centralizing data and automating manual processes, the platform improves transparency, enhances departmental coordination, and ensures faster service delivery for citizens.', 
-points:[
-"Built using the UPYOG framework on the DIGIT Platform.",
-"Focuses on digitizing municipal workflows and services.",
-"Uses microservice architecture for scalability.",
-"Major modules include-Inventory Management, Deonar Abattoir Management, Planning Module (Citizen Side)",
-"Enables real-time asset tracking and workflow management.",
-"Improves transparency and departmental coordination.",
-"Provides faster and more accessible citizen services."
-]},
-
+    shortDescription: "The Brihanmumbai Municipal Corporation (BMC) Digital Governance Platform is a municipal management system built on the DIGIT Platform using the UPYOG framework. It digitizes departmental workflows and integrates multiple municipal services into a single platform to improve operational efficiency and transparency.",
+    description: 'The Digital Governance Platform for the Brihanmumbai Municipal Corporation (BMC) was developed using the open-source DIGIT Platform through the UPYOG framework. The project aims to modernize municipal operations by digitizing workflows across multiple departments and improving service delivery for citizens.The system is composed of multiple integrated modules designed to address specific operational needs. The Inventory Management Module allows municipal departments to track, manage, and monitor assets and resources in real time. The Deonar Abattoir Module digitizes slaughterhouse operations, including workflow management, compliance tracking, and operational monitoring. Additionally, the Planning Module (Citizen Side) enables citizens to access planning-related services, submit applications, and interact with municipal authorities through an online interface.The platform is built on a microservice architecture with modular user interface components, allowing the system to scale easily and integrate with other government systems. By centralizing data and automating manual processes, the platform improves transparency, enhances departmental coordination, and ensures faster service delivery for citizens.', 
+    points:[
+      "Built using the UPYOG framework on the DIGIT Platform.",
+      "Focuses on digitizing municipal workflows and services.",
+      "Uses microservice architecture for scalability.",
+      "Major modules include-Inventory Management, Deonar Abattoir Management, Planning Module (Citizen Side)",
+      "Enables real-time asset tracking and workflow management.",
+      "Improves transparency and departmental coordination.",
+      "Provides faster and more accessible citizen services."
+    ]
+  },
   { id: 'p2', 
     title: 'CISH', 
     category: 'Web Development', 
     image: CISHImage,
-    shortDescription:
-    "The website for Central Institute for Subtropical Horticulture (CISH) was developed as a digital platform consisting of a public website and an internal administrative portal. It provides accessible information for the public while allowing institutional staff to manage content efficiently through a secure role-based admin system.",
+    shortDescription: "The website for Central Institute for Subtropical Horticulture (CISH) was developed as a digital platform consisting of a public website and an internal administrative portal. It provides accessible information for the public while allowing institutional staff to manage content efficiently through a secure role-based admin system.",
     description: 'The website for the Central Institute for Subtropical Horticulture (CISH) was developed as a comprehensive digital platform designed to serve both public users and internal employees. The system consists of a people-centric public website and an employee-focused administrative portal.The public website provides citizens, researchers, and stakeholders with easy access to information related to the institute, including research programs, horticulture resources, publications, and institutional announcements. The platform is designed with an intuitive interface to ensure users can easily navigate various sections and stay informed about the institute’s activities and updates.In addition to the public interface, an administrative management panel was developed for internal staff. The admin portal uses role-based access control, allowing different users such as Admin, Director, and Super Admin to manage specific functionalities. Authorized personnel can update website content, publish news, manage institutional data, and maintain the digital presence of the institute securely and efficiently.',
     points:[
       "Consists of two main components:Public website and Employee admin portal",
-    "Provides information on:Research initiatives, Publications, Events, Horticulture resources",
-    "Admin panel includes role-based access control.",
-    "Enables content management and website updates.",
-    "Ensures secure and structured information management."
- ] },
-
+      "Provides information on:Research initiatives, Publications, Events, Horticulture resources",
+      "Admin panel includes role-based access control.",
+      "Enables content management and website updates.",
+      "Ensures secure and structured information management."
+    ] 
+  },
   { id: 'p3',
-     title: 'National Farmer Portal',
-      category: 'Web Development',
-       image: FarmerPortal,
-       shortDescription:
-       "The National Farmer Portal is a centralized, digital agricultural platform designed to bridge the gap between rural farmers and agricultural experts. Operating on a strict, top-to-bottom Role-Based Access Control (RBAC) model, the platform streamlines farmer onboarding through local representatives (Editors), captures their on-the-ground challenges, and routes these issues directly to verified experts (Agronomists) for resolution.",
-      description: 'The platform operates on a strict, top-to-bottom Role-Based Access Control (RBAC) hierarchy to ensure secure, organized, and efficient workflows. At the administrative level, Admins manage the overarching system and are exclusively responsible for verifying and onboarding qualified Agronomists, ensuring quality control. To overcome potential digital literacy barriers, Ground Level Editors act as the vital link in specific regions; they are responsible for physically onboarding farmers into the system and actively logging their localized agricultural issues. Once registered, farmers gain access to a secure digital portal where they can manage their profiles, connect with community support networks, and explore available agricultural programs. The issues logged by the Editors are then routed directly to the vetted Agronomists, who review the data and provide expert, actionable solutions. This creates a centralized digital ecosystem that seamlessly connects field realities with expert guidance.',
+    title: 'National Farmer Portal',
+    category: 'Web Development',
+    image: FarmerPortal,
+    shortDescription: "The National Farmer Portal is a centralized, digital agricultural platform designed to bridge the gap between rural farmers and agricultural experts. Operating on a strict, top-to-bottom Role-Based Access Control (RBAC) model, the platform streamlines farmer onboarding through local representatives (Editors), captures their on-the-ground challenges, and routes these issues directly to verified experts (Agronomists) for resolution.",
+    description: 'The platform operates on a strict, top-to-bottom Role-Based Access Control (RBAC) hierarchy to ensure secure, organized, and efficient workflows. At the administrative level, Admins manage the overarching system and are exclusively responsible for verifying and onboarding qualified Agronomists, ensuring quality control. To overcome potential digital literacy barriers, Ground Level Editors act as the vital link in specific regions; they are responsible for physically onboarding farmers into the system and actively logging their localized agricultural issues. Once registered, farmers gain access to a secure digital portal where they can manage their profiles, connect with community support networks, and explore available agricultural programs. The issues logged by the Editors are then routed directly to the vetted Agronomists, who review the data and provide expert, actionable solutions. This creates a centralized digital ecosystem that seamlessly connects field realities with expert guidance.',
     points:[
       "Farmers can create profiles and register through an online form to join the platform.",
-      " Centralizes farmer data and provides an organized system for agricultural engagement.",
+      "Centralizes farmer data and provides an organized system for agricultural engagement.",
       "Designed to connect farmers with agricultural information, programs, and support networks.",
       "Having a RBAC controlled platform with top to bottom approach.",
-    "Regional Editors register farmers to overcome tech barriers.",
-    "Admins exclusively verify and onboard expert Agronomists.",
-    "Editors log localized field issues; Agronomists resolve them.",
-    "A single digital portal for farmer data, issue tracking, and community resources.",
-   
- ]},
-
+      "Regional Editors register farmers to overcome tech barriers.",
+      "Admins exclusively verify and onboard expert Agronomists.",
+      "Editors log localized field issues; Agronomists resolve them.",
+      "A single digital portal for farmer data, issue tracking, and community resources."
+    ]
+  },
   { id: 'p4', 
     title: 'UPYOG/DIGIT Platform', 
     category: 'Software Architecture', 
     image: UPYOG ,
-    shortDescription: 
-    "The DIGIT Platform based UPYOG Platform is an open-source digital governance framework designed to help municipal bodies deliver efficient and transparent public services. It enables government departments to digitize workflows and manage services through a unified platform. The system supports multiple modules for different administrative functions and allows citizens to access municipal services online.",
+    shortDescription: "The DIGIT Platform based UPYOG Platform is an open-source digital governance framework designed to help municipal bodies deliver efficient and transparent public services. It enables government departments to digitize workflows and manage services through a unified platform. The system supports multiple modules for different administrative functions and allows citizens to access municipal services online.",
     points:[
       "Built on the open-source DIGIT Platform framework.",
-    "Designed for digital governance of municipal corporations and ULBs.",
-    "Provides a modular architecture for different government departments.",
-    "Supports modules such as:Property management, Trade licensing, Planning permissions, Inventory management, Grievance systems",
-    "Helps digitize workflows and reduce manual paperwork.",
-    "Ensures scalability, interoperability, and service standardization.",
-    "Provides citizens with online access to municipal services.",
-    "Improves transparency, efficiency, and data-driven decision making."
- ]},
-
+      "Designed for digital governance of municipal corporations and ULBs.",
+      "Provides a modular architecture for different government departments.",
+      "Supports modules such as:Property management, Trade licensing, Planning permissions, Inventory management, Grievance systems",
+      "Helps digitize workflows and reduce manual paperwork.",
+      "Ensures scalability, interoperability, and service standardization.",
+      "Provides citizens with online access to municipal services.",
+      "Improves transparency, efficiency, and data-driven decision making."
+    ]
+  },
   { id: 'p5',
-     title: 'GMR',
-      category: 'Web App Selfie Kiosk', 
-      image: GMRImage,
-      shortDescription:
-      "The Selfie Kiosk System developed for **GMR Group at Indira Gandhi International Airport provides an interactive digital experience where visitors can capture selfies with themed backgrounds and download them instantly using a QR code.",
-      description: 'The Selfie Kiosk System was developed as an interactive digital solution for visitors at Indira Gandhi International Airport, with GMR Group as the client. The kiosk allows travelers to capture personalized selfies and enhance them with digitally generated backgrounds, creating a memorable airport experience.The system provides a user-friendly interface where visitors can take a selfie using the kiosk camera and select from multiple predefined background themes. After capturing the photo, the application processes the image and merges it with the selected background using image compositing techniques.Once the final image is generated, the system creates a QR code that users can scan with their smartphones to download the image instantly. This contactless download method ensures convenience and speed, especially in high-traffic environments like airports.The kiosk is designed for high performance and quick processing, making it suitable for locations with large numbers of visitors. By combining image processing, digital background integration, and QR-based downloads, the system provides an engaging and innovative digital experience for airport passengers.',
-      points:[
-        "Installed at Indira Gandhi International Airport.",
+    title: 'GMR',
+    category: 'Web App Selfie Kiosk', 
+    image: GMRImage,
+    shortDescription: "The Selfie Kiosk System developed for **GMR Group at Indira Gandhi International Airport provides an interactive digital experience where visitors can capture selfies with themed backgrounds and download them instantly using a QR code.",
+    description: 'The Selfie Kiosk System was developed as an interactive digital solution for visitors at Indira Gandhi International Airport, with GMR Group as the client. The kiosk allows travelers to capture personalized selfies and enhance them with digitally generated backgrounds, creating a memorable airport experience.The system provides a user-friendly interface where visitors can take a selfie using the kiosk camera and select from multiple predefined background themes. After capturing the photo, the application processes the image and merges it with the selected background using image compositing techniques.Once the final image is generated, the system creates a QR code that users can scan with their smartphones to download the image instantly. This contactless download method ensures convenience and speed, especially in high-traffic environments like airports.The kiosk is designed for high performance and quick processing, making it suitable for locations with large numbers of visitors. By combining image processing, digital background integration, and QR-based downloads, the system provides an engaging and innovative digital experience for airport passengers.',
+    points:[
+      "Installed at Indira Gandhi International Airport.",
       "Allows users to capture selfies through a digital kiosk.",
       "Users can select themed digital backgrounds.",
       "System performs image processing and background compositing.",
       "Generates a QR code for instant image download.",
       "Designed for high-footfall environments.",
       "Provides contactless and engaging visitor experience."
-   ]
-    },
+    ]
+  },
 ];
 
 export const CLIENT_LOGOS = [
