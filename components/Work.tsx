@@ -116,7 +116,7 @@ const Work: React.FC = () => {
 <section id="work" className="py-20 md:py-32 overflow-hidden">
         <div className="container mx-auto px-6">
         <div className="mb-24 text-center">
-        <h2 className="text-3xl sm:text-4xl md:text-6xl lg:text-8xl font-black mb-6 md:mb-8">FEATURED WORK</h2>
+        <h2 className="text-3xl sm:text-4xl md:text-6xl lg:text-10xl font-black mb-6 md:mb-8">CRAFTED BY OUR TEAM</h2>
           <div className="w-24 h-1 bg-cyan-500 mx-auto" />
         </div>
 

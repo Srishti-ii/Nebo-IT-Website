@@ -3,7 +3,6 @@ import { Canvas, useFrame } from '@react-three/fiber';
 import { Points, PointMaterial, OrbitControls, Float } from '@react-three/drei';
 import { motion } from 'framer-motion';
 import * as THREE from 'three';
-import NeboLogo from '../images/nebo_logo.png';
 
 const ParticleField = () => {
   const points = useMemo(() => {
@@ -103,7 +102,7 @@ const Hero: React.FC = () => {
       {/* --- ADDED LOGO CONTAINER --- */}
       <div className="absolute top-6 left-6 md:top-10 md:left-10 z-50 flex items-center gap-2">
         <img
-          src={NeboLogo}
+          src="/img/nebo_logo.png"
           alt="NEBO Logo"
           className="h-10 md:h-12 w-auto object-contain"
         />

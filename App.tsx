@@ -22,7 +22,7 @@ import NeboEngineering from './components/NeboEngineering';
 const App: React.FC = () => {
   const [mounted, setMounted] = useState(false);
   
-  // 1. Initialize state by checking localStorage first
+  // Initialize state by checking localStorage first
   const [isEngineeringMode, setIsEngineeringMode] = useState(() => {
     // Check if the user previously selected engineering
     const savedMode = localStorage.getItem('neboSiteMode');
@@ -35,7 +35,7 @@ const App: React.FC = () => {
 
   if (!mounted) return null;
 
-  // 2. Update toggle handler to save the choice to localStorage
+  // Update toggle handler to save the choice to localStorage
   const toggleSiteMode = () => {
     setIsEngineeringMode((prevMode) => {
       const newMode = !prevMode;
@@ -50,7 +50,8 @@ const App: React.FC = () => {
       <div className="relative min-h-screen overflow-x-hidden selection:bg-cyan-500/30">
         
         {/* Fixed Toggle Switch in the top right corner */}
-        <div className="absolute top-6 right-6 z-[9999] bg-white/10 backdrop-blur-md border border-slate-200/20 p-2 rounded-full shadow-lg">
+        {/* RESPONSIVE FIX: Scaled down on ultra-small mobile screens and adjusted spacing to prevent logo overlap */}
+        <div className="absolute top-4 right-2 sm:top-6 sm:right-6 z-[9999] bg-white/10 backdrop-blur-md border border-slate-200/20 p-1.5 sm:p-2 rounded-full shadow-lg scale-[0.80] min-[375px]:scale-[0.90] sm:scale-100 origin-top-right transition-transform">
           <ToggleSwitch isEngineering={isEngineeringMode} onToggle={toggleSiteMode} />
         </div>
 
@@ -59,7 +60,7 @@ const App: React.FC = () => {
              NEBO ENGINEERING SITE
              ========================================= */
           <div className="min-h-screen w-full">
-            <NeboEngineering />
+            <NeboEngineering onSwitchToIT={toggleSiteMode} />
           </div>
         ) : (
           /* =========================================

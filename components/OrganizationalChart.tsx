@@ -84,47 +84,56 @@ const OrganizationalChart: React.FC = () => {
 
                         <ConnectLine className="w-1 h-10" />
 
-                        {/* Level 2: Directors (4 columns) */}
-                        <div className="w-full max-w-6xl relative">
+                        {/* Level 2: Directors (5 columns) */}
+                        <div className="w-full max-w-7xl relative mt-0">
                             {/* HORIZONTAL LINE TRICK: 
-                                Spans exactly from the center of the first column (12.5%) 
-                                to the center of the last column (12.5% from right)
+                                Spans exactly from the center of the first column (10%) 
+                                to the center of the last column (10% from right)
+                                because 100% / 5 columns = 20% per column. Half of 20% is 10%.
                             */}
-                            <ConnectLine className="absolute top-0 left-[12.5%] right-[12.5%] h-1" />
+                            <ConnectLine className="absolute top-0 left-[10%] right-[10%] h-1" />
                             
                             <div className="flex w-full justify-between">
-                                {/* 2A: Tech */}
-                                <div className="w-1/4 flex flex-col items-center px-4">
-                                    <ConnectLine className="w-1 h-8" />
-                                    <OrgCard member={ORG_MEMBERS.directorTech} onSelect={setSelectedMember} />
-                                    <ConnectLine className="w-1 h-8" />
-                                    <OrgCard member={ORG_MEMBERS.teamLeader} onSelect={setSelectedMember} />
-                                    <ConnectLine className="w-1 h-8" />
-                                    <OrgCard member={ORG_MEMBERS.architects} onSelect={setSelectedMember} />
-                                </div>
-                            
-                                {/* 2B: Sales */}
-                                <div className="w-1/4 flex flex-col items-center px-4">
+                                {/* 1: HR/Marketing (Anant) */}
+                                <div className="w-1/5 flex flex-col items-center px-2">
                                     <ConnectLine className="w-1 h-8" />
                                     <OrgCard member={ORG_MEMBERS.directorSales} onSelect={setSelectedMember} />
                                     <ConnectLine className="w-1 h-8" />
                                     <OrgCard member={ORG_MEMBERS.teamSales} onSelect={setSelectedMember} />
                                 </div>
 
-                                {/* 2C: Project */}
-                                <div className="w-1/4 flex flex-col items-center px-4">
+                                {/* 2: Joint MD / Project (Rita) */}
+                                <div className="w-1/5 flex flex-col items-center px-2">
                                     <ConnectLine className="w-1 h-8" />
                                     <OrgCard member={ORG_MEMBERS.directorProject} onSelect={setSelectedMember} />
                                     <ConnectLine className="w-1 h-8" />
                                     <OrgCard member={ORG_MEMBERS.teamProject} onSelect={setSelectedMember} />
                                 </div>
 
-                                {/* 2D: Finance */}
-                                <div className="w-1/4 flex flex-col items-center px-4">
+                                {/* 3: Finance (Akash) */}
+                                <div className="w-1/5 flex flex-col items-center px-2">
                                     <ConnectLine className="w-1 h-8" />
                                     <OrgCard member={ORG_MEMBERS.directorFinance} onSelect={setSelectedMember} />
                                     <ConnectLine className="w-1 h-8" />
                                     <OrgCard member={ORG_MEMBERS.financeTeam} onSelect={setSelectedMember} />
+                                </div>
+                                
+                                {/* 4: HR (Shweta) */}
+                                <div className="w-1/5 flex flex-col items-center px-2">
+                                    <ConnectLine className="w-1 h-8" />
+                                    <OrgCard member={ORG_MEMBERS.directorHR} onSelect={setSelectedMember} />
+                                    <ConnectLine className="w-1 h-8" />
+                                    <OrgCard member={ORG_MEMBERS.teamHR} onSelect={setSelectedMember} />
+                                </div>
+
+                                {/* 5: IT (Pranav) */}
+                                <div className="w-1/5 flex flex-col items-center px-2">
+                                    <ConnectLine className="w-1 h-8" />
+                                    <OrgCard member={ORG_MEMBERS.directorTech} onSelect={setSelectedMember} />
+                                    <ConnectLine className="w-1 h-8" />
+                                    <OrgCard member={ORG_MEMBERS.teamLeader} onSelect={setSelectedMember} />
+                                    <ConnectLine className="w-1 h-8" />
+                                    <OrgCard member={ORG_MEMBERS.architects} onSelect={setSelectedMember} />
                                 </div>
                             </div>
                         </div>

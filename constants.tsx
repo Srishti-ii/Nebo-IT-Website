@@ -21,7 +21,8 @@ import Patron1 from './images/Sood.jpg';
 import Patron2 from './images/rajesh.png';
 import Patron3 from './images/indu.png';
 import Patron4 from './images/Arun.jpeg';
-
+import TeamHR from './images/teamHR.webp';
+import DirectorHR from './images/director_HR.png';
 export const LEADERSHIP_DATA = [
   {
     name: "Vir Bhan Sood",
@@ -124,6 +125,31 @@ export const ORG_MEMBERS: Record<string, OrgMember> = {
     details: "Provides top-level strategic vision and governance. Oversees board operations, guides the long-term business trajectory, and ensures the company's overarching objectives align with its core values and stakeholder interests.",
     experiences: ["30+ years of industry experience.", "Expert in Third-Party Inspection and Quality Assurance.", "Former leadership roles in Govt/PSUs (Ministry of Railways, RDSO, RITES).","Proven expertise in tendering, marketing, and project management."]
   },
+  directorHR: {
+    id: "director-hr",
+    role: "Director HR",
+    name: "Shweta Sinha",
+    image: DirectorHR, 
+    details: "Leads the organization's overarching human resources strategy, focusing on talent acquisition, employee retention, and organizational development. Champions a positive workplace culture and aligns HR initiatives with the company's long-term business goals.",
+    experiences: [
+      "Strategic workforce planning and executive talent acquisition.", 
+      "Performance management and organizational development.", 
+      "Ensuring strict compliance with labor laws and company policies.",
+      "Fostering an inclusive, engaging, and high-performance corporate culture."
+    ]
+  },
+  teamHR: {
+    id: "team-hr",
+    role: "HR Team",
+    name: "HRs",
+    image: TeamHR,
+    details: "Manages day-to-day human resources operations, from recruitment workflows and onboarding to benefits administration and employee relations. Ensures a smooth, supportive, and compliant workplace environment for all staff members.",
+    experiences: [
+      "Executing end-to-end recruitment pipelines and seamless employee onboarding.", 
+      "Administering employee benefits, payroll coordination, and policy enforcement.", 
+      "Acting as the primary liaison for employee relations and conflict resolution."
+    ]
+  },
   managingdirector: {
     id: "managingdirector",
     role: "Managing Director",
@@ -134,12 +160,13 @@ export const ORG_MEMBERS: Record<string, OrgMember> = {
   },
   directorSales: {
     id: "dir-hr-marketing",
-    role: "Director HR/Marketing",
+    role: "Director Marketing",
     name: "Anant Srivastava",
     image: DirectorSales,
     details: "Drives revenue growth by leading business development initiatives and client acquisition strategies. Cultivates key enterprise partnerships, expands market reach, and manages the end-to-end sales pipeline.",
     experiences: ["Driving revenue growth and B2B tech sales.", "Establishing global client networks.", "Over 12 years of executive sales leadership.","Conducts in-situ testing, risk analysis, and material assessments.","Leads structural design deliverables and concept development."]
   },
+
   directorProject: {
     id: "joint-md",
     role: "Joint Managing Director",

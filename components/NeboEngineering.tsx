@@ -1,8 +1,12 @@
 import React, { useState } from 'react';
 import { motion, Variants } from 'framer-motion';
 
+interface NeboEngineeringProps {
+  onSwitchToIT?: () => void;
+}
 
-const NeboEngineering: React.FC = () => {
+// 2. Pass the prop into the component
+const NeboEngineering: React.FC<NeboEngineeringProps> = ({ onSwitchToIT }) => {
   const [activeTab, setActiveTab] = useState<'services' | 'products'>('services');
   const [expandedBio, setExpandedBio] = useState<number | null>(null);
 
@@ -46,15 +50,14 @@ const NeboEngineering: React.FC = () => {
             {/* Logo / Badge */}
             <motion.div variants={itemVariants} className="flex items-center gap-4 mb-8">
               <div className="w-16 h-16 bg-white rounded-xl flex items-center justify-center shadow-lg p-2">
-                 {/* Replace with actual logo from brochure */}
-                 <img src="../images/nebo_logo.png"  alt="Nebo Logo" className="w-full h-full object-contain" />
+                 <img src="/img/nebo_logo.png"  alt="Nebo Logo" className="w-full h-full object-contain" />
               </div>
               <div className="px-4 py-1.5 rounded-full border border-amber-400/30 bg-amber-400/10 text-amber-400 text-sm font-bold tracking-widest uppercase shadow-sm">
                 Committed to Quality
               </div>
             </motion.div>
 
-            <motion.h1 variants={itemVariants} className="text-5xl lg:text-5xl font-extrabold tracking-tight mb-6 text-white leading-[1.1]">
+            <motion.h1 variants={itemVariants} className="text-5xl lg:text-5.5xl font-extrabold tracking-tight mb-6 text-white leading-[1.1]">
               NEBO <br/>
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-yellow-200">
                 ENGINEERING
@@ -92,7 +95,7 @@ const NeboEngineering: React.FC = () => {
             {/* Main Image */}
             <div className="relative z-10 rounded-2xl overflow-hidden border border-slate-700 shadow-2xl">
               <img 
-                src="../images/solar.avif" 
+                src="/img/solar.avif" 
                 alt="Solar Panel Installation" 
                 className="w-full h-[600px] object-cover hover:scale-105 transition-transform duration-700"
               />
@@ -114,7 +117,7 @@ const NeboEngineering: React.FC = () => {
                   <p className="text-xs text-slate-500 font-bold uppercase tracking-wider">Sustainable</p>
                 </div>
               </div>
-              <p className="text-sm text-slate-600 mt-2 font-medium">Harnessing the power of the sun to propel your business forward.</p>
+              <p className="text-sm text-slate-600 mt-2 font-medium">Harnessing the power of the sun.</p>
             </motion.div>
             
             {/* Background Decorative Accent */}
@@ -124,14 +127,113 @@ const NeboEngineering: React.FC = () => {
         </div>
       </section>
 
-      {/* 2. Welcome Section */}
-      <section className="py-20 px-6 max-w-7xl mx-auto text-center">
-        <h2 className="text-3xl md:text-4xl font-bold text-[#0f172a] mb-6 uppercase">
-          WELCOME TO NEBO ENGINEERING: EMPOWERING YOUR SOLAR FUTURE
-        </h2>
-        <p className="text-lg md:text-xl text-slate-600 leading-relaxed max-w-4xl mx-auto mb-6">
-          At Nebo Engineering, we are dedicated to harnessing the power of the sun to create sustainable energy solutions that propel your business forward. As a dynamic startup specializing in solar technologies, we offer a comprehensive range of services tailored to meet your energy needs.
-        </p>
+      {/* 2. About Us Section */}
+      <section className="bg-white py-24 px-6 border-b border-slate-200">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex flex-col lg:flex-row gap-16 items-center">
+            
+            {/* Left Side: About Text */}
+            <div className="lg:w-1/2">
+              <h2 className="text-sm font-bold text-amber-500 tracking-widest uppercase mb-2">About Us</h2>
+              <h3 className="text-3xl md:text-4xl font-bold text-[#0f172a] mb-6 uppercase leading-tight">
+                Empowering Your Future Through Engineering Excellence
+              </h3>
+              
+              <div className="space-y-4">
+                <p className="text-lg text-slate-600 leading-relaxed">
+                  At Nebo Engineering, we are dedicated to harnessing the power of the sun to create sustainable energy solutions that propel your business forward. As a dynamic startup specializing in solar technologies, we offer a comprehensive range of services tailored to meet your energy needs.
+                </p>
+                <div className="h-px w-full bg-slate-200 my-4"></div>
+                <p className="text-lg text-slate-600 leading-relaxed font-medium">
+                  Operating under <strong className="text-[#0f172a]">Nebo Industries</strong>, we possess the comprehensive capacity and capability to undertake all works related to Civil, Electrical, Mechanical, IT sector, and Non-Conventional Energy.
+                </p>
+              </div>
+            </div>
+
+            {/* Right Side: Core Activities Grid */}
+            <div className="lg:w-1/2 w-full">
+              <div className="bg-slate-50 p-8 md:p-10 rounded-2xl border border-slate-200 shadow-xl relative overflow-hidden">
+                {/* Decorative background accent */}
+                <div className="absolute -top-10 -right-10 w-32 h-32 bg-amber-400/10 rounded-full blur-2xl"></div>
+                
+                <h4 className="text-xl font-bold text-[#0f172a] mb-6 uppercase border-b border-slate-200 pb-4">Our Core Activities</h4>
+                
+                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-4">
+                  <li className="flex items-start gap-3">
+                    <div className="mt-1 flex-shrink-0 w-5 h-5 rounded-full bg-amber-100 flex items-center justify-center">
+                      <span className="text-amber-600 text-sm font-bold">✓</span>
+                    </div>
+                    <span className="text-slate-700 font-medium">Manufacturing</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="mt-1 flex-shrink-0 w-5 h-5 rounded-full bg-amber-100 flex items-center justify-center">
+                      <span className="text-amber-600 text-sm font-bold">✓</span>
+                    </div>
+                    <span className="text-slate-700 font-medium">Fabrication of components & assemblies</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="mt-1 flex-shrink-0 w-5 h-5 rounded-full bg-amber-100 flex items-center justify-center">
+                      <span className="text-amber-600 text-sm font-bold">✓</span>
+                    </div>
+                    <span className="text-slate-700 font-medium">Construction</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="mt-1 flex-shrink-0 w-5 h-5 rounded-full bg-amber-100 flex items-center justify-center">
+                      <span className="text-amber-600 text-sm font-bold">✓</span>
+                    </div>
+                    <span className="text-slate-700 font-medium">Project monitoring & management</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="mt-1 flex-shrink-0 w-5 h-5 rounded-full bg-amber-100 flex items-center justify-center">
+                      <span className="text-amber-600 text-sm font-bold">✓</span>
+                    </div>
+                    <span className="text-slate-700 font-medium">Destructive & non-destructive testing of metals</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="mt-1 flex-shrink-0 w-5 h-5 rounded-full bg-amber-100 flex items-center justify-center">
+                      <span className="text-amber-600 text-sm font-bold">✓</span>
+                    </div>
+                    <span className="text-slate-700 font-medium">Quality assurance</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="mt-1 flex-shrink-0 w-5 h-5 rounded-full bg-amber-100 flex items-center justify-center">
+                      <span className="text-amber-600 text-sm font-bold">✓</span>
+                    </div>
+                    <span className="text-slate-700 font-medium">Third-party inspection</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="mt-1 flex-shrink-0 w-5 h-5 rounded-full bg-amber-100 flex items-center justify-center">
+                      <span className="text-amber-600 text-sm font-bold">✓</span>
+                    </div>
+                    <span className="text-slate-700 font-medium">Turkey Projects</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="mt-1 flex-shrink-0 w-5 h-5 rounded-full bg-amber-100 flex items-center justify-center">
+                      <span className="text-amber-600 text-sm font-bold">✓</span>
+                    </div>
+                    <span className="text-slate-700 font-medium">Solar power systems</span>
+                  </li>
+                  <li 
+                    className="flex items-start gap-3 cursor-pointer hover:bg-amber-50 p-2 -ml-2 rounded-lg transition-colors group"
+                    onClick={() => {
+                      if (onSwitchToIT) onSwitchToIT();
+                      window.scrollTo(0, 0); // Forces browser to snap to the very top
+                    }}
+                  >
+                    <div className="mt-1 flex-shrink-0 w-5 h-5 rounded-full bg-amber-100 flex items-center justify-center">
+                      <span className="text-amber-600 text-sm font-bold">✓</span>
+                    </div>
+                    <span className="text-blue-700 font-medium underline group-hover:text-amber-600 transition-colors flex items-center gap-2">
+                      IT services<br></br>
+                      (click here to visit Nebo IT Solutions) <span className="text-xs text-amber-500 opacity-0 group-hover:opacity-100 transition-opacity">→ View</span>
+                    </span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+          </div>
+        </div>
       </section>
 
       {/* 3. Interactive Tabs */}
@@ -156,7 +258,7 @@ const NeboEngineering: React.FC = () => {
           {activeTab === 'services' && (
             <div className="grid grid-cols-1 md:grid-cols-2 gap-10 animate-in fade-in duration-500">
               <div className="group rounded-2xl overflow-hidden shadow-lg border border-slate-100 hover:shadow-2xl transition-all duration-300 flex flex-col">
-                <div className="h-64 overflow-hidden">
+                <div className="h-64 overflow-hidden bg-slate-100 flex items-center justify-center">
                   <img src="https://images.unsplash.com/photo-1613665813446-82a78c468a1d?q=80&w=1000" alt="Solar Rooftops" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                 </div>
                 <div className="p-8 flex-grow bg-white">
@@ -167,8 +269,8 @@ const NeboEngineering: React.FC = () => {
               </div>
 
               <div className="group rounded-2xl overflow-hidden shadow-lg border border-slate-100 hover:shadow-2xl transition-all duration-300 flex flex-col">
-                <div className="h-64 overflow-hidden">
-                  <img src="https://images.unsplash.com/photo-1508514177221-188b1c77eca1?q=80&w=1000" alt="Solar Ground Mounted" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                <div className="h-64 overflow-hidden bg-slate-100 flex items-center justify-center">
+                  <img src="/img/solarground.webp" alt="Solar Ground Mounted" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                 </div>
                 <div className="p-8 flex-grow bg-white">
                   <h3 className="text-2xl font-bold text-[#0f172a] mb-4">Solar Ground Mounted Systems</h3>
@@ -178,7 +280,7 @@ const NeboEngineering: React.FC = () => {
               </div>
 
               <div className="group rounded-2xl overflow-hidden shadow-lg border border-slate-100 hover:shadow-2xl transition-all duration-300 flex flex-col">
-                <div className="h-64 overflow-hidden">
+                <div className="h-64 overflow-hidden bg-slate-100 flex items-center justify-center">
                   <img src="https://images.unsplash.com/photo-1592833159155-c62df1b65634?q=80&w=1000" alt="Opex and Capex" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                 </div>
                 <div className="p-8 flex-grow bg-white">
@@ -189,7 +291,7 @@ const NeboEngineering: React.FC = () => {
               </div>
 
               <div className="group rounded-2xl overflow-hidden shadow-lg border border-slate-100 hover:shadow-2xl transition-all duration-300 flex flex-col">
-                <div className="h-64 overflow-hidden">
+                <div className="h-64 overflow-hidden bg-slate-100 flex items-center justify-center">
                   <img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?q=80&w=1000" alt="EPC Consultancy Multimeter" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                 </div>
                 <div className="p-8 flex-grow bg-white">
@@ -202,31 +304,57 @@ const NeboEngineering: React.FC = () => {
           )}
 
           {/* Tab Content: Products */}
-          {activeTab === 'products' && (
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 animate-in fade-in slide-in-from-bottom-4 duration-500">
-              <div className="bg-slate-50 p-8 rounded-2xl border border-slate-200 shadow-lg">
-                <h3 className="text-2xl font-bold text-[#0f172a] mb-6">OUR SOLAR STREET LIGHTS</h3>
-                <p className="text-slate-600 mb-4">At Nebo Engineering, we are committed to pioneering sustainable energy solutions that illuminate the future. Beyond our renowned expertise in solar rooftop installations, we also specialize in cutting-edge solar street lights and innovative solar lighting systems.</p>
-                <p className="text-slate-600 mb-4">Our solar street lights combine advanced technology with robust engineering to provide efficient, eco-friendly lighting solutions for urban and rural environments alike.</p>
-                <p className="text-slate-600 mb-4">These lights harness solar energy during the day, storing it in high-capacity batteries for reliable nighttime illumination. With minimal maintenance and maximum efficiency, Nebo Engineering's so solar street lights ensure cost-effective and sustainable lighting solutions.</p>
-                <div className="mt-6 bg-white border border-slate-200 p-4 rounded-lg shadow-sm">
-                  <p className="font-bold text-[#0f172a]">☔ IP65 Waterproof & Lightning Protection</p>
-                  <p className="text-sm text-slate-500 mt-1">No fear of bad weather, meet the needs of outdoor use</p>
-                </div>
+         {/* Tab Content: Products (UPDATED WITH FULL DETAILS) */}
+         {activeTab === 'products' && (
+            <div className="animate-in fade-in slide-in-from-bottom-4 duration-500 space-y-16">
+              
+              {/* Product Intro */}
+              <div className="text-center max-w-5xl mx-auto">
+                <h3 className="text-3xl font-bold text-[#0f172a] mb-6 uppercase">NEBO ENGINEERING SOLAR ENERGY SOLUTIONS</h3>
+                <p className="text-slate-600 text-lg leading-relaxed">
+                  Welcome to Nebo Engineering Solar Street Lights page, where we illuminate the future with cutting-edge solar lighting solutions designed for urban and rural environments. As a leader in renewable energy technologies, Nebo Engineering combines advanced engineering with sustainable practices to deliver efficient and eco-friendly lighting solutions that enhance safety, visibility, and energy efficiency.
+                </p>
               </div>
 
-              <div className="bg-slate-50 p-8 rounded-2xl border border-slate-200 shadow-lg flex flex-col justify-between">
-                <div>
-                  <h3 className="text-2xl font-bold text-[#0f172a] mb-6">SOLAR FANCY LIGHTS</h3>
-                  <p className="text-slate-600 mb-6">In addition to street lights, Nebo Engineering designs a diverse range of solar lights tailored to meet various residential, commercial, and industrial needs. Whether enhancing outdoor spaces or providing safety and security lighting, our solar lights deliver exceptional performance with a focus on durability and energy efficiency.</p>
-                  <ul className="space-y-4 mb-6">
-                    <li className="flex items-center gap-3 font-semibold text-[#0f172a]"><span className="text-amber-500">✨</span> Exclusive Solar Lights Collection</li>
-                    <li className="flex items-center gap-3 font-semibold text-[#0f172a]"><span className="text-amber-500">✨</span> Solar Wall Light</li>
-                    <li className="flex items-center gap-3 font-semibold text-[#0f172a]"><span className="text-amber-500">✨</span> Solar Fence Light</li>
-                  </ul>
+              {/* Product Grid */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                {/* Product 1 */}
+                <div className="bg-slate-50 p-8 rounded-2xl border border-slate-200 shadow-lg hover:shadow-xl transition-shadow">
+                  <div className="w-12 h-12 bg-amber-100 text-amber-600 rounded-full flex items-center justify-center text-2xl mb-6">💡</div>
+                  <h4 className="text-2xl font-bold text-[#0f172a] mb-4">Solar Wall Lights</h4>
+                  <p className="text-slate-600 leading-relaxed">
+                    Nebo Engineering solar fancy lights are crafted with a focus on both style and functionality. From decorative garden lights to pathway illumination and accent lighting, our designs complement outdoor spaces while harnessing the power of the sun for energy efficiency.
+                  </p>
+                </div>
+
+                {/* Product 2 */}
+                <div className="bg-slate-50 p-8 rounded-2xl border border-slate-200 shadow-lg hover:shadow-xl transition-shadow">
+                  <div className="w-12 h-12 bg-amber-100 text-amber-600 rounded-full flex items-center justify-center text-2xl mb-6">✨</div>
+                  <h4 className="text-2xl font-bold text-[#0f172a] mb-4">Exclusive Solar Lights Collections</h4>
+                  <p className="text-slate-600 leading-relaxed">
+                    Transform your outdoor spaces with Nebo Engineering solar fancy lights, which create inviting atmospheres for residential, commercial, and public areas alike. Whether enhancing landscapes, illuminating walkways, or adding ambience to patios, our lights enhance outdoor environments with sustainable elegance.
+                  </p>
+                </div>
+
+                {/* Product 3 */}
+                <div className="bg-slate-50 p-8 rounded-2xl border border-slate-200 shadow-lg hover:shadow-xl transition-shadow">
+                  <div className="w-12 h-12 bg-amber-100 text-amber-600 rounded-full flex items-center justify-center text-2xl mb-6">🏮</div>
+                  <h4 className="text-2xl font-bold text-[#0f172a] mb-4">Solar Post Lights</h4>
+                  <p className="text-slate-600 leading-relaxed">
+                    By utilizing solar energy, Nebo Engineering fancy lights offer significant energy savings and reduce reliance on traditional grid-powered lighting. Our commitment to sustainability extends to promoting eco-friendly practices that contribute to a greener future.
+                  </p>
+                </div>
+
+                {/* Product 4 */}
+                <div className="bg-slate-50 p-8 rounded-2xl border border-slate-200 shadow-lg hover:shadow-xl transition-shadow">
+                  <div className="w-12 h-12 bg-amber-100 text-amber-600 rounded-full flex items-center justify-center text-2xl mb-6">🛡️</div>
+                  <h4 className="text-2xl font-bold text-[#0f172a] mb-4">Durable Solar Wall Lights</h4>
+                  <p className="text-slate-600 leading-relaxed">
+                    Built to withstand varying weather conditions, Nebo Engineering solar fancy lights are durable and reliable. Each light undergoes rigorous testing to ensure performance and longevity, backed by comprehensive warranty and support services for peace of mind.
+                  </p>
                 </div>
               </div>
-            </div>
+              </div>
           )}
         </div>
       </section>
@@ -236,10 +364,10 @@ const NeboEngineering: React.FC = () => {
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col lg:flex-row items-center gap-12">
             <div className="lg:w-1/2 rounded-2xl overflow-hidden shadow-2xl">
-               <img src="https://images.unsplash.com/photo-1620916297397-a4a5402a3c6c?q=80&w=1000" alt="Worker on Solar Roof" className="w-full h-full object-cover" />
+               <img src="/img/whyus.jpg" alt="Worker on Solar Roof" className="w-full h-full object-cover" />
             </div>
             <div className="lg:w-1/2">
-              <h2 className="text-3xl md:text-4xl font-bold text-[#0f172a] mb-8 uppercase">WHY CHOOSE NEBOENGINEERING FOR SOLAR?</h2>
+              <h2 className="text-3xl md:text-4xl font-bold text-[#0f172a] mb-8 uppercase">WHY CHOOSE NEBO ENGINEERING FOR SOLAR?</h2>
               <div className="space-y-6">
                 <div className="bg-white p-6 rounded-xl shadow-sm border-l-4 border-amber-400">
                   <h4 className="text-lg font-bold text-slate-900 mb-2">Innovative Solutions:</h4>
@@ -263,64 +391,179 @@ const NeboEngineering: React.FC = () => {
         </div>
       </section>
 
-      {/* 5. Board of Directors */}
+      {/* 5. Board of Directors & Leadership */}
       <section className="bg-white py-20 px-6 border-y border-slate-200">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center text-[#0f172a] mb-12 uppercase tracking-wide">BOARD OF DIRECTORS</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-center text-[#0f172a] mb-12 uppercase tracking-wide">LEADERSHIP & BOARD OF DIRECTORS</h2>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Director 1 */}
-            <div onClick={() => toggleBio(0)} className="cursor-pointer bg-slate-50 rounded-2xl shadow-md border border-slate-200 overflow-hidden hover:shadow-xl transition-all">
-              <div className="h-64 bg-[#0f172a] flex items-end justify-center overflow-hidden">
-                <img src="../images/chairperson.png" alt="Jitendra Prakash Srivastava" className="w-full h-full object-cover opacity-90" />
+          {/* Changed to 4 columns to make cards smaller, resembling the 'patrons' cards */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            
+            {/* 1. VIR BHAN SOOD */}
+            <div onClick={() => toggleBio(5)} className="cursor-pointer bg-slate-50 rounded-xl shadow-sm border border-slate-200 overflow-hidden hover:shadow-md transition-all group flex flex-col">
+              {/* Reduced height to h-56 and set object-cover object-top to strictly crop the bottom out */}
+              <div className="h-56 w-full bg-slate-100 flex items-center justify-center overflow-hidden">
+                <img src="../images/Sood.jpg" alt="Vir Bhan Sood" className="w-full h-full object-contain object-top group-hover:scale-105 transition-transform duration-500" />
               </div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-[#0f172a] mb-2 uppercase">JITENDRA PRAKASH SRIVASTAVA</h3>
-                <p className="text-slate-600 font-medium mb-3 text-sm">J. P. Srivastava having a multifaceted personality is a graduate with post graduate qualification in Management.</p>
+              <div className="p-5 flex-grow">
+                <h3 className="text-lg font-bold text-[#0f172a] mb-1 uppercase">Vir Bhan Sood</h3>
+                <p className="text-slate-600 font-medium mb-3 text-xs">Patron</p>
+                <div className={`text-slate-500 text-sm overflow-hidden transition-all duration-500 ${expandedBio === 5 ? 'max-h-[800px] opacity-100 mt-4' : 'max-h-0 opacity-0'}`}>
+                  <p className="mb-2">25 years’ experience in Quality Assurance and inspection with RITES Limited, a premier Third Party Inspection & Consultancy Organization.</p>
+                  <p className="mb-2">Organized and supervised Quality Assurance and inspection of machinery, Plant, and equipment procured against World Bank funded projects of Health System Corporation of different State Governments on behalf of Oil Sector Clients.</p>
+                  <p className="mb-2">Trained Lead Assessor in ISO 9001 and ISO 14001. Prepared the Manual for ISO 17020 for RITES QA Division for its certification as an Inspection agency.</p>
+                  <p>Freelance Empanelled Assessor for National Accreditation Board for certifying Bodies. Member of NABCB Accreditation Committee From August 2021 to July 2023.</p>
+                </div>
+                <p className="text-xs text-amber-600 font-bold mt-3 uppercase tracking-wider">{expandedBio === 5 ? '- Show Less' : '+ Read Full Bio'}</p>
+              </div>
+            </div>
+
+            {/* 2. RAJESH KHARE */}
+            <div onClick={() => toggleBio(6)} className="cursor-pointer bg-slate-50 rounded-xl shadow-sm border border-slate-200 overflow-hidden hover:shadow-md transition-all group flex flex-col">
+              <div className="h-56 w-full bg-slate-100 flex items-center justify-center overflow-hidden">
+                <img src="../images/rajesh.png" alt="Rajesh Khare" className="w-full h-full object-contain object-top group-hover:scale-105 transition-transform duration-500" />
+              </div>
+              <div className="p-5 flex-grow">
+                <h3 className="text-lg font-bold text-[#0f172a] mb-1 uppercase">Rajesh Khare</h3>
+                <p className="text-slate-600 font-medium mb-3 text-xs">Country Head</p>
+                <div className={`text-slate-500 text-sm overflow-hidden transition-all duration-500 ${expandedBio === 6 ? 'max-h-[800px] opacity-100 mt-4' : 'max-h-0 opacity-0'}`}>
+                  <p className="mb-2">Mr. Khare is a seasoned Chartered Civil Engineering Professional with 45+ years of experience in the planning, design, and execution of infrastructure projects.</p>
+                  <p className="mb-2">His core expertise includes roads, water supply, sewerage, wastewater systems, and smart city developments.</p>
+                  <p>He has proven expertise in project management, structural design, and quality compliance with strong leadership in large-scale public infrastructure projects, gained while working in different capacities in Govt. departments.</p>
+                </div>
+                <p className="text-xs text-amber-600 font-bold mt-3 uppercase tracking-wider">{expandedBio === 6 ? '- Show Less' : '+ Read Full Bio'}</p>
+              </div>
+            </div>
+
+            {/* 3. INDU KUMAR SRIVASTAVA */}
+            <div onClick={() => toggleBio(7)} className="cursor-pointer bg-slate-50 rounded-xl shadow-sm border border-slate-200 overflow-hidden hover:shadow-md transition-all group flex flex-col">
+              <div className="h-56 w-full bg-slate-100 flex items-center justify-center overflow-hidden">
+                <img src="../images/indu.png" alt="Indu Kumar Srivastava" className="w-full h-full object-contain object-top group-hover:scale-105 transition-transform duration-500" />
+              </div>
+              <div className="p-5 flex-grow">
+                <h3 className="text-lg font-bold text-[#0f172a] mb-1 uppercase">Indu Kumar Srivastava</h3>
+                <p className="text-slate-600 font-medium mb-3 text-xs">Patron</p>
+                <div className={`text-slate-500 text-sm overflow-hidden transition-all duration-500 ${expandedBio === 7 ? 'max-h-[800px] opacity-100 mt-4' : 'max-h-0 opacity-0'}`}>
+                  <p className="mb-2">Mr. Indu Kant Srivastava is a distinguished Civil Engineering graduate with an illustrious career spanning 39 years of dedicated service at U.P. Jal Nigam.</p>
+                  <p className="mb-2">A veteran in the field of public infrastructure, he has developed an unparalleled mastery over the entire lifecycle of Water Supply Projects, ranging from initial conceptualization and design to ground-level execution and large-scale supervision.</p>
+                  <p>His nearly four decades at the forefront of state-level infrastructure development have equipped him with deep expertise in navigating regulatory frameworks, ensuring quality compliance, and leading multi-disciplinary teams through high-stakes engineering challenges.</p>
+                </div>
+                <p className="text-xs text-amber-600 font-bold mt-3 uppercase tracking-wider">{expandedBio === 7 ? '- Show Less' : '+ Read Full Bio'}</p>
+              </div>
+            </div>
+
+            {/* 4. ARUN KUMAR TYAGI */}
+            <div onClick={() => toggleBio(8)} className="cursor-pointer bg-slate-50 rounded-xl shadow-sm border border-slate-200 overflow-hidden hover:shadow-md transition-all group flex flex-col">
+              <div className="h-56 w-full bg-slate-100 flex items-center justify-center overflow-hidden">
+                <img src="../images/Arun.jpeg" alt="Arun Kumar Tyagi" className="w-full h-full object-contain object-top group-hover:scale-105 transition-transform duration-500" />
+              </div>
+              <div className="p-5 flex-grow">
+                <h3 className="text-lg font-bold text-[#0f172a] mb-1 uppercase">Arun Kumar Tyagi</h3>
+                <p className="text-slate-600 font-medium mb-3 text-xs">Patron</p>
+                <div className={`text-slate-500 text-sm overflow-hidden transition-all duration-500 ${expandedBio === 8 ? 'max-h-[800px] opacity-100 mt-4' : 'max-h-0 opacity-0'}`}>
+                  <p className="mb-2">Mr. Arun Kumar Tyagi is a distinguished professional with a robust background in engineering and management (BE, MBA, FIE).</p>
+                  <p className="mb-2">He has a proven track record of leadership in the public sector, having served as the Chief Project Officer for UREDA (Uttarakhand Renewable Energy Development Agency) and as an Advisor to the Planning Department for the Government of Uttarakhand.</p>
+                  <p>With deep expertise in large-scale project implementation and strategic planning, Mr. Tyagi specializes in steering complex initiatives from conception to execution within government frameworks. As a Fellow of the Institution of Engineers (FIE), he brings a high level of technical authority.</p>
+                </div>
+                <p className="text-xs text-amber-600 font-bold mt-3 uppercase tracking-wider">{expandedBio === 8 ? '- Show Less' : '+ Read Full Bio'}</p>
+              </div>
+            </div>
+
+            {/* 5. JITENDRA PRAKASH SRIVASTAVA */}
+            <div onClick={() => toggleBio(0)} className="cursor-pointer bg-slate-50 rounded-xl shadow-md border border-slate-200 overflow-hidden hover:shadow-md transition-all group flex flex-col">
+              <div className="h-56 w-full bg-slate-100 flex items-center justify-center overflow-hidden">
+                <img src="../images/chairperson.png" alt="Jitendra Prakash Srivastava" className="w-full h-full object-contain object-top group-hover:scale-105 transition-transform duration-500" />
+              </div>
+              <div className="p-5 flex-grow">
+                <h3 className="text-lg font-bold text-[#0f172a] mb-1 uppercase">Jitendra Prakash Srivastava</h3>
+                <p className="text-slate-600 font-medium mb-3 text-xs">Chairperson</p>
                 <div className={`text-slate-500 text-sm overflow-hidden transition-all duration-500 ${expandedBio === 0 ? 'max-h-[800px] opacity-100 mt-4' : 'max-h-0 opacity-0'}`}>
-                  <p className="mb-2">He brings with him a rich experience of more than thirty years in the fields of management, planning, maintenance of Railway Rolling Stock.</p>
-                  <p className="mb-2">Third Party Inspection and Quality Assurance of General Engineering Items, Machinery Plant & Equipment and critical as well as safety components.</p>
-                  <p className="mb-2">He has in depth knowledge of intricacies of design of components and various causes of failure during service.</p>
+                  <p className="mb-2">J. P. Srivastava having a multifaceted personality is a graduate with post graduate qualification in Management.</p>
+                  <p className="mb-2">He brings with him a rich experience of more than thirty years in the fields of management, planning, maintenance of Railway Rolling Stock, Third Party Inspection and Quality Assurance of General Engineering Items, Machinery Plant & Equipment and critical as well as safety components.</p>
                   <p className="mb-2">He has gained this experience while working in different capacities in various Govt. departments and Public Sector Undertakings such as Ministry of Railways, RDSO and RITES where he performed the management functions as well as formulation and finalisation of Tenders for various works.</p>
-                  <p>At EliTes he always pursued to master his field of expertise.</p>
                 </div>
-                <p className="text-sm text-amber-600 font-bold mt-4 uppercase tracking-wider">{expandedBio === 0 ? '- Show Less' : '+ Read Full Bio'}</p>
+                <p className="text-xs text-amber-600 font-bold mt-3 uppercase tracking-wider">{expandedBio === 0 ? '- Show Less' : '+ Read Full Bio'}</p>
               </div>
             </div>
 
-            {/* Director 2 */}
-            <div onClick={() => toggleBio(1)} className="cursor-pointer bg-slate-50 rounded-2xl shadow-md border border-slate-200 overflow-hidden hover:shadow-xl transition-all">
-              <div className="h-64 bg-[#0f172a] flex items-end justify-center overflow-hidden">
-                <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=800" alt="Aakash Srivastava" className="w-full h-full object-cover opacity-90" />
+            {/* 6. REKHA SRIVASTAVA */}
+            <div onClick={() => toggleBio(1)} className="cursor-pointer bg-slate-50 rounded-xl shadow-md border border-slate-200 overflow-hidden hover:shadow-md transition-all group flex flex-col">
+              <div className="h-56 w-full bg-slate-100 flex items-center justify-center overflow-hidden">
+                <img src="../images/managing_dir.png" alt="Rekha Srivastava" className="w-full h-full object-contain object-top group-hover:scale-105 transition-transform duration-500" />
               </div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-[#0f172a] mb-2 uppercase">Aakash Srivastava</h3>
-                <p className="text-slate-600 font-medium mb-3 text-sm">Aakash Srivastava has a Civil Engineering from Institute of Engineering Technology from UP Technical University, Lucknow.</p>
+              <div className="p-5 flex-grow">
+                <h3 className="text-lg font-bold text-[#0f172a] mb-1 uppercase">Rekha Srivastava</h3>
+                <p className="text-slate-600 font-medium mb-3 text-xs">Managing Director</p>
                 <div className={`text-slate-500 text-sm overflow-hidden transition-all duration-500 ${expandedBio === 1 ? 'max-h-[800px] opacity-100 mt-4' : 'max-h-0 opacity-0'}`}>
-                  <p className="mb-2">He has over Five years of professional experience.</p>
-                  <p>During this period he has worked in consultancy, Construction supervision and Quality Assurance / Third Party Inspectionof Engineering Stores on for EliTes India.</p>
+                  <p className="mb-2">Directs overall daily business operations and executes the company's strategic vision. Acts as the primary bridge between the board of directors and executive leadership to drive organizational growth, operational excellence, and market expansion.</p>
+                  <ul className="list-disc pl-4 space-y-1">
+                    <li>15+ years of experience in the trading, manufacturing, and service sectors.</li>
+                    <li>Directs daily business operations and executes long-term organizational strategy.</li>
+                    <li>Fosters a strong corporate culture and team development, backed by a PG in Psychology.</li>
+                    <li>Oversees financial health, business growth, and administrative excellence.</li>
+                  </ul>
                 </div>
-                <p className="text-sm text-amber-600 font-bold mt-4 uppercase tracking-wider">{expandedBio === 1 ? '- Show Less' : '+ Read Full Bio'}</p>
+                <p className="text-xs text-amber-600 font-bold mt-3 uppercase tracking-wider">{expandedBio === 1 ? '- Show Less' : '+ Read Full Bio'}</p>
               </div>
             </div>
 
-            {/* Director 3 */}
-            <div onClick={() => toggleBio(2)} className="cursor-pointer bg-slate-50 rounded-2xl shadow-md border border-slate-200 overflow-hidden hover:shadow-xl transition-all">
-              <div className="h-64 bg-[#0f172a] flex items-end justify-center overflow-hidden">
-                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=800" alt="Rita Rai" className="w-full h-full object-cover opacity-90" />
+            {/* 7. RITA RAI */}
+            <div onClick={() => toggleBio(2)} className="cursor-pointer bg-slate-50 rounded-xl shadow-md border border-slate-200 overflow-hidden hover:shadow-md transition-all group flex flex-col">
+              <div className="h-56 w-full bg-slate-100 flex items-center justify-center overflow-hidden">
+                <img src="../images/dir_project.jpeg" alt="Rita Rai" className="w-full h-full object-contain object-top group-hover:scale-105 transition-transform duration-500" />
               </div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-[#0f172a] mb-2 uppercase">Rita Rai</h3>
-                <p className="text-slate-600 font-medium mb-3 text-sm">Rita holds a mechanical engineering degree from Darbhanga College of Engineering, Darbhanga.</p>
+              <div className="p-5 flex-grow">
+                <h3 className="text-lg font-bold text-[#0f172a] mb-1 uppercase">Rita Rai</h3>
+                <p className="text-slate-600 font-medium mb-3 text-xs">Joint Managing Director</p>
                 <div className={`text-slate-500 text-sm overflow-hidden transition-all duration-500 ${expandedBio === 2 ? 'max-h-[800px] opacity-100 mt-4' : 'max-h-0 opacity-0'}`}>
-                  <p className="mb-2">She has 10 years of experience in service industry and served at Eli Technical Economic Services India Pvt. Ltd.</p>
-                  <p className="mb-2">During this period she conducted Inspection of Various Engineering Products, Faced external & internal audit as Management representative (like ISO:9000, DRR, ISO:17020), was responsible for carrying out Internal Quality audit for ISO 9001:2015 & ISO 17020:2012, for planning and carrying out Impartiality Committee Meeting and Management Review Meeting.</p>
-                  <p className="mb-2">Responsibility of various tender participation process in govt organization. Co-ordination with the purchase representatives in successful execution of works awarded to the company.</p>
-                  <p>She is a part of management decision making body.</p>
+                  <p className="mb-2">Rita holds a mechanical engineering degree from Darbhanga College of Engineering, Darbhanga.</p>
+                  <p className="mb-2">She has 10 years of experience in the service industry and served at Eli Technical Economic Services India Pvt. Ltd. Ensures the flawless execution and delivery of all client projects.</p>
+                  <p className="mb-2">She conducted inspections of Various Engineering Products, faced external & internal audits as Management Representative (ISO:9000, ISO:17020), and carried out Internal Quality audits for ISO 9001:2015.</p>
+                  <p>She is a part of the management decision making body, responsible for tender participation and successful execution of works.</p>
                 </div>
-                <p className="text-sm text-amber-600 font-bold mt-4 uppercase tracking-wider">{expandedBio === 2 ? '- Show Less' : '+ Read Full Bio'}</p>
+                <p className="text-xs text-amber-600 font-bold mt-3 uppercase tracking-wider">{expandedBio === 2 ? '- Show Less' : '+ Read Full Bio'}</p>
               </div>
             </div>
+
+            {/* 8. AAKASH SRIVASTAVA */}
+            <div onClick={() => toggleBio(3)} className="cursor-pointer bg-slate-50 rounded-xl shadow-md border border-slate-200 overflow-hidden hover:shadow-md transition-all group flex flex-col">
+              <div className="h-56 w-full bg-slate-100 flex items-center justify-center overflow-hidden">
+                <img src="../images/dir_finance.jpeg" alt="Aakash Srivastava" className="w-full h-full object-contain object-top group-hover:scale-105 transition-transform duration-500" />
+              </div>
+              <div className="p-5 flex-grow">
+                <h3 className="text-lg font-bold text-[#0f172a] mb-1 uppercase">Aakash Srivastava</h3>
+                <p className="text-slate-600 font-medium mb-3 text-xs">Director Finance</p>
+                <div className={`text-slate-500 text-sm overflow-hidden transition-all duration-500 ${expandedBio === 3 ? 'max-h-[800px] opacity-100 mt-4' : 'max-h-0 opacity-0'}`}>
+                  <p className="mb-2">Aakash Srivastava holds a Civil Engineering degree from the Institute of Engineering Technology, UP Technical University, Lucknow.</p>
+                  <p className="mb-2">He has over five years of professional experience managing financial planning, budgeting, forecasting, and capital optimization.</p>
+                  <p>During this period he has worked in consultancy, construction supervision, Quality Assurance, and Third Party Inspection of Engineering Stores for EliTes India.</p>
+                </div>
+                <p className="text-xs text-amber-600 font-bold mt-3 uppercase tracking-wider">{expandedBio === 3 ? '- Show Less' : '+ Read Full Bio'}</p>
+              </div>
+            </div>
+
+            {/* 9. ANANT SRIVASTAVA */}
+            <div onClick={() => toggleBio(4)} className="cursor-pointer bg-slate-50 rounded-xl shadow-md border border-slate-200 overflow-hidden hover:shadow-md transition-all group flex flex-col">
+              <div className="h-56 w-full bg-slate-100 flex items-center justify-center overflow-hidden">
+                <img src="../images/dir_sales.png" alt="Anant Srivastava" className="w-full h-full object-contain object-top group-hover:scale-105 transition-transform duration-500" />
+              </div>
+              <div className="p-5 flex-grow">
+                <h3 className="text-lg font-bold text-[#0f172a] mb-1 uppercase">Anant Srivastava</h3>
+                <p className="text-slate-600 font-medium mb-3 text-xs">Director HR/Marketing</p>
+                <div className={`text-slate-500 text-sm overflow-hidden transition-all duration-500 ${expandedBio === 4 ? 'max-h-[800px] opacity-100 mt-4' : 'max-h-0 opacity-0'}`}>
+                  <p className="mb-2">Drives revenue growth by leading business development initiatives and client acquisition strategies. Cultivates key enterprise partnerships, expands market reach, and manages the end-to-end sales pipeline.</p>
+                  <ul className="list-disc pl-4 space-y-1">
+                    <li>Driving revenue growth and B2B tech sales.</li>
+                    <li>Establishing global client networks.</li>
+                    <li>Over 12 years of executive sales leadership.</li>
+                    <li>Conducts in-situ testing, risk analysis, and material assessments.</li>
+                    <li>Leads structural design deliverables and concept development.</li>
+                  </ul>
+                </div>
+                <p className="text-xs text-amber-600 font-bold mt-3 uppercase tracking-wider">{expandedBio === 4 ? '- Show Less' : '+ Read Full Bio'}</p>
+              </div>
+            </div>
+
           </div>
         </div>
       </section>
@@ -367,8 +610,8 @@ const NeboEngineering: React.FC = () => {
               <h4 className="font-bold mb-6 text-sm uppercase tracking-widest text-white">Navigation</h4>
               <ul className="space-y-3 text-slate-400 text-sm">
                 <li><button onClick={() => { window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="hover:text-amber-400 transition-colors">Home</button></li>
-                <li><button onClick={() => { window.scrollTo({ top: 800, behavior: 'smooth' }); }} className="hover:text-amber-400 transition-colors">Services & Products</button></li>
-                <li><button onClick={() => { window.scrollTo({ top: 2200, behavior: 'smooth' }); }} className="hover:text-amber-400 transition-colors">Leadership</button></li>
+                <li><button onClick={() => { window.scrollTo({ top: 1500, behavior: 'smooth' }); }} className="hover:text-amber-400 transition-colors">Services & Products</button></li>
+                <li><button onClick={() => { window.scrollTo({ top: 3800, behavior: 'smooth' }); }} className="hover:text-amber-400 transition-colors">Leadership</button></li>
               </ul>
             </div>
 
@@ -390,7 +633,7 @@ const NeboEngineering: React.FC = () => {
             <div className="col-span-1 lg:col-span-3 mt-4 lg:mt-0">
               <h4 className="font-bold mb-6 text-sm uppercase tracking-widest text-white">Contact</h4>
               <div className="text-slate-400 text-sm space-y-3">
-                <p>Contact Us – 8700449133, +91 870-0445434 & 8802239746</p>
+                <p>Contact Us –<br></br> +91 8700449133, <br></br> +91 8700445434 <br></br> +91 8802239746</p>
             
               </div>
             </div>
