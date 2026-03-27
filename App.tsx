@@ -35,7 +35,6 @@ const App: React.FC = () => {
 
   if (!mounted) return null;
 
-  // Update toggle handler to save the choice to localStorage
   const toggleSiteMode = () => {
     setIsEngineeringMode((prevMode) => {
       const newMode = !prevMode;
