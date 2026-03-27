@@ -15,7 +15,7 @@ import About from './components/About';
 import Leadership from './components/Leadership';
 import GlobalBackground from './components/GlobalBackground';
 
-// Engineering Components
+
 import ToggleSwitch from './components/ToggleSwitch';
 import NeboEngineering from './components/NeboEngineering';
 
