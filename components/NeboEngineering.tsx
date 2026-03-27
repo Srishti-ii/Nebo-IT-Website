@@ -49,24 +49,28 @@ const NeboEngineering: React.FC<NeboEngineeringProps> = ({ onSwitchToIT }) => {
           >
             {/* Logo / Badge */}
             <motion.div variants={itemVariants} className="flex items-center gap-4 mb-8">
-              <div className="w-16 h-16 bg-white rounded-xl flex items-center justify-center shadow-lg p-2">
-                 <img src="/img/nebo_logo.png"  alt="Nebo Logo" className="w-full h-full object-contain" />
-              </div>
-              <div className="px-4 py-1.5 rounded-full border border-amber-400/30 bg-amber-400/10 text-amber-400 text-sm font-bold tracking-widest uppercase shadow-sm">
-                Committed to Quality
-              </div>
-            </motion.div>
+    <div className="w-16 h-16 bg-white rounded-xl flex items-center justify-center shadow-lg p-2">
+       <img src="/img/nebo_logo.png"  alt="Nebo Logo" className="w-full h-full object-contain" />
+    </div>
+    <div className="px-4 py-1.5 rounded-full border border-amber-400/30 bg-amber-400/10 text-amber-400 text-xs sm:text-sm font-bold tracking-widest uppercase shadow-sm">
+      Committed to Quality
+    </div>
+  </motion.div>
 
-            <motion.h1 variants={itemVariants} className="text-5xl lg:text-5.5xl font-extrabold tracking-tight mb-6 text-white leading-[1.1]">
-              NEBO <br/>
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-yellow-200">
-                ENGINEERING
-              </span>
-            </motion.h1>
+  {/* FIXED HEADING */}
+  <motion.h1 
+  variants={itemVariants} 
+  className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight mb-6 text-white leading-[1.2] sm:leading-[1.1] md:leading-none break-words"
+>
+  <span className="block">NEBO</span>
+  <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-yellow-200 block sm:inline">
+    ENGINEERING
+  </span>
+</motion.h1>
 
-            <motion.h2 variants={itemVariants} className="text-xl md:text-2xl font-medium mb-8 leading-relaxed text-slate-300 max-w-xl">
-              DELIVERING ALL-IN-ONE SOLAR SOLUTIONS TAILORED TO YOUR NEEDS
-            </motion.h2>
+  <motion.h2 variants={itemVariants} className="text-lg sm:text-xl md:text-2xl font-medium mb-8 leading-relaxed text-slate-300 max-w-xl">
+    DELIVERING ALL-IN-ONE SOLAR SOLUTIONS TAILORED TO YOUR NEEDS
+  </motion.h2>
 
             {/* CTA Buttons */}
             <motion.div variants={itemVariants} className="flex flex-wrap items-center gap-4">
@@ -403,7 +407,7 @@ const NeboEngineering: React.FC<NeboEngineeringProps> = ({ onSwitchToIT }) => {
             <div onClick={() => toggleBio(5)} className="cursor-pointer bg-slate-50 rounded-xl shadow-sm border border-slate-200 overflow-hidden hover:shadow-md transition-all group flex flex-col">
               {/* Reduced height to h-56 and set object-cover object-top to strictly crop the bottom out */}
               <div className="h-56 w-full bg-slate-100 flex items-center justify-center overflow-hidden">
-                <img src="../images/Sood.jpg" alt="Vir Bhan Sood" className="w-full h-full object-contain object-top group-hover:scale-105 transition-transform duration-500" />
+                <img src="/img/Sood.jpg" alt="Vir Bhan Sood" className="w-full h-full object-contain object-top group-hover:scale-105 transition-transform duration-500" />
               </div>
               <div className="p-5 flex-grow">
                 <h3 className="text-lg font-bold text-[#0f172a] mb-1 uppercase">Vir Bhan Sood</h3>
@@ -421,7 +425,7 @@ const NeboEngineering: React.FC<NeboEngineeringProps> = ({ onSwitchToIT }) => {
             {/* 2. RAJESH KHARE */}
             <div onClick={() => toggleBio(6)} className="cursor-pointer bg-slate-50 rounded-xl shadow-sm border border-slate-200 overflow-hidden hover:shadow-md transition-all group flex flex-col">
               <div className="h-56 w-full bg-slate-100 flex items-center justify-center overflow-hidden">
-                <img src="../images/rajesh.png" alt="Rajesh Khare" className="w-full h-full object-contain object-top group-hover:scale-105 transition-transform duration-500" />
+                <img src="/img/rajesh.png" alt="Rajesh Khare" className="w-full h-full object-contain object-top group-hover:scale-105 transition-transform duration-500" />
               </div>
               <div className="p-5 flex-grow">
                 <h3 className="text-lg font-bold text-[#0f172a] mb-1 uppercase">Rajesh Khare</h3>
@@ -438,7 +442,7 @@ const NeboEngineering: React.FC<NeboEngineeringProps> = ({ onSwitchToIT }) => {
             {/* 3. INDU KUMAR SRIVASTAVA */}
             <div onClick={() => toggleBio(7)} className="cursor-pointer bg-slate-50 rounded-xl shadow-sm border border-slate-200 overflow-hidden hover:shadow-md transition-all group flex flex-col">
               <div className="h-56 w-full bg-slate-100 flex items-center justify-center overflow-hidden">
-                <img src="../images/indu.png" alt="Indu Kumar Srivastava" className="w-full h-full object-contain object-top group-hover:scale-105 transition-transform duration-500" />
+                <img src="/img/indu.png" alt="Indu Kumar Srivastava" className="w-full h-full object-contain object-top group-hover:scale-105 transition-transform duration-500" />
               </div>
               <div className="p-5 flex-grow">
                 <h3 className="text-lg font-bold text-[#0f172a] mb-1 uppercase">Indu Kumar Srivastava</h3>
@@ -455,7 +459,7 @@ const NeboEngineering: React.FC<NeboEngineeringProps> = ({ onSwitchToIT }) => {
             {/* 4. ARUN KUMAR TYAGI */}
             <div onClick={() => toggleBio(8)} className="cursor-pointer bg-slate-50 rounded-xl shadow-sm border border-slate-200 overflow-hidden hover:shadow-md transition-all group flex flex-col">
               <div className="h-56 w-full bg-slate-100 flex items-center justify-center overflow-hidden">
-                <img src="../images/Arun.jpeg" alt="Arun Kumar Tyagi" className="w-full h-full object-contain object-top group-hover:scale-105 transition-transform duration-500" />
+                <img src="/img/Arun.jpeg" alt="Arun Kumar Tyagi" className="w-full h-full object-contain object-top group-hover:scale-105 transition-transform duration-500" />
               </div>
               <div className="p-5 flex-grow">
                 <h3 className="text-lg font-bold text-[#0f172a] mb-1 uppercase">Arun Kumar Tyagi</h3>
@@ -472,7 +476,7 @@ const NeboEngineering: React.FC<NeboEngineeringProps> = ({ onSwitchToIT }) => {
             {/* 5. JITENDRA PRAKASH SRIVASTAVA */}
             <div onClick={() => toggleBio(0)} className="cursor-pointer bg-slate-50 rounded-xl shadow-md border border-slate-200 overflow-hidden hover:shadow-md transition-all group flex flex-col">
               <div className="h-56 w-full bg-slate-100 flex items-center justify-center overflow-hidden">
-                <img src="../images/chairperson.png" alt="Jitendra Prakash Srivastava" className="w-full h-full object-contain object-top group-hover:scale-105 transition-transform duration-500" />
+                <img src="/img/chairperson.png" alt="Jitendra Prakash Srivastava" className="w-full h-full object-contain object-top group-hover:scale-105 transition-transform duration-500" />
               </div>
               <div className="p-5 flex-grow">
                 <h3 className="text-lg font-bold text-[#0f172a] mb-1 uppercase">Jitendra Prakash Srivastava</h3>
@@ -489,7 +493,7 @@ const NeboEngineering: React.FC<NeboEngineeringProps> = ({ onSwitchToIT }) => {
             {/* 6. REKHA SRIVASTAVA */}
             <div onClick={() => toggleBio(1)} className="cursor-pointer bg-slate-50 rounded-xl shadow-md border border-slate-200 overflow-hidden hover:shadow-md transition-all group flex flex-col">
               <div className="h-56 w-full bg-slate-100 flex items-center justify-center overflow-hidden">
-                <img src="../images/managing_dir.png" alt="Rekha Srivastava" className="w-full h-full object-contain object-top group-hover:scale-105 transition-transform duration-500" />
+                <img src="/img/managing_dir.png" alt="Rekha Srivastava" className="w-full h-full object-contain object-top group-hover:scale-105 transition-transform duration-500" />
               </div>
               <div className="p-5 flex-grow">
                 <h3 className="text-lg font-bold text-[#0f172a] mb-1 uppercase">Rekha Srivastava</h3>
@@ -510,7 +514,7 @@ const NeboEngineering: React.FC<NeboEngineeringProps> = ({ onSwitchToIT }) => {
             {/* 7. RITA RAI */}
             <div onClick={() => toggleBio(2)} className="cursor-pointer bg-slate-50 rounded-xl shadow-md border border-slate-200 overflow-hidden hover:shadow-md transition-all group flex flex-col">
               <div className="h-56 w-full bg-slate-100 flex items-center justify-center overflow-hidden">
-                <img src="../images/dir_project.jpeg" alt="Rita Rai" className="w-full h-full object-contain object-top group-hover:scale-105 transition-transform duration-500" />
+                <img src="/img/dir_project.jpeg" alt="Rita Rai" className="w-full h-full object-contain object-top group-hover:scale-105 transition-transform duration-500" />
               </div>
               <div className="p-5 flex-grow">
                 <h3 className="text-lg font-bold text-[#0f172a] mb-1 uppercase">Rita Rai</h3>
@@ -528,7 +532,7 @@ const NeboEngineering: React.FC<NeboEngineeringProps> = ({ onSwitchToIT }) => {
             {/* 8. AAKASH SRIVASTAVA */}
             <div onClick={() => toggleBio(3)} className="cursor-pointer bg-slate-50 rounded-xl shadow-md border border-slate-200 overflow-hidden hover:shadow-md transition-all group flex flex-col">
               <div className="h-56 w-full bg-slate-100 flex items-center justify-center overflow-hidden">
-                <img src="../images/dir_finance.jpeg" alt="Aakash Srivastava" className="w-full h-full object-contain object-top group-hover:scale-105 transition-transform duration-500" />
+                <img src="/img/dir_finance.jpeg" alt="Aakash Srivastava" className="w-full h-full object-contain object-top group-hover:scale-105 transition-transform duration-500" />
               </div>
               <div className="p-5 flex-grow">
                 <h3 className="text-lg font-bold text-[#0f172a] mb-1 uppercase">Aakash Srivastava</h3>
@@ -542,10 +546,52 @@ const NeboEngineering: React.FC<NeboEngineeringProps> = ({ onSwitchToIT }) => {
               </div>
             </div>
 
-            {/* 9. ANANT SRIVASTAVA */}
+            {/* 9. SHWETA SINHA */}
+            <div onClick={() => toggleBio(9)} className="cursor-pointer bg-slate-50 rounded-xl shadow-md border border-slate-200 overflow-hidden hover:shadow-md transition-all group flex flex-col">
+              <div className="h-56 w-full bg-slate-100 flex items-center justify-center overflow-hidden">
+                <img src="/img/director_HR.png" alt="Shweta Sinha" className="w-full h-full object-contain object-top group-hover:scale-105 transition-transform duration-500" />
+              </div>
+              <div className="p-5 flex-grow">
+                <h3 className="text-lg font-bold text-[#0f172a] mb-1 uppercase">Shweta Sinha</h3>
+                <p className="text-slate-600 font-medium mb-3 text-xs">Director HR</p>
+                <div className={`text-slate-500 text-sm overflow-hidden transition-all duration-500 ${expandedBio === 9 ? 'max-h-[800px] opacity-100 mt-4' : 'max-h-0 opacity-0'}`}>
+                  <p className="mb-2">Leads the organization's HR strategy with a focus on talent acquisition, retention, and culture-building aligned to long-term business goals.</p>
+                  <ul className="list-disc pl-4 space-y-1">
+                    <li>Strategic workforce planning and executive talent acquisition.</li>
+                    <li>Performance management and organizational development.</li>
+                    <li>Ensures strict compliance with labor laws and company policies.</li>
+                    <li>Fosters an inclusive, high-performance workplace culture.</li>
+                  </ul>
+                </div>
+                <p className="text-xs text-amber-600 font-bold mt-3 uppercase tracking-wider">{expandedBio === 9 ? '- Show Less' : '+ Read Full Bio'}</p>
+              </div>
+            </div>
+
+            {/* 10. PRANAV SRIVASTAVA */}
+            <div onClick={() => toggleBio(10)} className="cursor-pointer bg-slate-50 rounded-xl shadow-md border border-slate-200 overflow-hidden hover:shadow-md transition-all group flex flex-col">
+              <div className="h-56 w-full bg-slate-100 flex items-center justify-center overflow-hidden">
+                <img src="/img/dir_IT.png" alt="Pranav Srivastava" className="w-full h-full object-contain object-top group-hover:scale-105 transition-transform duration-500" />
+              </div>
+              <div className="p-5 flex-grow">
+                <h3 className="text-lg font-bold text-[#0f172a] mb-1 uppercase">Pranav Srivastava</h3>
+                <p className="text-slate-600 font-medium mb-3 text-xs">Director IT</p>
+                <div className={`text-slate-500 text-sm overflow-hidden transition-all duration-500 ${expandedBio === 10 ? 'max-h-[800px] opacity-100 mt-4' : 'max-h-0 opacity-0'}`}>
+                  <p className="mb-2">Leads technology strategy, engineering practices, and product development with a focus on scalable, high-performance systems.</p>
+                  <ul className="list-disc pl-4 space-y-1">
+                    <li>Cloud architecture and scalable system design.</li>
+                    <li>Full-stack development leadership.</li>
+                    <li>5+ years in software engineering.</li>
+                    <li>Leads frontend architecture, UI/UX execution, and sprint planning.</li>
+                  </ul>
+                </div>
+                <p className="text-xs text-amber-600 font-bold mt-3 uppercase tracking-wider">{expandedBio === 10 ? '- Show Less' : '+ Read Full Bio'}</p>
+              </div>
+            </div>
+
+            {/* 11. ANANT SRIVASTAVA */}
             <div onClick={() => toggleBio(4)} className="cursor-pointer bg-slate-50 rounded-xl shadow-md border border-slate-200 overflow-hidden hover:shadow-md transition-all group flex flex-col">
               <div className="h-56 w-full bg-slate-100 flex items-center justify-center overflow-hidden">
-                <img src="../images/dir_sales.png" alt="Anant Srivastava" className="w-full h-full object-contain object-top group-hover:scale-105 transition-transform duration-500" />
+                <img src="/img/dir_sales.png" alt="Anant Srivastava" className="w-full h-full object-contain object-top group-hover:scale-105 transition-transform duration-500" />
               </div>
               <div className="p-5 flex-grow">
                 <h3 className="text-lg font-bold text-[#0f172a] mb-1 uppercase">Anant Srivastava</h3>
@@ -619,13 +665,10 @@ const NeboEngineering: React.FC<NeboEngineeringProps> = ({ onSwitchToIT }) => {
             <div className="col-span-1 lg:col-span-5 mt-4 lg:mt-0">
               <h4 className="font-bold mb-6 text-sm uppercase tracking-widest text-white">Offices</h4>
               <address className="not-italic text-slate-400 space-y-3 text-xs leading-relaxed">
-                <p>1. G 204 Shilp residency near prarthna apartment, Hirawadi Road, Bapunagar, Ahmedabad, Gujarat 382345.</p>
-                <p>2. Badrish colony lane no. 1, house no. 75, danda dharampur Dehradun, 248001.</p>
-                <p>3. R-18 1St Floor, Vikas Marg, Shakarpur, Delhi-110092.</p>
-                <p>4. Building No./Flat No.: 6A/183 Road/Street: VIRENDAVAN YOJNA, City/ Town/Village: RAIBARELI ROAD, District: Lucknow, State: Uttar Pradesh, PIN Code: 226029.</p>
-                <p>5. K 422, UPSIDC, Site 5, Kasna, Greater Noida, Uttar Pradesh</p>
-                <p>6. E/S-6, vanshree c.h.s.ltd, khadakpada, Kalyan (w), Mumbai-421301.</p>
-                <p>7. Tamamunda chouk near by Champa fuels petrol pump farsabahar (c.g.) Dist. Jashpur, Chhattisgarh-496242.</p>
+                
+                <p>1. R-18 1St Floor, Vikas Marg, Shakarpur, Delhi-110092.</p>
+                <p>2. K 422, UPSIDC, Site 5, Kasna, Greater Noida, Uttar Pradesh</p>
+              
               </address>
             </div>
 
@@ -633,7 +676,7 @@ const NeboEngineering: React.FC<NeboEngineeringProps> = ({ onSwitchToIT }) => {
             <div className="col-span-1 lg:col-span-3 mt-4 lg:mt-0">
               <h4 className="font-bold mb-6 text-sm uppercase tracking-widest text-white">Contact</h4>
               <div className="text-slate-400 text-sm space-y-3">
-                <p>Contact Us –<br></br> +91 8700449133, <br></br> +91 8700445434 <br></br> +91 8802239746</p>
+                <p>Contact Us –<br></br> +91 7275629690 <br></br> +91 8802239746 <br></br> +91 8700449133</p>
             
               </div>
             </div>
@@ -641,7 +684,7 @@ const NeboEngineering: React.FC<NeboEngineeringProps> = ({ onSwitchToIT }) => {
           </div>
 
           <div className="pt-6 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-500">
-            <p>© {new Date().getFullYear()} Nebo Engineering. All rights reserved.</p>
+            <p>© 2019 Nebo Engineering. All rights reserved.</p>
           </div>
         </div>
       </footer>

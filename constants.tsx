@@ -1,47 +1,25 @@
 import { Code, Figma, Aperture, LineChart } from 'lucide-react';
 import { Service, TeamMember, Project, OrgMember } from './types';
 
-// Image Imports
-import ChairPerson from './images/chairperson.png';
-import ProjectDirector from './images/dir_project.jpeg';
-import DirectorFinance from './images/dir_finance.jpeg';
-import ManagingDirector from './images/managing_dir.png';
-import DirectorIt from './images/dir_IT.png';
-import DirectorSales from './images/dir_sales.png';
-import CISHImage from './images/cish.jpg';
-import FarmerPortal from './images/farmerportal.png';
-import UPYOG from './images/upyog.jpg';
-import GMRImage from './images/gmr.avif';
-import TechLead from './images/tech_lead.webp';
-import SalesOps from './images/sales_ops.jpeg';
-import ProjectOps from './images/project_ops.webp';
-import FinanceOps from './images/finance_ops.jpg';
-import Team from './images/team.jpg';
-import Patron1 from './images/Sood.jpg';
-import Patron2 from './images/rajesh.png';
-import Patron3 from './images/indu.png';
-import Patron4 from './images/Arun.jpeg';
-import TeamHR from './images/teamHR.webp';
-import DirectorHR from './images/director_HR.png';
 export const LEADERSHIP_DATA = [
   {
     name: "Vir Bhan Sood",
-    image: Patron1,
+    image: '/img/Sood.jpg',
     description: "25 years’ experience in Quality Assurance and inspection with RITES Limited, premier Third Party Inspection & Consultancy Organization. Conducted inspection of apprx.16000 tons of 60 Kg UIC Rails in China and wheels & wheel sets in Romania besides inspection of Wheels, Axles, Tyres & Wheel sets and other M&P items in foreign countries. Organized and supervised Quality Assurance and inspection of machinery Plant and equipment procured against World Bank funded projects of Health System Corporation of different State Governments on behalf of Oil Sector Clients such as Indian Oil Corporation Limited and IBP Co Ltd. Etc. Upgraded the RITES Northern Region Laboratory for testing of Metals. Surveillance of private and other Government testing laboratories. Vendor assessment prior to their approval .Construction supervision of Retail Outlets of IBP Company in Northern and Eastern Regions for assuring the Quality of works. Trained Lead Assessor in ISO 9001 and ISO 14001, worked as Management Representative Northern Region, RITES for.ISO 9001 from Aug 97 to Feb. 2004.Changed ISO Manual from 1994 version to 2000 version. In 2005 prepared Manual for ISO 17020 for RITES QA Division for its certification as Inspection agency. Consultancy works. Conducted ISO audits in different Divisions of RITES. Freelance Empanelled Assessor for National Accreditation Board for certifying Bodies, for assessment of Certification Bodies and inspection bodies for 08 years. . Member of NABCB Accreditation Committee From August 2021 to July 2023."
   },
   {
     name: "Rajesh Khare",
-    image: Patron2,
+    image: '/img/rajesh.png',
     description: "Mr. Khare, a Seasoned Chartered Civil Engineering Professional with 45+ years of experience in planning, design, and execution of infrastructure projects including roads, water supply, sewerage, wastewater systems, and smart city developments. Proven expertise in project management, structural design, and quality compliance with strong leadership in large-scale public infrastructure projects. He has gained this experience while working in different capacities in Govt. departments and is associated with us as Country Head."
   },
   {
     name: "Indu Kumar Srivastava",
-    image: Patron3,
+    image: '/img/indu.png',
     description: "Mr. Indu Kant Srivastava is a distinguished Civil Engineering graduate with an illustrious career spanning 39 years of dedicated service at U.P. Jal Nigam. A veteran in the field of public infrastructure, he has developed an unparalleled mastery over the entire lifecycle of Water Supply Projects, ranging from initial conceptualization and design to ground-level execution and large-scale supervision. Beyond his specialization in water systems, Mr. Srivastava’s technical footprint extends to the successful management of complex Building and Road projects, demonstrating a versatile engineering acumen. His nearly four decades at the forefront of state-level infrastructure development have equipped him with deep expertise in navigating regulatory frameworks, ensuring quality compliance, and leading multi-disciplinary teams through high-stakes engineering challenges. His career is a testament to technical excellence and a lifelong commitment to enhancing public utility systems."
   },
   {
     name: "Arun Kumar Tyagi",
-    image: Patron4,
+    image: '/img/Arun.jpeg',
     description: "Mr. Arun Kumar Tyagi is a distinguished professional with a robust background in engineering and management (BE, MBA, FIE). He has a proven track record of leadership in the public sector, having served as the Chief Project Officer for UREDA (Uttarakhand Renewable Energy Development Agency) and as an Advisor to the Planning Department for the Government of Uttarakhand. With deep expertise in large-scale project implementation and strategic planning, Mr. Tyagi specializes in steering complex initiatives from conception to execution within government frameworks. As a Fellow of the Institution of Engineers (FIE), he brings a high level of technical authority and administrative excellence to our leadership team."
   },
 ];
@@ -110,7 +88,7 @@ export const SERVICES: Service[] = [
 ];
 
 export const TEAM: TeamMember[] = [
-  { id: '1', name: 'Pranav Srivastava', role: 'Director IT', image: DirectorIt },
+  { id: '1', name: 'Pranav Srivastava', role: 'Director IT', image: '/img/dir_IT.png' },
   { id: '2', name: 'Shubham Singh', role: 'Technical Lead', image: 'https://picsum.photos/seed/sarah/200' },
   { id: '3', name: 'Satyam Gupta', role: 'Frontend Lead', image: 'https://picsum.photos/seed/marcus/200' },
   { id: '4', name: 'Navajit Mishra', role: 'Backend Lead', image: 'https://picsum.photos/seed/elena/200' },
@@ -121,7 +99,7 @@ export const ORG_MEMBERS: Record<string, OrgMember> = {
     id: "chairperson",
     role: "Chairperson",
     name: "J. P. Srivastava",
-    image: ChairPerson,
+    image: '/img/chairperson.png',
     details: "Provides top-level strategic vision and governance. Oversees board operations, guides the long-term business trajectory, and ensures the company's overarching objectives align with its core values and stakeholder interests.",
     experiences: ["30+ years of industry experience.", "Expert in Third-Party Inspection and Quality Assurance.", "Former leadership roles in Govt/PSUs (Ministry of Railways, RDSO, RITES).","Proven expertise in tendering, marketing, and project management."]
   },
@@ -129,7 +107,7 @@ export const ORG_MEMBERS: Record<string, OrgMember> = {
     id: "director-hr",
     role: "Director HR",
     name: "Shweta Sinha",
-    image: DirectorHR, 
+    image: '/img/director_HR.png', 
     details: "Leads the organization's overarching human resources strategy, focusing on talent acquisition, employee retention, and organizational development. Champions a positive workplace culture and aligns HR initiatives with the company's long-term business goals.",
     experiences: [
       "Strategic workforce planning and executive talent acquisition.", 
@@ -142,7 +120,7 @@ export const ORG_MEMBERS: Record<string, OrgMember> = {
     id: "team-hr",
     role: "HR Team",
     name: "HRs",
-    image: TeamHR,
+    image: '/img/teamHR.webp',
     details: "Manages day-to-day human resources operations, from recruitment workflows and onboarding to benefits administration and employee relations. Ensures a smooth, supportive, and compliant workplace environment for all staff members.",
     experiences: [
       "Executing end-to-end recruitment pipelines and seamless employee onboarding.", 
@@ -154,7 +132,7 @@ export const ORG_MEMBERS: Record<string, OrgMember> = {
     id: "managingdirector",
     role: "Managing Director",
     name: "Rekha Srivastava",
-    image: ManagingDirector,
+    image: '/img/managing_dir.png',
     details: "Directs overall daily business operations and executes the company's strategic vision. Acts as the primary bridge between the board of directors and executive leadership to drive organizational growth, operational excellence, and market expansion.",
     experiences: ["15+ years of experience in the trading, manufacturing, and service sectors.", "Directs daily business operations and executes long-term organizational strategy.", "Fosters a strong corporate culture and team development, backed by a PG in Psychology.","Oversees financial health, business growth, and administrative excellence."]
   },
@@ -162,7 +140,7 @@ export const ORG_MEMBERS: Record<string, OrgMember> = {
     id: "dir-hr-marketing",
     role: "Director Marketing",
     name: "Anant Srivastava",
-    image: DirectorSales,
+    image: 'img/dir_sales.png',
     details: "Drives revenue growth by leading business development initiatives and client acquisition strategies. Cultivates key enterprise partnerships, expands market reach, and manages the end-to-end sales pipeline.",
     experiences: ["Driving revenue growth and B2B tech sales.", "Establishing global client networks.", "Over 12 years of executive sales leadership.","Conducts in-situ testing, risk analysis, and material assessments.","Leads structural design deliverables and concept development."]
   },
@@ -171,7 +149,7 @@ export const ORG_MEMBERS: Record<string, OrgMember> = {
     id: "joint-md",
     role: "Joint Managing Director",
     name: "Rita Rai",
-    image: ProjectDirector,
+    image: '/img/dir_project.jpeg',
     details: "Ensures the flawless execution and delivery of all client projects. Oversees project management frameworks, agile methodologies, and resource allocation to guarantee digital solutions are delivered on time, strictly within budget, and up to quality standards.",
     experiences: ["12+ years of industry experience as a Mechanical Engineer.","Project lifecycle management and Agile methodologies.", "Delivered 50+ enterprise IT projects.", "Expertise in risk and resource management.","Management Representative for ISO 17020 compliance and NABCB audits."]
   },
@@ -179,7 +157,7 @@ export const ORG_MEMBERS: Record<string, OrgMember> = {
     id: "dir-finance",
     role: "Director Finance",
     name: "Akash Srivastava",
-    image: DirectorFinance,
+    image: '/img/dir_finance.jpeg',
     details: "Manages the company's financial health, including budgeting, forecasting, and capital optimization. Provides strategic financial insights and risk management to support sustainable organizational scaling.",
     experiences: ["Financial planning & analysis.", "Budget management and forecasting.", "10+ years of engineering experience with EliTes India.","Specializes in consultancy, project monitoring, and vendor assessment."]
   },
@@ -187,7 +165,7 @@ export const ORG_MEMBERS: Record<string, OrgMember> = {
     id: "finance-team",
     role: "Finance Team",
     name: "Finance Ops",
-    image: FinanceOps,
+    image: '/img/finance_ops.jpg',
     details: "Handles day-to-day financial operations including invoicing, accounts payable/receivable, payroll processing, and financial compliance reporting to maintain flawlessly accurate records.",
     experiences: ["Accounting, taxation, and auditing.", "Quarterly financial reporting.", "Ensuring regulatory financial compliance.","Maintains accurate financial forecasting, budget tracking, and cost-benefit reporting."]
   },
@@ -195,7 +173,7 @@ export const ORG_MEMBERS: Record<string, OrgMember> = {
     id: "dir-tech",
     role: "Director IT",
     name: "Pranav Srivastava",
-    image: DirectorIt,
+    image: '/img/dir_IT.png',
     details: "Leads the overarching technology strategy, engineering practices, and product development. Oversees the technical architecture and drives the engineering teams to deliver high-performance, scalable, and innovative software solutions.",
     experiences: ["Cloud architecture and scalable system design.", "Full-stack development leadership.", "5+ years in software engineering.","Led frontend architecture, UI/UX execution, sprint planning and stakeholder coordination"]
   },
@@ -203,7 +181,7 @@ export const ORG_MEMBERS: Record<string, OrgMember> = {
     id: "vp",
     role: "VP",
     name: "VP",
-    image: TechLead,
+    image: '/img/tech_lead.webp',
     details: "Manages the day-to-day operations of the engineering floor. Mentors developers, enforces rigorous code quality and architectural best practices, and bridges the gap between complex technical execution and project requirements.",
     experiences: ["full-stack engineering and technical leadership.","Drives agile sprint execution and actively mentors development teams.", "Code reviews, systems architecture, debugging."]
   },
@@ -211,7 +189,7 @@ export const ORG_MEMBERS: Record<string, OrgMember> = {
     id: "sales-team",
     role: "Sales Team",
     name: "Sales Ops",
-    image: SalesOps,
+    image: '/img/sales_ops.jpeg',
     details: "Supports the overarching sales strategy by analyzing market data, managing CRM tools, generating leads, and optimizing the client onboarding process to maximize conversion rates.",
     experiences: ["Manages end-to-end CRM workflows and sales pipeline optimization.", "Conducts targeted market research to drive lead generation strategies.", "Analyzes core sales metrics to accurately forecast revenue and scale growth."]
   },
@@ -219,7 +197,7 @@ export const ORG_MEMBERS: Record<string, OrgMember> = {
     id: "project-team",
     role: "Project Team",
     name: "Project Ops",
-    image: ProjectOps,
+    image: '/img/project_ops.webp',
     details: "Coordinates daily project tasks, tracks sprint milestones, and facilitates seamless communication between internal engineering teams and external clients to ensure a smooth development lifecycle.",
     experiences: ["Coordinates cross-functional teams to ensure on-time, on-budget delivery.", "Manages resource allocation, risk mitigation, and daily project tracking.", "Maintains continuous, transparent communication with key internal and external stakeholders."]
   },
@@ -227,7 +205,7 @@ export const ORG_MEMBERS: Record<string, OrgMember> = {
     id: "architects",
     role: "Architects/Managers & SEs",
     name: "Engineering Team",
-    image: Team,
+    image: '/img/team.jpg',
     details: "The core builders of the company’s digital products. Responsible for writing robust code, designing scalable system architectures, and implementing cutting-edge technologies to solve complex engineering challenges.",
     experiences: ["Building rich scalable software solutions.", "React, Node.js, Python, AWS, Azure.", "Performance optimization & AI integrations."]
   }
@@ -253,7 +231,7 @@ export const PROJECTS: Project[] = [
   { id: 'p2', 
     title: 'CISH', 
     category: 'Web Development', 
-    image: CISHImage,
+    image: '/img/cish.jpg',
     shortDescription: "The website for Central Institute for Subtropical Horticulture (CISH) was developed as a digital platform consisting of a public website and an internal administrative portal. It provides accessible information for the public while allowing institutional staff to manage content efficiently through a secure role-based admin system.",
     description: 'The website for the Central Institute for Subtropical Horticulture (CISH) was developed as a comprehensive digital platform designed to serve both public users and internal employees. The system consists of a people-centric public website and an employee-focused administrative portal.The public website provides citizens, researchers, and stakeholders with easy access to information related to the institute, including research programs, horticulture resources, publications, and institutional announcements. The platform is designed with an intuitive interface to ensure users can easily navigate various sections and stay informed about the institute’s activities and updates.In addition to the public interface, an administrative management panel was developed for internal staff. The admin portal uses role-based access control, allowing different users such as Admin, Director, and Super Admin to manage specific functionalities. Authorized personnel can update website content, publish news, manage institutional data, and maintain the digital presence of the institute securely and efficiently.',
     points:[
@@ -267,7 +245,7 @@ export const PROJECTS: Project[] = [
   { id: 'p3',
     title: 'National Farmer Portal',
     category: 'Web Development',
-    image: FarmerPortal,
+    image: '/img/farmerportal.png',
     shortDescription: "The National Farmer Portal is a centralized, digital agricultural platform designed to bridge the gap between rural farmers and agricultural experts. Operating on a strict, top-to-bottom Role-Based Access Control (RBAC) model, the platform streamlines farmer onboarding through local representatives (Editors), captures their on-the-ground challenges, and routes these issues directly to verified experts (Agronomists) for resolution.",
     description: 'The platform operates on a strict, top-to-bottom Role-Based Access Control (RBAC) hierarchy to ensure secure, organized, and efficient workflows. At the administrative level, Admins manage the overarching system and are exclusively responsible for verifying and onboarding qualified Agronomists, ensuring quality control. To overcome potential digital literacy barriers, Ground Level Editors act as the vital link in specific regions; they are responsible for physically onboarding farmers into the system and actively logging their localized agricultural issues. Once registered, farmers gain access to a secure digital portal where they can manage their profiles, connect with community support networks, and explore available agricultural programs. The issues logged by the Editors are then routed directly to the vetted Agronomists, who review the data and provide expert, actionable solutions. This creates a centralized digital ecosystem that seamlessly connects field realities with expert guidance.',
     points:[
@@ -284,7 +262,7 @@ export const PROJECTS: Project[] = [
   { id: 'p4', 
     title: 'UPYOG/DIGIT Platform', 
     category: 'Software Architecture', 
-    image: UPYOG ,
+    image: '/img/upyog.jpg' ,
     shortDescription: "The DIGIT Platform based UPYOG Platform is an open-source digital governance framework designed to help municipal bodies deliver efficient and transparent public services. It enables government departments to digitize workflows and manage services through a unified platform. The system supports multiple modules for different administrative functions and allows citizens to access municipal services online.",
     points:[
       "Built on the open-source DIGIT Platform framework.",
@@ -300,7 +278,7 @@ export const PROJECTS: Project[] = [
   { id: 'p5',
     title: 'GMR',
     category: 'Web App Selfie Kiosk', 
-    image: GMRImage,
+    image: '/img/gmr.avif',
     shortDescription: "The Selfie Kiosk System developed for **GMR Group at Indira Gandhi International Airport provides an interactive digital experience where visitors can capture selfies with themed backgrounds and download them instantly using a QR code.",
     description: 'The Selfie Kiosk System was developed as an interactive digital solution for visitors at Indira Gandhi International Airport, with GMR Group as the client. The kiosk allows travelers to capture personalized selfies and enhance them with digitally generated backgrounds, creating a memorable airport experience.The system provides a user-friendly interface where visitors can take a selfie using the kiosk camera and select from multiple predefined background themes. After capturing the photo, the application processes the image and merges it with the selected background using image compositing techniques.Once the final image is generated, the system creates a QR code that users can scan with their smartphones to download the image instantly. This contactless download method ensures convenience and speed, especially in high-traffic environments like airports.The kiosk is designed for high performance and quick processing, making it suitable for locations with large numbers of visitors. By combining image processing, digital background integration, and QR-based downloads, the system provides an engaging and innovative digital experience for airport passengers.',
     points:[

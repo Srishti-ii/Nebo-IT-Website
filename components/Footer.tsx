@@ -29,13 +29,8 @@ const Footer: React.FC = () => {
           <div className="col-span-1 lg:col-span-5">
             <h4 className="font-bold mb-6 text-sm uppercase tracking-widest text-white">Offices</h4>
             <address className="not-italic text-slate-400 space-y-3 text-xs leading-relaxed">
-              <p>1. G 204 Shilp residency near prarthna apartment, Hirawadi Road, Bapunagar, Ahmedabad, Gujarat 382345.</p>
-              <p>2. Badrish colony lane no. 1, house no. 75, danda dharampur Dehradun, 248001.</p>
-              <p>3. R-18 1St Floor, Vikas Marg, Shakarpur, Delhi-110092.</p>
-              <p>4. Building No./Flat No.: 6A/183 Road/Street: VIRENDAVAN YOJNA, City/ Town/Village: RAIBARELI ROAD, District: Lucknow, State: Uttar Pradesh, PIN Code: 226029.</p>
-              <p>5. K-422, SITE 5 KASNA IND AREA Greater Noida, Gautam Budh Nagar -201310.</p>
-              <p>6. E/S-6, vanshree c.h.s.ltd, khadakpada, Kalyan (w), Mumbai-421301.</p>
-              <p>7. Tamamunda chouk near by Champa fuels petrol pump farsabahar (c.g.) Dist. Jashpur, Chhattisgarh-496242.</p>
+              <p>1. R-18 1St Floor, Vikas Marg, Shakarpur, Delhi-110092.</p>
+              <p>2. K-422, SITE 5 KASNA IND AREA Greater Noida, Gautam Budh Nagar -201310.</p>
             </address>
           </div>
 
