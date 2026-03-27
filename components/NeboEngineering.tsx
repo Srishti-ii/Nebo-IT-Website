@@ -60,7 +60,7 @@ const NeboEngineering: React.FC<NeboEngineeringProps> = ({ onSwitchToIT }) => {
   {/* FIXED HEADING */}
   <motion.h1 
   variants={itemVariants} 
-  className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight mb-6 text-white leading-[1.2] sm:leading-[1.1] md:leading-none break-words"
+  className="text-3xl sm:text-5xl lg:text-5xl font-extrabold tracking-tight mb-6 text-white leading-[1.2] sm:leading-[1.1] md:leading-none break-words"
 >
   <span className="block">NEBO</span>
   <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-yellow-200 block sm:inline">
