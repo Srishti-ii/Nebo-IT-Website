@@ -74,15 +74,15 @@ const NeboEngineering: React.FC<NeboEngineeringProps> = ({ onSwitchToIT }) => {
 
             {/* CTA Buttons */}
             <motion.div variants={itemVariants} className="flex flex-wrap items-center gap-4">
-              <button 
-                onClick={() => { setActiveTab('services'); window.scrollTo({ top: 800, behavior: 'smooth' }); }}
-                className="px-8 py-4 bg-amber-500 hover:bg-amber-400 text-slate-900 font-bold rounded-lg shadow-lg hover:shadow-amber-500/25 transition-all duration-300 transform hover:-translate-y-1"
+            <button 
+                onClick={() => { setActiveTab('services'); document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' }); }}
+                className="w-full sm:w-auto px-6 py-4 bg-amber-500 hover:bg-amber-400 text-slate-900 font-bold rounded-lg shadow-lg hover:shadow-amber-500/25 transition-all duration-300 transform hover:-translate-y-1 text-center"
               >
                 Explore Our Services
               </button>
               <button 
                 onClick={() => { window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' }); }}
-                className="px-8 py-4 bg-transparent hover:bg-white/5 border-2 border-slate-600 hover:border-slate-400 text-white font-bold rounded-lg transition-all duration-300"
+                className="w-full sm:w-auto px-6 py-4 bg-transparent hover:bg-white/5 border-2 border-slate-600 hover:border-slate-400 text-white font-bold rounded-lg transition-all duration-300 text-center"
               >
                 Contact Us
               </button>
@@ -139,7 +139,8 @@ const NeboEngineering: React.FC<NeboEngineeringProps> = ({ onSwitchToIT }) => {
             {/* Left Side: About Text */}
             <div className="lg:w-1/2">
               <h2 className="text-sm font-bold text-amber-500 tracking-widest uppercase mb-2">About Us</h2>
-              <h3 className="text-3xl md:text-4xl font-bold text-[#0f172a] mb-6 uppercase leading-tight">
+              {/* Added text-2xl on mobile to prevent overflow */}
+              <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#0f172a] mb-6 uppercase leading-tight break-words">
                 Empowering Your Future Through Engineering Excellence
               </h3>
               
@@ -156,7 +157,7 @@ const NeboEngineering: React.FC<NeboEngineeringProps> = ({ onSwitchToIT }) => {
 
             {/* Right Side: Core Activities Grid */}
             <div className="lg:w-1/2 w-full">
-              <div className="bg-slate-50 p-8 md:p-10 rounded-2xl border border-slate-200 shadow-xl relative overflow-hidden">
+              <div className="bg-slate-50 p-6 md:p-10 rounded-2xl border border-slate-200 shadow-xl relative overflow-hidden">
                 {/* Decorative background accent */}
                 <div className="absolute -top-10 -right-10 w-32 h-32 bg-amber-400/10 rounded-full blur-2xl"></div>
                 
@@ -209,7 +210,7 @@ const NeboEngineering: React.FC<NeboEngineeringProps> = ({ onSwitchToIT }) => {
                     <div className="mt-1 flex-shrink-0 w-5 h-5 rounded-full bg-amber-100 flex items-center justify-center">
                       <span className="text-amber-600 text-sm font-bold">✓</span>
                     </div>
-                    <span className="text-slate-700 font-medium">Turkey Projects</span>
+                    <span className="text-slate-700 font-medium">Turnkey Projects</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <div className="mt-1 flex-shrink-0 w-5 h-5 rounded-full bg-amber-100 flex items-center justify-center">
@@ -217,20 +218,22 @@ const NeboEngineering: React.FC<NeboEngineeringProps> = ({ onSwitchToIT }) => {
                     </div>
                     <span className="text-slate-700 font-medium">Solar power systems</span>
                   </li>
+                  {/* VIEWPORT FIX: Converted to flex-col on mobile so the long text doesn't force container wide */}
                   <li 
-                    className="flex items-start gap-3 cursor-pointer hover:bg-amber-50 p-2 -ml-2 rounded-lg transition-colors group"
+                    className="flex items-start gap-3 cursor-pointer hover:bg-amber-50 p-2 -ml-2 rounded-lg transition-colors group w-full"
                     onClick={() => {
                       if (onSwitchToIT) onSwitchToIT();
-                      window.scrollTo(0, 0); // Forces browser to snap to the very top
+                      window.scrollTo(0, 0);
                     }}
                   >
                     <div className="mt-1 flex-shrink-0 w-5 h-5 rounded-full bg-amber-100 flex items-center justify-center">
                       <span className="text-amber-600 text-sm font-bold">✓</span>
                     </div>
-                    <span className="text-blue-700 font-medium underline group-hover:text-amber-600 transition-colors flex items-center gap-2">
-                      IT services<br></br>
-                      (click here to visit Nebo IT Solutions) <span className="text-xs text-amber-500 opacity-0 group-hover:opacity-100 transition-opacity">→ View</span>
-                    </span>
+                    <div className="text-blue-700 font-medium underline group-hover:text-amber-600 transition-colors flex flex-col sm:block gap-1 flex-1">
+                      <span>IT services </span>
+                      <span className="text-sm text-slate-500 font-normal no-underline block sm:inline-block sm:ml-1">(click here to visit Nebo IT Solutions)</span>
+                      <span className="text-xs text-amber-500 opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap hidden sm:inline-block sm:ml-2">→ View</span>
+                    </div>
                   </li>
                 </ul>
               </div>
@@ -241,18 +244,20 @@ const NeboEngineering: React.FC<NeboEngineeringProps> = ({ onSwitchToIT }) => {
       </section>
 
       {/* 3. Interactive Tabs */}
-      <section className="bg-white py-20 px-6 border-y border-slate-200">
+      <section id="services" className="bg-slate-50 py-20 px-6 border-b border-slate-200">
         <div className="max-w-7xl mx-auto">
-          <div className="flex justify-center gap-4 md:gap-8 mb-12 border-b border-gray-300 pb-4">
+          
+          {/* VIEWPORT FIX: Added flex-wrap and reduced base font size to text-lg on mobile */}
+          <div className="flex flex-wrap justify-center gap-3 sm:gap-4 md:gap-8 mb-12 border-b border-gray-300 pb-4">
             <button 
               onClick={() => setActiveTab('services')}
-              className={`text-2xl font-bold transition-all ${activeTab === 'services' ? 'text-[#0f172a] border-b-4 border-amber-400' : 'text-gray-400 hover:text-gray-600'}`}
+              className={`text-lg sm:text-2xl font-bold transition-all whitespace-nowrap ${activeTab === 'services' ? 'text-[#0f172a] border-b-4 border-amber-400' : 'text-gray-400 hover:text-gray-600'}`}
             >
               OUR SERVICES
             </button>
             <button 
               onClick={() => setActiveTab('products')}
-              className={`text-2xl font-bold transition-all ${activeTab === 'products' ? 'text-[#0f172a] border-b-4 border-amber-400' : 'text-gray-400 hover:text-gray-600'}`}
+              className={`text-lg sm:text-2xl font-bold transition-all whitespace-nowrap ${activeTab === 'products' ? 'text-[#0f172a] border-b-4 border-amber-400' : 'text-gray-400 hover:text-gray-600'}`}
             >
               SOLAR ILLUMINATION
             </button>
@@ -308,13 +313,13 @@ const NeboEngineering: React.FC<NeboEngineeringProps> = ({ onSwitchToIT }) => {
           )}
 
           {/* Tab Content: Products */}
-         {/* Tab Content: Products (UPDATED WITH FULL DETAILS) */}
          {activeTab === 'products' && (
             <div className="animate-in fade-in slide-in-from-bottom-4 duration-500 space-y-16">
               
               {/* Product Intro */}
               <div className="text-center max-w-5xl mx-auto">
-                <h3 className="text-3xl font-bold text-[#0f172a] mb-6 uppercase">NEBO ENGINEERING SOLAR ENERGY SOLUTIONS</h3>
+                {/* Reduced font size slightly for narrow screens to prevent overlap */}
+                <h3 className="text-2xl sm:text-3xl font-bold text-[#0f172a] mb-6 uppercase">NEBO ENGINEERING SOLAR ENERGY SOLUTIONS</h3>
                 <p className="text-slate-600 text-lg leading-relaxed">
                   Welcome to Nebo Engineering Solar Street Lights page, where we illuminate the future with cutting-edge solar lighting solutions designed for urban and rural environments. As a leader in renewable energy technologies, Nebo Engineering combines advanced engineering with sustainable practices to deliver efficient and eco-friendly lighting solutions that enhance safety, visibility, and energy efficiency.
                 </p>
@@ -323,7 +328,7 @@ const NeboEngineering: React.FC<NeboEngineeringProps> = ({ onSwitchToIT }) => {
               {/* Product Grid */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {/* Product 1 */}
-                <div className="bg-slate-50 p-8 rounded-2xl border border-slate-200 shadow-lg hover:shadow-xl transition-shadow">
+                <div className="bg-white p-8 rounded-2xl border border-slate-200 shadow-lg hover:shadow-xl transition-shadow">
                   <div className="w-12 h-12 bg-amber-100 text-amber-600 rounded-full flex items-center justify-center text-2xl mb-6">💡</div>
                   <h4 className="text-2xl font-bold text-[#0f172a] mb-4">Solar Wall Lights</h4>
                   <p className="text-slate-600 leading-relaxed">
@@ -332,7 +337,7 @@ const NeboEngineering: React.FC<NeboEngineeringProps> = ({ onSwitchToIT }) => {
                 </div>
 
                 {/* Product 2 */}
-                <div className="bg-slate-50 p-8 rounded-2xl border border-slate-200 shadow-lg hover:shadow-xl transition-shadow">
+                <div className="bg-white p-8 rounded-2xl border border-slate-200 shadow-lg hover:shadow-xl transition-shadow">
                   <div className="w-12 h-12 bg-amber-100 text-amber-600 rounded-full flex items-center justify-center text-2xl mb-6">✨</div>
                   <h4 className="text-2xl font-bold text-[#0f172a] mb-4">Exclusive Solar Lights Collections</h4>
                   <p className="text-slate-600 leading-relaxed">
@@ -341,7 +346,7 @@ const NeboEngineering: React.FC<NeboEngineeringProps> = ({ onSwitchToIT }) => {
                 </div>
 
                 {/* Product 3 */}
-                <div className="bg-slate-50 p-8 rounded-2xl border border-slate-200 shadow-lg hover:shadow-xl transition-shadow">
+                <div className="bg-white p-8 rounded-2xl border border-slate-200 shadow-lg hover:shadow-xl transition-shadow">
                   <div className="w-12 h-12 bg-amber-100 text-amber-600 rounded-full flex items-center justify-center text-2xl mb-6">🏮</div>
                   <h4 className="text-2xl font-bold text-[#0f172a] mb-4">Solar Post Lights</h4>
                   <p className="text-slate-600 leading-relaxed">
@@ -350,7 +355,7 @@ const NeboEngineering: React.FC<NeboEngineeringProps> = ({ onSwitchToIT }) => {
                 </div>
 
                 {/* Product 4 */}
-                <div className="bg-slate-50 p-8 rounded-2xl border border-slate-200 shadow-lg hover:shadow-xl transition-shadow">
+                <div className="bg-white p-8 rounded-2xl border border-slate-200 shadow-lg hover:shadow-xl transition-shadow">
                   <div className="w-12 h-12 bg-amber-100 text-amber-600 rounded-full flex items-center justify-center text-2xl mb-6">🛡️</div>
                   <h4 className="text-2xl font-bold text-[#0f172a] mb-4">Durable Solar Wall Lights</h4>
                   <p className="text-slate-600 leading-relaxed">
@@ -358,20 +363,56 @@ const NeboEngineering: React.FC<NeboEngineeringProps> = ({ onSwitchToIT }) => {
                   </p>
                 </div>
               </div>
+
+              {/* Why Choose Nebo Engineering Solar */}
+              <div className="bg-[#0f172a] text-white rounded-3xl p-6 sm:p-10 shadow-2xl overflow-hidden">
+                <h3 className="text-2xl sm:text-3xl font-bold text-center text-amber-400 mb-12 uppercase tracking-wide">WHY CHOOSE NEBO ENGINEERING SOLAR</h3>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                  <div className="text-center md:text-left">
+                    <div className="text-amber-400 text-4xl mb-4">⭐</div>
+                    <h4 className="text-xl font-bold mb-3 text-white">Quality Assurance</h4>
+                    <p className="text-slate-300 leading-relaxed">
+                      We use only top-tier solar components and adhere to rigorous quality standards to guarantee long-term performance and reliability.
+                    </p>
+                  </div>
+                  <div className="text-center md:text-left">
+                    <div className="text-amber-400 text-4xl mb-4">🌱</div>
+                    <h4 className="text-xl font-bold mb-3 text-white">Sustainability</h4>
+                    <p className="text-slate-300 leading-relaxed">
+                      By choosing solar energy, you contribute to a greener future and reduce your carbon footprint significantly.
+                    </p>
+                  </div>
+                  <div className="text-center md:text-left">
+                    <div className="text-amber-400 text-4xl mb-4">🤝</div>
+                    <h4 className="text-xl font-bold mb-3 text-white">Customer Focus</h4>
+                    <p className="text-slate-300 leading-relaxed">
+                      Your satisfaction is our priority. We offer personalized solutions and dedicated support throughout the project lifecycle.
+                    </p>
+                  </div>
+                </div>
+                
+                <div className="mt-12 text-center border-t border-slate-700 pt-8">
+                  <p className="text-lg text-slate-300 max-w-3xl mx-auto">
+                    Join the renewable energy revolution with Nebo Engineering Solar. Contact us today to discuss how we can transform your energy consumption with innovative solar solutions tailored to your needs.
+                  </p>
+                </div>
               </div>
+
+            </div>
           )}
         </div>
       </section>
 
       {/* 4. Why Choose Us */}
       <section className="bg-slate-50 py-20">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-7xl mx-auto px-6 overflow-hidden">
           <div className="flex flex-col lg:flex-row items-center gap-12">
-            <div className="lg:w-1/2 rounded-2xl overflow-hidden shadow-2xl">
+            <div className="lg:w-1/2 w-full rounded-2xl overflow-hidden shadow-2xl">
                <img src="/img/whyus.jpg" alt="Worker on Solar Roof" className="w-full h-full object-cover" />
             </div>
-            <div className="lg:w-1/2">
-              <h2 className="text-3xl md:text-4xl font-bold text-[#0f172a] mb-8 uppercase">WHY CHOOSE NEBO ENGINEERING FOR SOLAR?</h2>
+            <div className="lg:w-1/2 w-full">
+              {/* VIEWPORT FIX: Reduced heading size on mobile to prevent overflow */}
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#0f172a] mb-8 uppercase text-center lg:text-left">WHY CHOOSE NEBO ENGINEERING FOR SOLAR?</h2>
               <div className="space-y-6">
                 <div className="bg-white p-6 rounded-xl shadow-sm border-l-4 border-amber-400">
                   <h4 className="text-lg font-bold text-slate-900 mb-2">Innovative Solutions:</h4>
@@ -396,16 +437,14 @@ const NeboEngineering: React.FC<NeboEngineeringProps> = ({ onSwitchToIT }) => {
       </section>
 
       {/* 5. Board of Directors & Leadership */}
-      <section className="bg-white py-20 px-6 border-y border-slate-200">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center text-[#0f172a] mb-12 uppercase tracking-wide">LEADERSHIP & BOARD OF DIRECTORS</h2>
+      <section id="leadership" className="bg-white py-20 px-6 border-y border-slate-200">
+        <div className="max-w-7xl mx-auto overflow-hidden">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center text-[#0f172a] mb-12 uppercase tracking-wide">LEADERSHIP & BOARD OF DIRECTORS</h2>
           
-          {/* Changed to 4 columns to make cards smaller, resembling the 'patrons' cards */}
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             
             {/* 1. VIR BHAN SOOD */}
             <div onClick={() => toggleBio(5)} className="cursor-pointer bg-slate-50 rounded-xl shadow-sm border border-slate-200 overflow-hidden hover:shadow-md transition-all group flex flex-col">
-              {/* Reduced height to h-56 and set object-cover object-top to strictly crop the bottom out */}
               <div className="h-56 w-full bg-slate-100 flex items-center justify-center overflow-hidden">
                 <img src="/img/Sood.jpg" alt="Vir Bhan Sood" className="w-full h-full object-contain object-top group-hover:scale-105 transition-transform duration-500" />
               </div>
@@ -546,7 +585,29 @@ const NeboEngineering: React.FC<NeboEngineeringProps> = ({ onSwitchToIT }) => {
               </div>
             </div>
 
-            {/* 9. SHWETA SINHA */}
+            {/* 9. ANANT SRIVASTAVA */}
+            <div onClick={() => toggleBio(4)} className="cursor-pointer bg-slate-50 rounded-xl shadow-md border border-slate-200 overflow-hidden hover:shadow-md transition-all group flex flex-col">
+              <div className="h-56 w-full bg-slate-100 flex items-center justify-center overflow-hidden">
+                <img src="/img/dir_sales.png" alt="Anant Srivastava" className="w-full h-full object-contain object-top group-hover:scale-105 transition-transform duration-500" />
+              </div>
+              <div className="p-5 flex-grow">
+                <h3 className="text-lg font-bold text-[#0f172a] mb-1 uppercase">Anant Srivastava</h3>
+                <p className="text-slate-600 font-medium mb-3 text-xs">Director Marketing</p>
+                <div className={`text-slate-500 text-sm overflow-hidden transition-all duration-500 ${expandedBio === 4 ? 'max-h-[800px] opacity-100 mt-4' : 'max-h-0 opacity-0'}`}>
+                  <p className="mb-2">Drives revenue growth by leading business development initiatives and client acquisition strategies. Cultivates key enterprise partnerships, expands market reach, and manages the end-to-end sales pipeline.</p>
+                  <ul className="list-disc pl-4 space-y-1">
+                    <li>Driving revenue growth and B2B tech sales.</li>
+                    <li>Establishing global client networks.</li>
+                    <li>Over 12 years of executive sales leadership.</li>
+                    <li>Conducts in-situ testing, risk analysis, and material assessments.</li>
+                    <li>Leads structural design deliverables and concept development.</li>
+                  </ul>
+                </div>
+                <p className="text-xs text-amber-600 font-bold mt-3 uppercase tracking-wider">{expandedBio === 4 ? '- Show Less' : '+ Read Full Bio'}</p>
+              </div>
+            </div>
+
+            {/* 10. SHWETA SINHA */}
             <div onClick={() => toggleBio(9)} className="cursor-pointer bg-slate-50 rounded-xl shadow-md border border-slate-200 overflow-hidden hover:shadow-md transition-all group flex flex-col">
               <div className="h-56 w-full bg-slate-100 flex items-center justify-center overflow-hidden">
                 <img src="/img/director_HR.png" alt="Shweta Sinha" className="w-full h-full object-contain object-top group-hover:scale-105 transition-transform duration-500" />
@@ -567,7 +628,7 @@ const NeboEngineering: React.FC<NeboEngineeringProps> = ({ onSwitchToIT }) => {
               </div>
             </div>
 
-            {/* 10. PRANAV SRIVASTAVA */}
+            {/* 11. PRANAV SRIVASTAVA */}
             <div onClick={() => toggleBio(10)} className="cursor-pointer bg-slate-50 rounded-xl shadow-md border border-slate-200 overflow-hidden hover:shadow-md transition-all group flex flex-col">
               <div className="h-56 w-full bg-slate-100 flex items-center justify-center overflow-hidden">
                 <img src="/img/dir_IT.png" alt="Pranav Srivastava" className="w-full h-full object-contain object-top group-hover:scale-105 transition-transform duration-500" />
@@ -585,28 +646,6 @@ const NeboEngineering: React.FC<NeboEngineeringProps> = ({ onSwitchToIT }) => {
                   </ul>
                 </div>
                 <p className="text-xs text-amber-600 font-bold mt-3 uppercase tracking-wider">{expandedBio === 10 ? '- Show Less' : '+ Read Full Bio'}</p>
-              </div>
-            </div>
-
-            {/* 11. ANANT SRIVASTAVA */}
-            <div onClick={() => toggleBio(4)} className="cursor-pointer bg-slate-50 rounded-xl shadow-md border border-slate-200 overflow-hidden hover:shadow-md transition-all group flex flex-col">
-              <div className="h-56 w-full bg-slate-100 flex items-center justify-center overflow-hidden">
-                <img src="/img/dir_sales.png" alt="Anant Srivastava" className="w-full h-full object-contain object-top group-hover:scale-105 transition-transform duration-500" />
-              </div>
-              <div className="p-5 flex-grow">
-                <h3 className="text-lg font-bold text-[#0f172a] mb-1 uppercase">Anant Srivastava</h3>
-                <p className="text-slate-600 font-medium mb-3 text-xs">Director HR/Marketing</p>
-                <div className={`text-slate-500 text-sm overflow-hidden transition-all duration-500 ${expandedBio === 4 ? 'max-h-[800px] opacity-100 mt-4' : 'max-h-0 opacity-0'}`}>
-                  <p className="mb-2">Drives revenue growth by leading business development initiatives and client acquisition strategies. Cultivates key enterprise partnerships, expands market reach, and manages the end-to-end sales pipeline.</p>
-                  <ul className="list-disc pl-4 space-y-1">
-                    <li>Driving revenue growth and B2B tech sales.</li>
-                    <li>Establishing global client networks.</li>
-                    <li>Over 12 years of executive sales leadership.</li>
-                    <li>Conducts in-situ testing, risk analysis, and material assessments.</li>
-                    <li>Leads structural design deliverables and concept development.</li>
-                  </ul>
-                </div>
-                <p className="text-xs text-amber-600 font-bold mt-3 uppercase tracking-wider">{expandedBio === 4 ? '- Show Less' : '+ Read Full Bio'}</p>
               </div>
             </div>
 
@@ -630,7 +669,7 @@ const NeboEngineering: React.FC<NeboEngineeringProps> = ({ onSwitchToIT }) => {
       {/* 7. Pre-Footer / Contact Hook */}
       <section className="bg-amber-400 py-16 px-6 text-center text-slate-900">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-4xl font-extrabold mb-6 uppercase">CONTACT US TODAY</h2>
+          <h2 className="text-3xl sm:text-4xl font-extrabold mb-6 uppercase">CONTACT US TODAY</h2>
           <p className="text-lg font-medium mb-6">
             Discover how NeboEngineering can transform your energy landscape. Whether you're exploring solar options for your business or seeking expert EPC consultancy, Solar street lights & Solar fancy lights, we are here to support you every step of the way.
           </p>
@@ -656,8 +695,8 @@ const NeboEngineering: React.FC<NeboEngineeringProps> = ({ onSwitchToIT }) => {
               <h4 className="font-bold mb-6 text-sm uppercase tracking-widest text-white">Navigation</h4>
               <ul className="space-y-3 text-slate-400 text-sm">
                 <li><button onClick={() => { window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="hover:text-amber-400 transition-colors">Home</button></li>
-                <li><button onClick={() => { window.scrollTo({ top: 1500, behavior: 'smooth' }); }} className="hover:text-amber-400 transition-colors">Services & Products</button></li>
-                <li><button onClick={() => { window.scrollTo({ top: 3800, behavior: 'smooth' }); }} className="hover:text-amber-400 transition-colors">Leadership</button></li>
+                <li><button onClick={() => { document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' }); }} className="hover:text-amber-400 transition-colors">Services & Products</button></li>
+                <li><button onClick={() => { document.getElementById('leadership')?.scrollIntoView({ behavior: 'smooth' }); }} className="hover:text-amber-400 transition-colors">Leadership</button></li>
               </ul>
             </div>
 
@@ -665,19 +704,20 @@ const NeboEngineering: React.FC<NeboEngineeringProps> = ({ onSwitchToIT }) => {
             <div className="col-span-1 lg:col-span-5 mt-4 lg:mt-0">
               <h4 className="font-bold mb-6 text-sm uppercase tracking-widest text-white">Offices</h4>
               <address className="not-italic text-slate-400 space-y-3 text-xs leading-relaxed">
-                
                 <p>1. R-18 1St Floor, Vikas Marg, Shakarpur, Delhi-110092.</p>
                 <p>2. K 422, UPSIDC, Site 5, Kasna, Greater Noida, Uttar Pradesh</p>
-              
               </address>
             </div>
 
             {/* Contact Section */}
             <div className="col-span-1 lg:col-span-3 mt-4 lg:mt-0">
-              <h4 className="font-bold mb-6 text-sm uppercase tracking-widest text-white">Contact</h4>
+              <h4 className="font-bold mb-6 text-sm uppercase tracking-widest text-white">Contact Us</h4>
               <div className="text-slate-400 text-sm space-y-3">
-                <p>Contact Us –<br></br> +91 7275629690 <br></br> +91 8802239746 <br></br> +91 8700449133</p>
-            
+                <p> +91 7275629690 <br></br> +91 8802239746 <br></br> +91 8700449133
+                <br></br>
+                <br></br>
+
+                  Email: contact@neboengineering.in</p>
               </div>
             </div>
 

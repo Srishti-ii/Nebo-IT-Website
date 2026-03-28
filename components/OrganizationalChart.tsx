@@ -15,7 +15,6 @@ const OrgCard: React.FC<{
             whileHover={{ y: -5, scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
             onClick={() => onSelect(member)}
-            // Added 'w-full' here to ensure it fills its container
             className={`relative w-full bg-slate-800/80 backdrop-blur-sm border border-slate-700/50 p-4 rounded-xl shadow-lg cursor-pointer flex flex-col items-center text-center group overflow-hidden ${className}`}
         >
             <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -47,7 +46,6 @@ const OrganizationalChart: React.FC = () => {
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        // APPLIED 320px FIX HERE: text-3xl, min-[375px]:text-4xl, and break-words
                         className="text-xl min-[375px]:text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white to-slate-400 px-4"
                     >
                         Organizational Structure
@@ -86,22 +84,10 @@ const OrganizationalChart: React.FC = () => {
 
                         {/* Level 2: Directors (5 columns) */}
                         <div className="w-full max-w-7xl relative mt-0">
-                            {/* HORIZONTAL LINE TRICK: 
-                                Spans exactly from the center of the first column (10%) 
-                                to the center of the last column (10% from right)
-                                because 100% / 5 columns = 20% per column. Half of 20% is 10%.
-                            */}
+                            {/* HORIZONTAL LINE TRICK */}
                             <ConnectLine className="absolute top-0 left-[10%] right-[10%] h-1" />
                             
                             <div className="flex w-full justify-between">
-                                {/* 1: HR/Marketing (Anant) */}
-                                <div className="w-1/5 flex flex-col items-center px-2">
-                                    <ConnectLine className="w-1 h-8" />
-                                    <OrgCard member={ORG_MEMBERS.directorSales} onSelect={setSelectedMember} />
-                                    <ConnectLine className="w-1 h-8" />
-                                    <OrgCard member={ORG_MEMBERS.teamSales} onSelect={setSelectedMember} />
-                                </div>
-
                                 {/* 2: Joint MD / Project (Rita) */}
                                 <div className="w-1/5 flex flex-col items-center px-2">
                                     <ConnectLine className="w-1 h-8" />
@@ -109,7 +95,6 @@ const OrganizationalChart: React.FC = () => {
                                     <ConnectLine className="w-1 h-8" />
                                     <OrgCard member={ORG_MEMBERS.teamProject} onSelect={setSelectedMember} />
                                 </div>
-
                                 {/* 3: Finance (Akash) */}
                                 <div className="w-1/5 flex flex-col items-center px-2">
                                     <ConnectLine className="w-1 h-8" />
@@ -117,7 +102,14 @@ const OrganizationalChart: React.FC = () => {
                                     <ConnectLine className="w-1 h-8" />
                                     <OrgCard member={ORG_MEMBERS.financeTeam} onSelect={setSelectedMember} />
                                 </div>
-                                
+                                {/* 1: HR/Marketing (Anant) */}
+                                <div className="w-1/5 flex flex-col items-center px-2">
+                                    <ConnectLine className="w-1 h-8" />
+                                    <OrgCard member={ORG_MEMBERS.directorSales} onSelect={setSelectedMember} />
+                                    <ConnectLine className="w-1 h-8" />
+                                    <OrgCard member={ORG_MEMBERS.teamSales} onSelect={setSelectedMember} />
+                                </div>
+  
                                 {/* 4: HR (Shweta) */}
                                 <div className="w-1/5 flex flex-col items-center px-2">
                                     <ConnectLine className="w-1 h-8" />
@@ -148,6 +140,7 @@ const OrganizationalChart: React.FC = () => {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
+                        // Added fixed padding and flex alignment to prevent the modal from getting stuck off-screen
                         className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-slate-950/80 backdrop-blur-sm"
                         onClick={() => setSelectedMember(null)}
                     >
@@ -157,52 +150,58 @@ const OrganizationalChart: React.FC = () => {
                             exit={{ scale: 0.9, y: 20, opacity: 0 }}
                             transition={{ type: "spring", damping: 25, stiffness: 300 }}
                             onClick={(e) => e.stopPropagation()}
-                            className="bg-slate-900 border border-slate-700 rounded-2xl p-6 sm:p-8 max-w-lg w-full shadow-2xl relative overflow-hidden"
+                            // MODIFIED: Added max-h-[90vh] to constrain height, and flex flex-col so internal scrolling works
+                            className="bg-slate-900 border border-slate-700 rounded-2xl p-6 sm:p-8 max-w-lg w-full max-h-[90vh] shadow-2xl relative overflow-hidden flex flex-col"
                         >
                             {/* Glow Behind */}
-                            <div className="absolute -top-32 -right-32 w-64 h-64 bg-cyan-500/20 rounded-full blur-[80px]" />
+                            <div className="absolute -top-32 -right-32 w-64 h-64 bg-cyan-500/20 rounded-full blur-[80px] pointer-events-none" />
 
                             <button
                                 onClick={() => setSelectedMember(null)}
-                                className="absolute top-4 right-4 text-slate-400 hover:text-white transition-colors p-2 bg-slate-800/50 rounded-full hover:bg-slate-800"
+                                className="absolute top-4 right-4 z-10 text-slate-400 hover:text-white transition-colors p-2 bg-slate-800/50 rounded-full hover:bg-slate-800"
                             >
                                 <X size={20} />
                             </button>
 
-                            <div className="flex flex-col sm:flex-row items-center sm:items-start gap-6 mb-6">
-                                <div className="w-24 h-24 sm:w-32 sm:h-32 rounded-2xl overflow-hidden border-2 border-cyan-500/30 flex-shrink-0 shadow-lg">
-                                    <img src={selectedMember.image} alt={selectedMember.name} className="w-full h-full object-cover" />
-                                </div>
-                                <div className="text-center sm:text-left pt-2">
-                                    <h3 className="text-2xl sm:text-3xl font-bold text-white mb-1">{selectedMember.name}</h3>
-                                    <p className="text-cyan-400 font-medium text-lg">{selectedMember.role}</p>
-                                </div>
-                            </div>
-
-                            <div className="space-y-6">
-                                <div>
-                                    <h4 className="text-sm uppercase tracking-wider text-slate-500 font-bold mb-2">About Role</h4>
-                                    <p className="text-slate-300 leading-relaxed bg-slate-800/50 p-4 rounded-xl border border-slate-700/50">
-                                        {selectedMember.details}
-                                    </p>
+                            {/* MODIFIED: Added overflow-y-auto to allow scrolling *inside* the modal, hiding the main scrollbar for aesthetics */}
+                            <div className="overflow-y-auto pr-2 pb-4 -mr-2 hide-scrollbar">
+                                <div className="flex flex-col sm:flex-row items-center sm:items-start gap-6 mb-6 mt-4 sm:mt-0">
+                                    <div className="w-24 h-24 sm:w-32 sm:h-32 rounded-2xl overflow-hidden border-2 border-cyan-500/30 flex-shrink-0 shadow-lg">
+                                        <img src={selectedMember.image} alt={selectedMember.name} className="w-full h-full object-cover" />
+                                    </div>
+                                    <div className="text-center sm:text-left pt-2">
+                                        <h3 className="text-2xl sm:text-3xl font-bold text-white mb-1 pr-6">{selectedMember.name}</h3>
+                                        <p className="text-cyan-400 font-medium text-lg">{selectedMember.role}</p>
+                                    </div>
                                 </div>
 
-                                <div>
-                                    <h4 className="text-sm uppercase tracking-wider text-slate-500 font-bold mb-2">Experience</h4>
-                                    <ul className="space-y-2">
-                                        {selectedMember.experiences?.map((exp, idx) => (
-                                            <motion.li
-                                                initial={{ opacity: 0, x: -10 }}
-                                                animate={{ opacity: 1, x: 0 }}
-                                                transition={{ delay: 0.1 * idx }}
-                                                key={idx}
-                                                className="flex items-start text-slate-300 bg-slate-800/30 p-3 rounded-lg border border-slate-700/30"
-                                            >
-                                                <span className="text-cyan-400 mr-3 mt-1 text-lg leading-none">•</span>
-                                                <span>{exp}</span>
-                                            </motion.li>
-                                        ))}
-                                    </ul>
+                                <div className="space-y-6">
+                                    <div>
+                                        <h4 className="text-sm uppercase tracking-wider text-slate-500 font-bold mb-2">About Role</h4>
+                                        <p className="text-slate-300 leading-relaxed bg-slate-800/50 p-4 rounded-xl border border-slate-700/50">
+                                            {selectedMember.details}
+                                        </p>
+                                    </div>
+
+                                    {selectedMember.experiences && selectedMember.experiences.length > 0 && (
+                                        <div>
+                                            <h4 className="text-sm uppercase tracking-wider text-slate-500 font-bold mb-2">Experience</h4>
+                                            <ul className="space-y-2">
+                                                {selectedMember.experiences.map((exp, idx) => (
+                                                    <motion.li
+                                                        initial={{ opacity: 0, x: -10 }}
+                                                        animate={{ opacity: 1, x: 0 }}
+                                                        transition={{ delay: 0.1 * idx }}
+                                                        key={idx}
+                                                        className="flex items-start text-slate-300 bg-slate-800/30 p-3 rounded-lg border border-slate-700/30"
+                                                    >
+                                                        <span className="text-cyan-400 mr-3 mt-1 text-lg leading-none">•</span>
+                                                        <span>{exp}</span>
+                                                    </motion.li>
+                                                ))}
+                                            </ul>
+                                        </div>
+                                    )}
                                 </div>
                             </div>
                         </motion.div>
