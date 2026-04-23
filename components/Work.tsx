@@ -17,7 +17,7 @@ const ProjectModal: React.FC<{ project: typeof PROJECTS[0]; isOpen: boolean; onC
               exit: { opacity: 0 }
             } as any)}
             onClick={onClose}
-            className="absolute inset-0 bg-slate-950/90 backdrop-blur-md"
+            className="absolute inset-0 bg-[var(--bg-primary)]/90 backdrop-blur-md"
           />
           <motion.div
             // Fix: Spread animation props as any
@@ -26,10 +26,10 @@ const ProjectModal: React.FC<{ project: typeof PROJECTS[0]; isOpen: boolean; onC
               animate: { opacity: 1, scale: 1, y: 0 },
               exit: { opacity: 0, scale: 0.9, y: 20 }
             } as any)}
-            className="relative w-full max-w-4xl max-h-[90vh] overflow-y-auto bg-slate-900 rounded-2xl shadow-2xl"          >
+            className="relative w-full max-w-4xl max-h-[90vh] overflow-y-auto bg-[var(--bg-secondary)] rounded-2xl shadow-2xl"          >
             <button 
               onClick={onClose}
-              className="absolute top-6 right-6 z-10 w-10 h-10 glass rounded-full flex items-center justify-center text-slate-400 hover:text-white transition-colors clickable"
+              className="absolute top-6 right-6 z-10 w-10 h-10 glass rounded-full flex items-center justify-center text-[var(--text-muted)] hover:text-white transition-colors clickable"
             >
               <X size={24} />
             </button>
@@ -40,7 +40,7 @@ const ProjectModal: React.FC<{ project: typeof PROJECTS[0]; isOpen: boolean; onC
               <div className="p-6 sm:p-8 md:p-12 space-y-5">
                 <span className="text-cyan-400 font-mono text-xs tracking-widest uppercase">{project.category}</span>
                 <h2 className="text-2xl sm:text-3xl md:text-4xl font-black">{project.title}</h2>
-                <div className="space-y-4 text-slate-400">
+                <div className="space-y-4 text-[var(--text-muted)]">
                 <p>{project.description}</p>
                 <ul className="list-disc list-inside space-y-2 text-sm">
   {project.points.map((point, index) => (
@@ -96,12 +96,12 @@ const ProjectItem: React.FC<{ project: typeof PROJECTS[0]; index: number; onOpen
       >
         <span className="text-cyan-500 font-mono text-sm tracking-widest">{project.category}</span>
         <h3 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-black leading-tight">{project.title}</h3>
-        <p className="text-slate-400 text-base md:text-lg leading-relaxed">
+        <p className="text-[var(--text-muted)] text-base md:text-lg leading-relaxed">
 {project.shortDescription}
 </p>
         <button 
           onClick={onOpen}
-          className="clickable px-8 py-3 bg-slate-900 border border-slate-800 rounded-full font-bold hover:bg-slate-800 active:bg-slate-700 transition-colors"        >
+          className="clickable px-8 py-3 bg-[var(--bg-secondary)] border border-slate-800 rounded-full font-bold hover:bg-slate-800 active:bg-slate-700 transition-colors"        >
           Explore Technical Details
         </button>
       </motion.div>

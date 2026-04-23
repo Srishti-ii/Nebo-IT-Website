@@ -40,7 +40,7 @@ const Contact: React.FC = () => {
                 name="name"
                 type="text"
                 placeholder="Full Name"
-                className="w-full rounded-xl border border-slate-700 bg-slate-900/60 px-5 py-4 text-white placeholder-slate-400 outline-none backdrop-blur-md transition-all duration-300 focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400/30"
+                className="w-full rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-secondary)]/60 px-5 py-4 text-white placeholder-slate-400 outline-none backdrop-blur-md transition-all duration-300 focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400/30"
 
               />
               <input
@@ -48,7 +48,7 @@ const Contact: React.FC = () => {
                 name="email"
                 type="email"
                 placeholder="Email Address"
-                className="w-full rounded-xl border border-slate-700 bg-slate-900/60 px-5 py-4 text-white placeholder-slate-400 outline-none backdrop-blur-md transition-all duration-300 focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400/30"
+                className="w-full rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-secondary)]/60 px-5 py-4 text-white placeholder-slate-400 outline-none backdrop-blur-md transition-all duration-300 focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400/30"
 
               />
             </div>
@@ -58,7 +58,7 @@ const Contact: React.FC = () => {
               name="message"
               rows={4}
               placeholder="Tell us about your project..."
-              className="w-full rounded-xl border border-slate-700 bg-slate-900/60 px-5 py-4 text-white placeholder-slate-400 outline-none backdrop-blur-md transition-all duration-300 focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400/30"
+              className="w-full rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-secondary)]/60 px-5 py-4 text-white placeholder-slate-400 outline-none backdrop-blur-md transition-all duration-300 focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400/30"
 
             />
 
@@ -76,7 +76,7 @@ const Contact: React.FC = () => {
                 </>
               )}
               {formState === 'sending' && (
-                <div className="w-6 h-6 border-2 border-slate-950 border-t-transparent rounded-full animate-spin" />
+                <div className="w-6 h-6 border-2 border-[var(--border-subtle)] border-t-transparent rounded-full animate-spin" />
               )}
               {formState === 'success' && (
                 <>

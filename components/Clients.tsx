@@ -5,7 +5,7 @@ import { CLIENT_LOGOS } from '../constants';
 
 const Clients: React.FC = () => {
   return (
-    <div className="py-20 bg-slate-950 overflow-hidden border-y border-slate-900">
+    <div className="py-20 bg-[var(--bg-primary)] overflow-hidden border-y border-[var(--border-subtle)]">
       <div className="container mx-auto px-6 mb-10 text-center">
         <h3 className="text-slate-500 text-sm uppercase tracking-[0.3em] font-bold">Trusted by Industry Leaders</h3>
       </div>

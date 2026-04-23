@@ -36,7 +36,7 @@ const OrganizationalChart: React.FC = () => {
     const [selectedMember, setSelectedMember] = useState<OrgMember | null>(null);
 
     return (
-        <section id="org-structure" className="py-24 bg-slate-900/50 relative overflow-hidden">
+        <section id="org-structure" className="py-24 bg-[var(--bg-secondary)]/50 relative overflow-hidden">
             {/* Background glow */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-cyan-500/10 rounded-full blur-[120px] pointer-events-none" />
 
@@ -46,8 +46,9 @@ const OrganizationalChart: React.FC = () => {
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="text-xl min-[375px]:text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white to-slate-400 px-4"
+                        className="text-xl min-[375px]:text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-[var(--text-main)] px-4"
                     >
+                      
                         Organizational Structure
                     </motion.h2>
                     <motion.div
@@ -110,14 +111,6 @@ const OrganizationalChart: React.FC = () => {
                                     <OrgCard member={ORG_MEMBERS.teamSales} onSelect={setSelectedMember} />
                                 </div>
   
-                                {/* 4: HR (Shweta) */}
-                                <div className="w-1/5 flex flex-col items-center px-2">
-                                    <ConnectLine className="w-1 h-8" />
-                                    <OrgCard member={ORG_MEMBERS.directorHR} onSelect={setSelectedMember} />
-                                    <ConnectLine className="w-1 h-8" />
-                                    <OrgCard member={ORG_MEMBERS.teamHR} onSelect={setSelectedMember} />
-                                </div>
-
                                 {/* 5: IT (Pranav) */}
                                 <div className="w-1/5 flex flex-col items-center px-2">
                                     <ConnectLine className="w-1 h-8" />
@@ -141,7 +134,7 @@ const OrganizationalChart: React.FC = () => {
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
                         // Added fixed padding and flex alignment to prevent the modal from getting stuck off-screen
-                        className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-slate-950/80 backdrop-blur-sm"
+                        className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-[var(--bg-primary)]/80 backdrop-blur-sm"
                         onClick={() => setSelectedMember(null)}
                     >
                         <motion.div
@@ -151,14 +144,14 @@ const OrganizationalChart: React.FC = () => {
                             transition={{ type: "spring", damping: 25, stiffness: 300 }}
                             onClick={(e) => e.stopPropagation()}
                             // MODIFIED: Added max-h-[90vh] to constrain height, and flex flex-col so internal scrolling works
-                            className="bg-slate-900 border border-slate-700 rounded-2xl p-6 sm:p-8 max-w-lg w-full max-h-[90vh] shadow-2xl relative overflow-hidden flex flex-col"
+                            className="bg-[var(--bg-secondary)] border border-slate-700 rounded-2xl p-6 sm:p-8 max-w-lg w-full max-h-[90vh] shadow-2xl relative overflow-hidden flex flex-col"
                         >
                             {/* Glow Behind */}
                             <div className="absolute -top-32 -right-32 w-64 h-64 bg-cyan-500/20 rounded-full blur-[80px] pointer-events-none" />
 
                             <button
                                 onClick={() => setSelectedMember(null)}
-                                className="absolute top-4 right-4 z-10 text-slate-400 hover:text-white transition-colors p-2 bg-slate-800/50 rounded-full hover:bg-slate-800"
+                                className="absolute top-4 right-4 z-10 text-[var(--text-muted)] hover:text-white transition-colors p-2 bg-[var(--bg-secondary)]/50 rounded-full hover:bg-[var(--bg-secondary)]"
                             >
                                 <X size={20} />
                             </button>
@@ -170,22 +163,22 @@ const OrganizationalChart: React.FC = () => {
                                         <img src={selectedMember.image} alt={selectedMember.name} className="w-full h-full object-cover" />
                                     </div>
                                     <div className="text-center sm:text-left pt-2">
-                                        <h3 className="text-2xl sm:text-3xl font-bold text-white mb-1 pr-6">{selectedMember.name}</h3>
+                                        <h3 className="text-2xl sm:text-3xl font-bold var(--text-main) mb-1 pr-6">{selectedMember.name}</h3>
                                         <p className="text-cyan-400 font-medium text-lg">{selectedMember.role}</p>
                                     </div>
                                 </div>
 
                                 <div className="space-y-6">
                                     <div>
-                                        <h4 className="text-sm uppercase tracking-wider text-slate-500 font-bold mb-2">About Role</h4>
-                                        <p className="text-slate-300 leading-relaxed bg-slate-800/50 p-4 rounded-xl border border-slate-700/50">
+                                        <h4 className="text-sm uppercase tracking-wider text-[var(--text-muted)] font-bold mb-2">About Role</h4>
+                                        <p className="text-[var(--text-muted)] leading-relaxed bg-[var(--bg-secondary)]/50 p-4 rounded-xl border border-slate-700/50">
                                             {selectedMember.details}
                                         </p>
                                     </div>
 
                                     {selectedMember.experiences && selectedMember.experiences.length > 0 && (
                                         <div>
-                                            <h4 className="text-sm uppercase tracking-wider text-slate-500 font-bold mb-2">Experience</h4>
+                                            <h4 className="text-sm uppercase tracking-wider text-[var(--text-muted)] font-bold mb-2">Experience</h4>
                                             <ul className="space-y-2">
                                                 {selectedMember.experiences.map((exp, idx) => (
                                                     <motion.li
@@ -193,7 +186,7 @@ const OrganizationalChart: React.FC = () => {
                                                         animate={{ opacity: 1, x: 0 }}
                                                         transition={{ delay: 0.1 * idx }}
                                                         key={idx}
-                                                        className="flex items-start text-slate-300 bg-slate-800/30 p-3 rounded-lg border border-slate-700/30"
+                                                        className="flex items-start text-[var(--text-muted)] bg-[var(--bg-secondary)]/30 p-3 rounded-lg border border-slate-700/30"
                                                     >
                                                         <span className="text-cyan-400 mr-3 mt-1 text-lg leading-none">•</span>
                                                         <span>{exp}</span>

@@ -117,16 +117,14 @@ const GlobalBackground: React.FC = () => {
       mouse.current.x = (event.clientX / window.innerWidth) * 2 - 1;
       mouse.current.y = -(event.clientY / window.innerHeight) * 2 + 1;
     };
-
     window.addEventListener('mousemove', handleMouseMove);
     return () => window.removeEventListener('mousemove', handleMouseMove);
   }, []);
 
   return (
-    <div className="fixed inset-0 z-[-1] pointer-events-none bg-slate-950">
+    <div className="fixed inset-0 z-[-1] pointer-events-none transition-colors duration-500 bg-[var(--bg-primary)]">
       <Canvas camera={{ position: [0, 0, 6], fov: 60 }} dpr={[1, 2]}>
-        <ambientLight intensity={0.8} />
-        <directionalLight position={[5, 5, 5]} intensity={2} color="#ffffff" />
+        <ambientLight intensity={0.5} />
         <pointLight position={[0, 0, 0]} intensity={2} color="#06b6d4" />
         <BackgroundContent mouse={mouse} />
       </Canvas>

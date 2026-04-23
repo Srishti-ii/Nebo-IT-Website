@@ -103,31 +103,7 @@ export const ORG_MEMBERS: Record<string, OrgMember> = {
     details: "Provides top-level strategic vision and governance. Oversees board operations, guides the long-term business trajectory, and ensures the company's overarching objectives align with its core values and stakeholder interests.",
     experiences: ["30+ years of industry experience.", "Expert in Third-Party Inspection and Quality Assurance.", "Former leadership roles in Govt/PSUs (Ministry of Railways, RDSO, RITES).","Proven expertise in tendering, marketing, and project management."]
   },
-  directorHR: {
-    id: "director-hr",
-    role: "Director HR",
-    name: "Shweta Sinha",
-    image: '/img/director_HR.png', 
-    details: "Leads the organization's overarching human resources strategy, focusing on talent acquisition, employee retention, and organizational development. Champions a positive workplace culture and aligns HR initiatives with the company's long-term business goals.",
-    experiences: [
-      "Strategic workforce planning and executive talent acquisition.", 
-      "Performance management and organizational development.", 
-      "Ensuring strict compliance with labor laws and company policies.",
-      "Fostering an inclusive, engaging, and high-performance corporate culture."
-    ]
-  },
-  teamHR: {
-    id: "team-hr",
-    role: "HR Team",
-    name: "HRs",
-    image: '/img/teamHR.webp',
-    details: "Manages day-to-day human resources operations, from recruitment workflows and onboarding to benefits administration and employee relations. Ensures a smooth, supportive, and compliant workplace environment for all staff members.",
-    experiences: [
-      "Executing end-to-end recruitment pipelines and seamless employee onboarding.", 
-      "Administering employee benefits, payroll coordination, and policy enforcement.", 
-      "Acting as the primary liaison for employee relations and conflict resolution."
-    ]
-  },
+ 
   managingdirector: {
     id: "managingdirector",
     role: "Managing Director",
