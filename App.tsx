@@ -12,11 +12,12 @@ import Clients from './components/Clients';
 import Cursor from './components/Cursor';
 import Footer from './components/Footer';
 import About from './components/About';
-import Leadership from './components/Leadership';
+// import Leadership from './components/Leadership';
 import GlobalBackground from './components/GlobalBackground';
 import Blog from './components/Blog';
 import ToggleSwitch from './components/ToggleSwitch';
 import NeboEngineering from './components/NeboEngineering';
+import Certifications from './components/Certifications';
 
 const App: React.FC = () => {
   const [mounted, setMounted] = useState(false);
@@ -92,6 +93,7 @@ const App: React.FC = () => {
 
                 <main className="theme-transition">
                   <Hero />
+                  <Certifications/>
                   <About />
                   <Clients />
                   <Services />

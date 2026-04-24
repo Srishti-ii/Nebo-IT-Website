@@ -27,7 +27,7 @@ const Hero: React.FC = () => {
       <div className="relative z-20 max-w-6xl mx-auto px-6 text-center">
         <motion.div {...({ initial: { opacity: 0, scale: 0.9 }, animate: { opacity: 1, scale: 1 }, transition: { duration: 0.8 } } as any)}>
           <SpotlightText text="NEBO IT SOLUTIONS" />
-          <motion.p className="text-cyan-500 font-semibold tracking-[0.3em] text-xs sm:text-sm md:text-base mb-8 uppercase">A Nebo Engineering Company</motion.p>
+          <motion.p className="text-cyan-500 font-semibold tracking-[0.3em] text-xs sm:text-sm md:text-base mb-8 uppercase">An IT Division of Nebo Engineering India Pvt. Ltd.</motion.p>
           <motion.p className="text-[var(--it-text-muted)] text-base sm:text-lg md:text-xl max-w-xl sm:max-w-2xl mx-auto mb-10 leading-relaxed font-light">
             We orchestrate high-performance digital experiences that blend artistic finesse with surgical engineering precision.
           </motion.p>

@@ -24,6 +24,11 @@ export const LEADERSHIP_DATA = [
   },
 ];
 
+export const CERTIFICATION_LOGOS = [
+  { id: 1, src: '/img/iso_9001.svg', alt: 'ISO Certification' },
+  { id: 2, src: '/img/iso_27001.svg', alt: 'Quality Standard' },
+  { id: 3, src: '/img/startup_india.png', alt: 'Safety Accreditation' },
+];
 export const SERVICES: Service[] = [
   {
     id: 'soft-dev',
@@ -124,7 +129,7 @@ export const ORG_MEMBERS: Record<string, OrgMember> = {
   directorProject: {
     id: "joint-md",
     role: "Joint Managing Director",
-    name: "Rita Rai",
+    name: "Rita Kumari",
     image: '/img/dir_project.jpeg',
     details: "Ensures the flawless execution and delivery of all client projects. Oversees project management frameworks, agile methodologies, and resource allocation to guarantee digital solutions are delivered on time, strictly within budget, and up to quality standards.",
     experiences: ["12+ years of industry experience as a Mechanical Engineer.","Project lifecycle management and Agile methodologies.", "Delivered 50+ enterprise IT projects.", "Expertise in risk and resource management.","Management Representative for ISO 17020 compliance and NABCB audits."]

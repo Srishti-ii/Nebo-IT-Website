@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion, Variants } from 'framer-motion';
+import { Twitter, Github, Linkedin, Instagram } from 'lucide-react';
 
 interface NeboEngineeringProps {
   onSwitchToIT?: () => void;
@@ -143,12 +144,12 @@ const NeboEngineering: React.FC<NeboEngineeringProps> = ({ onSwitchToIT }) => {
               </h3>
               
               <div className="space-y-4">
-                <p className="text-lg text-white leading-relaxed">
+                <p className="text-lg text-slate-300 leading-relaxed">
                   At Nebo Engineering, we are dedicated to harnessing the power of the sun to create sustainable energy solutions that propel your business forward. As a dynamic startup specializing in solar technologies, we offer a comprehensive range of services tailored to meet your energy needs.
                 </p>
                 <div className="h-px w-full bg-slate-200 my-4"></div>
-                <p className="text-lg white leading-relaxed font-medium">
-                  Operating under <strong className="text-white">Nebo Industries</strong>, we possess the comprehensive capacity and capability to undertake all works related to Civil, Electrical, Mechanical, IT sector, and Non-Conventional Energy.
+                <p className="text-lg text-slate-300 leading-relaxed font-medium">
+                  Operating under <strong className="text-cyan-300">Nebo Industries</strong>, we possess the comprehensive capacity and capability to undertake all works related to Civil, Electrical, Mechanical, IT sector, and Non-Conventional Energy.
                 </p>
               </div>
             </div>
@@ -242,7 +243,7 @@ const NeboEngineering: React.FC<NeboEngineeringProps> = ({ onSwitchToIT }) => {
       </section>
 
       {/* 3. Interactive Tabs */}
-<section id="services" className="bg-[var(--bg-secondary)] py-20 px-6 border-b border-[var(--border-subtle)]">        <div className="max-w-7xl mx-auto">
+<section id="services" className="bg-[var(--bg-secondary)] py-20 px-6 border-y border-slate-200 border-b border-[var(--border-subtle)]">        <div className="max-w-7xl mx-auto">
           
           {/* VIEWPORT FIX: Added flex-wrap and reduced base font size to text-lg on mobile */}
           <div className="flex flex-wrap justify-center gap-3 sm:gap-4 md:gap-8 mb-12 border-b border-gray-300 pb-4">
@@ -548,7 +549,7 @@ const NeboEngineering: React.FC<NeboEngineeringProps> = ({ onSwitchToIT }) => {
                 <img src="/img/dir_project.jpeg" alt="Rita Rai" className="w-full h-full object-contain object-top group-hover:scale-105 transition-transform duration-500" />
               </div>
               <div className="p-5 flex-grow">
-                <h3 className="text-lg font-bold text-white mb-1 uppercase">Rita Rai</h3>
+                <h3 className="text-lg font-bold text-white mb-1 uppercase">Rita Kumari</h3>
                 <p className="text-slate-400 font-medium mb-3 text-xs">Joint Managing Director</p>
                 <div className={`text-slate-400 text-sm overflow-hidden transition-all duration-500 ${expandedBio === 2 ? 'max-h-[800px] opacity-100 mt-4' : 'max-h-0 opacity-0'}`}>
                   <p className="mb-2">Rita holds a mechanical engineering degree from Darbhanga College of Engineering, Darbhanga.</p>
@@ -627,7 +628,7 @@ const NeboEngineering: React.FC<NeboEngineeringProps> = ({ onSwitchToIT }) => {
       </section>
 
       {/* 6. Commitment Section */}
-      <section className="bg-[var(--bg-primary)] py-20 px-6 text-center">
+      <section className="bg-[var(--bg-primary)] py-20 px-6 border-y border-slate-200 text-center">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold text-cyan-300 mb-6 uppercase">OUR COMMITMENT TO YOU</h2>
           <p className="text-lg text-slate-200 mb-6 italic font-serif">
@@ -648,38 +649,85 @@ const NeboEngineering: React.FC<NeboEngineeringProps> = ({ onSwitchToIT }) => {
             <div className="col-span-1 lg:col-span-2">
               <h2 className="text-3xl font-black mb-1 tracking-tighter text-white">NEBO</h2>
               <span className="text-cyan-300 font-bold tracking-widest text-sm uppercase">Engineering</span>
+              <span className="block mt-4 text-sm text-[var(--text-muted)]">Delivering all-in-one solar solutions tailored to your needs.</span>
             </div>
             
             {/* Navigation */}
-            <div className="col-span-1 lg:col-span-2 mt-4 lg:mt-0">
-              <h4 className="font-bold mb-6 text-sm uppercase tracking-widest text-white">Navigation</h4>
-              <ul className="space-y-3 text-slate-400 text-sm">
-                <li><button onClick={() => { window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="hover:text-amber-400 transition-colors">Home</button></li>
-                <li><button onClick={() => { document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' }); }} className="hover:text-amber-400 transition-colors">Services & Products</button></li>
-                <li><button onClick={() => { document.getElementById('leadership')?.scrollIntoView({ behavior: 'smooth' }); }} className="hover:text-amber-400 transition-colors">Leadership</button></li>
+            <div className="col-span-1 lg:col-span-2">
+            <h4 className="font-bold mb-6 text-sm uppercase tracking-widest var(--text-main)">Navigation</h4>
+            <ul className="space-y-3 text-[var(--text-muted)] text-sm">
+                <li><button onClick={() => { window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="hover:text-cyan-300 transition-colors">Home</button></li>
+                <li><button onClick={() => { document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' }); }} className="hover:text-cyan-300 transition-colors">Services & Products</button></li>
+                <li><button onClick={() => { document.getElementById('leadership')?.scrollIntoView({ behavior: 'smooth' }); }} className="hover:text-cyan-300 transition-colors">Leadership</button></li>
               </ul>
             </div>
 
-            {/* Offices Section */}
-            <div className="col-span-1 lg:col-span-5 mt-4 lg:mt-0">
-              <h4 className="font-bold mb-6 text-sm uppercase tracking-widest text-white">Offices</h4>
-              <address className="not-italic text-slate-400 space-y-3 text-xs leading-relaxed">
-                <p>1. R-18 1St Floor, Vikas Marg, Shakarpur, Delhi-110092.</p>
-                <p>2. K 422, UPSIDC, Site 5, Kasna, Greater Noida, Uttar Pradesh</p>
-              </address>
-            </div>
+           {/* Offices */}
+          <div className="col-span-1 lg:col-span-4">
+            <h4 className="font-bold mb-6 text-sm uppercase tracking-widest var(--text-main)">Offices</h4>
+            <address className="not-italic text-[var(--text-muted)] space-y-3 text-xs leading-relaxed">
+              <p>1. R-18 1St Floor, Vikas Marg, Shakarpur, Delhi-110092.</p>
+              <p>2. K-422, SITE 5 KASNA IND AREA Greater Noida, Gautam Budh Nagar -201310.</p>
+            </address>
+          </div>
 
-            {/* Contact Section */}
-            <div className="col-span-1 lg:col-span-3 mt-4 lg:mt-0">
-              <h4 className="font-bold mb-6 text-sm uppercase tracking-widest text-white">Contact Us</h4>
-              <div className="text-slate-400 text-sm space-y-3">
-                <p> +91 7275629690 <br></br> +91 8802239746 <br></br> +91 8700449133
-                <br></br>
-                <br></br>
-
-                  Email: contact@neboengineering.in</p>
-              </div>
-            </div>
+            {/* GROUPED: Connect and Contact Side-by-Side (Nested Grid) */}
+                     <div className="col-span-1 lg:col-span-4 grid grid-cols-2 gap-4">
+                       
+                       {/* Connect */}
+                       <div>
+                         <h4 className="font-bold mb-6 text-sm uppercase tracking-widest var(--text-main)">Connect</h4>
+                         <div className="flex flex-wrap gap-2 sm:gap-3">
+                                <a href="https://x.com/NeboEng" target='_blank' className="w-8 h-8 sm:w-9 sm:h-9 border border-[var(--border-subtle)] rounded-full flex items-center justify-center text-[var(--text-muted)] hover:text-cyan-400 hover:border-cyan-400 transition-all"><Twitter size={14} /></a>
+                         <a 
+                           href="https://www.reddit.com/user/Nebo-IT-Solutions/" 
+                           target="_blank" 
+                           rel="noopener noreferrer" 
+                           className="w-8 h-8 sm:w-9 sm:h-9 border border-[var(--border-subtle)] rounded-full flex items-center justify-center text-[var(--text-muted)] hover:text-cyan-400 hover:border-cyan-400 transition-all"
+                         >
+                           {/* Using a standard Reddit SVG icon */}
+                           <img 
+                             src="/img/reddit.png" 
+                             alt="Reddit" 
+                             className="w-3.5 h-3.5 object-contain nebo-logo opacity-70 group-hover:opacity-100" 
+                            style={{ filter: 'brightness(0) invert(1)'}}
+                           />
+                         </a>                <a href="https://www.linkedin.com/company/neboitsolutions" target='_blank' className="w-8 h-8 sm:w-9 sm:h-9 border border-[var(--border-subtle)] rounded-full flex items-center justify-center text-[var(--text-muted)] hover:text-cyan-400 hover:border-cyan-400 transition-all"><Linkedin size={14} /></a>
+                                         <a href="https://www.instagram.com/nebo.it/?hl=en" target='_blank' className="w-8 h-8 sm:w-9 sm:h-9 border border-[var(--border-subtle)] rounded-full flex items-center justify-center text-[var(--text-muted)] hover:text-cyan-400 hover:border-cyan-400 transition-all"><Instagram size={14} /></a>
+                                         <a 
+                           href="https://www.facebook.com/profile.php?id=61573308520182" 
+                           target="_blank" 
+                           rel="noopener noreferrer" 
+                           className="w-8 h-8 sm:w-9 sm:h-9 border border-[var(--border-subtle)] rounded-full flex items-center justify-center text-[var(--text-muted)] hover:text-cyan-400 hover:border-cyan-400 transition-all"
+                         >
+                           {/* Using a standard Reddit SVG icon */}
+                           <img 
+                             src="/img/meta.jpeg" 
+                             alt="Meta" 
+                             className="w-3.5 h-3.5 object-contain nebo-logo opacity-70 group-hover:opacity-100" 
+                             style={{ filter: 'currentColor' }}
+                           />
+                         </a>   
+                         </div>
+                       </div>
+           
+                       {/* Contact */}
+                       <div>
+                         <h4 className="font-bold mb-6 text-sm uppercase tracking-widest var(--text-main)">Contact Us</h4>
+                         <div className="text-[var(--text-muted)] text-sm space-y-3">
+                           <p>
+                             +91 7275629690<br/>
+                             +91 8802239746<br/>
+                             +91 8700449133    <br></br>
+                             <br></br>
+           
+                             Email: contact@neboengineering.in<br></br>
+                             hr@neboengineering.in
+                           </p>
+                         </div>
+                       </div>
+           
+                     </div>
 
           </div>
 
