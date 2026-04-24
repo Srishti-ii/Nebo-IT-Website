@@ -11,7 +11,8 @@ const Footer: React.FC = () => {
           
           {/* NEBO Logo */}
           <div className="col-span-1 lg:col-span-2">
-            <h2 className="text-3xl font-black mb-6 tracking-tighter var(--text-main)">NEBO</h2>
+             <h2 className="text-3xl font-black mb-1 tracking-tighter text-white">NEBO</h2>
+             <span className="text-cyan-300 font-bold tracking-widest text-sm uppercase">IT Solutions</span>
           </div>
           
           {/* Navigation */}

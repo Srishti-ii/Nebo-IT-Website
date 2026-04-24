@@ -35,7 +35,7 @@ const ParticleField = ({ mouse }: { mouse: React.MutableRefObject<THREE.Vector2>
           transparent
           color="#06b6d4"
           size={0.02}
-          opacity={0.7}
+          opacity={0.5}
           sizeAttenuation={true}
           depthWrite={false}
           blending={THREE.AdditiveBlending}

@@ -65,7 +65,7 @@ const App: React.FC = () => {
           </div>
 
           {/* Theme Toggle (Sun/Moon) - Visible always, but logic affects IT site */}
-          <button 
+          {/*<button 
             onClick={toggleTheme}
             className="w-12 h-12 it-glass rounded-full flex items-center justify-center text-cyan-500 hover:scale-110 transition-all shadow-xl active:scale-95"
             title={theme === 'dark' ? "Switch to Light Mode" : "Switch to Dark Mode"}
@@ -75,7 +75,7 @@ const App: React.FC = () => {
             ) : (
               <Moon size={22} className="text-slate-700" />
             )}
-          </button>
+          </button>*/}
         </div>
 
         <Routes>
@@ -97,7 +97,7 @@ const App: React.FC = () => {
                   <Services />
                   <Work />
                   <Blog />
-                  <Leadership />
+                  {/* <Leadership /> */}
                   <OrganizationalChart />
                   <Contact />
                 </main>
