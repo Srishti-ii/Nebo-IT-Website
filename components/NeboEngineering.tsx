@@ -454,7 +454,7 @@ const NeboEngineering: React.FC<NeboEngineeringProps> = ({ onSwitchToIT }) => {
               </div>
             </div>
 
-            {/* 2. RAJESH KHARE */}
+            {/* 2. RAJESH KHARE
             <div onClick={() => toggleBio(6)} className="cursor-pointer bg-[var(--bg-secondary)] rounded-xl shadow-sm border border-slate-200 overflow-hidden hover:shadow-md transition-all group flex flex-col">
               <div className="h-56 w-full bg-[var(--bg-subtle)] flex items-center justify-center overflow-hidden">
                 <img src="/img/rajesh.png" alt="Rajesh Khare" className="w-full h-full object-contain object-top group-hover:scale-105 transition-transform duration-500" />
@@ -471,7 +471,7 @@ const NeboEngineering: React.FC<NeboEngineeringProps> = ({ onSwitchToIT }) => {
               </div>
             </div>
 
-            {/* 3. INDU KUMAR SRIVASTAVA */}
+           3. INDU KUMAR SRIVASTAVA 
             <div onClick={() => toggleBio(7)} className="cursor-pointer bg-[var(--bg-secondary)] rounded-xl shadow-sm border border-slate-200 overflow-hidden hover:shadow-md transition-all group flex flex-col">
               <div className="h-56 w-full bg-[var(--bg-subtle)] flex items-center justify-center overflow-hidden">
                 <img src="/img/indu.png" alt="Indu Kumar Srivastava" className="w-full h-full object-contain object-top group-hover:scale-105 transition-transform duration-500" />
@@ -486,7 +486,7 @@ const NeboEngineering: React.FC<NeboEngineeringProps> = ({ onSwitchToIT }) => {
                 </div>
                 <p className="text-xs text-cyan-500 font-bold mt-3 uppercase tracking-wider">{expandedBio === 7 ? '- Show Less' : '+ Read Full Bio'}</p>
               </div>
-            </div>
+            </div> */}
 
             {/* 4. ARUN KUMAR TYAGI */}
             <div onClick={() => toggleBio(8)} className="cursor-pointer bg-[var(--bg-secondary)] rounded-xl shadow-sm border border-slate-200 overflow-hidden hover:shadow-md transition-all group flex flex-col">
